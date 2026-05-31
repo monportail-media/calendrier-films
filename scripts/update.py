@@ -23,8 +23,8 @@ TMDB_BASE     = "https://api.themoviedb.org/3"
 TMDB_IMG      = "https://image.tmdb.org/t/p"
 TVMAZE_BASE   = "https://api.tvmaze.com"
 RC_RSS        = "https://ici.radio-canada.ca/rss/4159"   # RSS Arts & Spectacles
-DATA_PATH     = Path("public/data.json")
-QC_PATH       = Path("public/data-qc.json")
+DATA_PATH     = Path("data.json")
+QC_PATH       = Path("data-qc.json")
 TODAY         = datetime.now()
 WINDOW_DAYS   = 180   # 6 mois avant + après aujourd'hui
 
