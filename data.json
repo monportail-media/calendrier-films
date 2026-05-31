@@ -1,7 +1,514 @@
 {
   "version": "2.0",
-  "generated_at": "2026-05-31T00:00:00Z",
-  "total": 0,
-  "rc_announcements": [],
-  "events": []
+  "generated_at": "2026-05-31T21:48:06Z",
+  "total": 14,
+  "rc_announcements": [
+    {
+      "title": " Hors des ondes avec Alexandre : la nécessaire évolution du journalisme ",
+      "link": "https://ici.radio-canada.ca/nouvelle/2257770/alexandre-duval-chronique-evolution-journalisme",
+      "date": "Sun, 31 Ma"
+    },
+    {
+      "title": " Prix Écrans canadiens : Heated Rivalry gagne 13 prix au gala des séries ",
+      "link": "https://ici.radio-canada.ca/nouvelle/2258118/heated-rivalry-13-prix-series-ecrans-canadiens",
+      "date": "Sun, 31 Ma"
+    }
+  ],
+  "events": [
+    {
+      "id": "qc-detective-surprenant-s2",
+      "date": "2026-01-22",
+      "title": "Détective Surprenant",
+      "saison": "Saison 2",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Club Illico",
+      "platformUrl": "https://www.illico.com",
+      "lang": [
+        "FR"
+      ],
+      "tags": [
+        "QC"
+      ],
+      "categories": [
+        "Policier"
+      ],
+      "cast": [
+        "Patrick Hivon"
+      ],
+      "desc": "Patrick Hivon reprend son rôle de sergent-détective dans une nouvelle enquête qui l'emmène de Verdun aux Îles-de-la-Madeleine.",
+      "note": null,
+      "trailers": [],
+      "poster": null,
+      "backdrop": null,
+      "isManual": true
+    },
+    {
+      "id": "tmdb-movie-1284016",
+      "date": "2026-05-18",
+      "title": "Power Ballad",
+      "saison": "Film",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinéma",
+      "platformUrl": "https://www.themoviedb.org/movie/1284016",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "tags": [],
+      "categories": [
+        "Comédie",
+        "Musique",
+        "Drame"
+      ],
+      "cast": [],
+      "desc": "Un chanteur de mariage et une pop star en déclin collaborent sur une chanson, ce qui entraîne des conséquences comiques.",
+      "note": "9.3",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Three cities. One must-see movie. An encore moviegoers never expected.",
+          "url": "https://www.youtube.com/watch?v=eEKFkmLLiMA"
+        },
+        {
+          "lang": "VO",
+          "label": "these reviews speak for themselves.",
+          "url": "https://www.youtube.com/watch?v=S6A_sbKhXhg"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/lsDLLagSIyTu0Gi06QjVKDp2LI2.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/u1c2DAXhpyAwFK8zljcMc4FFEc3.jpg",
+      "source": "tmdb",
+      "isManual": false
+    },
+    {
+      "id": "tvmaze-67268",
+      "date": "2026-05-31",
+      "title": "Sullivan's Crossing",
+      "saison": "Saison 4",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "CTV",
+      "platformUrl": "#",
+      "lang": [
+        "EN",
+        "FR"
+      ],
+      "tags": [],
+      "categories": [
+        "Drame",
+        "Romance"
+      ],
+      "cast": [],
+      "desc": "Après que la vie personnelle et professionnelle de la neurochirurgienne Maggie Sullivan ait été bouleversée, elle rentre chez elle à Sullivan's Crossing. Là-bas, Maggie est obligée de naviguer dans son présent compliqué tout en affrontant le passé douloureux qu'elle a choisi d'ignorer pendant des années.",
+      "note": "8.2",
+      "trailers": [],
+      "poster": "https://image.tmdb.org/t/p/w300/sIRFRHTsCQxhJJtn5TPYOqryjdW.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/coh0nl5ov1o42fy7f74MDMvme2I.jpg",
+      "source": "tvmaze",
+      "isManual": false
+    },
+    {
+      "id": "tvmaze-68063",
+      "date": "2026-05-31",
+      "title": "Survivor Québec",
+      "saison": "Saison 4",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Club Illico",
+      "platformUrl": "https://www.illico.com",
+      "lang": [
+        "FR"
+      ],
+      "tags": [
+        "QC"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [],
+      "desc": "Complètement isolés de la civilisation et loin de tout confort, les 20 candidats de Survivor Québec devront tester leur endurance et leur forme physique dans une série d’épreuves extrêmes pendant plus de 40 jours. En plus de survivre aux intempéries et de combattre la faim, ils et elles devront user de stratégie pour éviter les éliminations et tenter de devenir le ou la dernier.ère survivant.e afin de remporter un grand prix de 100 000 $.",
+      "note": "5.6",
+      "trailers": [],
+      "poster": "https://image.tmdb.org/t/p/w300/ur3ui4ueknPN6vHTowo1BQKhs4g.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/qgjIQAq2IWAVCTEd8FYpsWXuv6P.jpg",
+      "source": "tvmaze",
+      "isManual": false
+    },
+    {
+      "id": "tvm-intl-28826",
+      "date": "2026-05-31",
+      "title": "Euphoria",
+      "saison": "Saison 3",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "tags": [],
+      "categories": [
+        "Drame",
+        "Crime",
+        "Thriller"
+      ],
+      "cast": [],
+      "desc": "À 17 ans, Rue Bennett, fraîchement sortie de désintox, cherche à donner un sens à son existence. Elle se lie très vite à Jules Vaughn, une fille trans récemment arrivée en ville après le divorce de ses parents. Dans leur sillage gravitent Nate Jacobs, un sportif dont les problèmes de colère masquent des complexes sexuels ; Maddy Perez, la petite amie de Nate ; Chris McKay, star de l'équipe de football qui peine à suivre les cours ; Cassie Howard, dont le passif sexuel continue de la poursuivre ; Lexi Howard, jeune sœur de Cassie et amie d'enfance de Rue ; et Kat Hernandez, en pleine exploration de sa sexualité.",
+      "note": "8.3",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "EUPHORIA - Saison 3 | Bande-annonce officielle | HBO Max",
+          "url": "https://www.youtube.com/watch?v=VGV4ti93zMA"
+        },
+        {
+          "lang": "VF",
+          "label": "EUPHORIA - Saison 3 | Bande-annonce officielle | HBO Max | VOST",
+          "url": "https://www.youtube.com/watch?v=sHi75dl1nz8"
+        },
+        {
+          "lang": "VF",
+          "label": "EUPHORIA Saison 2 Bande Annonce (Nouvelle, 2022) Zendaya",
+          "url": "https://www.youtube.com/watch?v=0jMbMjnqmwM"
+        },
+        {
+          "lang": "VF",
+          "label": "Euphoria l Bande-annonce l Épisode spécial Jules",
+          "url": "https://www.youtube.com/watch?v=Gw6f2wmrodE"
+        },
+        {
+          "lang": "VF",
+          "label": "Euphoria l Épisode spécial : Rue",
+          "url": "https://www.youtube.com/watch?v=5K6pomAHRYM"
+        },
+        {
+          "lang": "VF",
+          "label": "Euphoria | Bande-annonce officielle",
+          "url": "https://www.youtube.com/watch?v=lpe0uJkv_eM"
+        },
+        {
+          "lang": "VF",
+          "label": "Euphoria - Bande Annonce VOST",
+          "url": "https://www.youtube.com/watch?v=fwpehJzMXEM"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/y2Oydc1hoN8aV1ObovRoweL5msE.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/mez2Z3WqlPKNXpi7mWoiiE5guE9.jpg",
+      "source": "tvmaze",
+      "isManual": false
+    },
+    {
+      "id": "tvm-intl-263",
+      "date": "2026-05-31",
+      "title": "Last Week Tonight with John Oliver",
+      "saison": "Saison 13",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "tags": [],
+      "categories": [
+        "Comédie"
+      ],
+      "cast": [],
+      "desc": "L'ancien animateur et correspondant du Daily Show, John Oliver, apporte sa personnalité à cette émission hebdomadaire de satire sur l'actualité.",
+      "note": "7.8",
+      "trailers": [],
+      "poster": "https://image.tmdb.org/t/p/w300/fuuEjEr69uvRtGaQw70JfvdrUwb.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/q31EEBycbOyX7GGJP4GTPI5WJRO.jpg",
+      "source": "tvmaze",
+      "isManual": false
+    },
+    {
+      "id": "tmdb-movie-1273221",
+      "date": "2026-06-05",
+      "title": "Scary Movie",
+      "saison": "Film",
+      "status": "a-venir",
+      "type": "film",
+      "platform": "Cinéma",
+      "platformUrl": "https://www.themoviedb.org/movie/1273221",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "tags": [],
+      "categories": [
+        "Comédie",
+        "Horreur"
+      ],
+      "cast": [],
+      "desc": "Vingt-six ans après avoir échappé à un tueur masqué étrangement familier, les héros emblématiques de la saga sont de nouveau dans la ligne de mire du meurtrier, et aucune franchise de film d’horreur n’est à l’abri.",
+      "note": "7.5",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "SCARY MOVIE - Bande-annonce",
+          "url": "https://www.youtube.com/watch?v=DflB7yaf5_o"
+        },
+        {
+          "lang": "VF",
+          "label": "Scary Movie | Michael VF [Au cinéma le 3 juin 2026]",
+          "url": "https://www.youtube.com/watch?v=wnM8frdT75E"
+        },
+        {
+          "lang": "VF",
+          "label": "Bande-annonce [VOST]",
+          "url": "https://www.youtube.com/watch?v=ZpNiaveLId0"
+        },
+        {
+          "lang": "VF",
+          "label": "Bande-annonce [VF]",
+          "url": "https://www.youtube.com/watch?v=PtR0LAKzWrg"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/w6x1zcdRtU9ihPCNADmElR1NHRw.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/lj6AaDqDUbzm2XJltFNHeAm2uXN.jpg",
+      "source": "tmdb",
+      "isManual": false
+    },
+    {
+      "id": "tmdb-movie-1680516",
+      "date": "2026-06-05",
+      "title": "WHO",
+      "saison": "Film",
+      "status": "a-venir",
+      "type": "film",
+      "platform": "Cinéma",
+      "platformUrl": "https://www.themoviedb.org/movie/1680516",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "tags": [],
+      "categories": [
+        "Thriller"
+      ],
+      "cast": [],
+      "desc": "Neuf criminels, chacun unique en son genre, découvrent que l’un d’eux a été arrêté. Une seule explication : le traître est autour de leur table. Leur pacte ne tient plus qu’à un fil. Ils doivent démasquer la balance avant qu’elle ne les fasse tous tomber les uns après les autres. Mais le plus dangereux n’est pas toujours celui qu’on regarde.",
+      "note": "5.0",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "WHO - Teaser officiel (VF) | Disney+",
+          "url": "https://www.youtube.com/watch?v=Wd71UmxUjdQ"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/rO9L4pXE0ykAKGHOTPNGXcvh450.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/85sDwuKIqyRGQeG6E4OK0WKzMse.jpg",
+      "source": "tmdb",
+      "isManual": false
+    },
+    {
+      "id": "tmdb-movie-55",
+      "date": "2026-06-12",
+      "title": "Amours chiennes",
+      "saison": "Film",
+      "status": "a-venir",
+      "type": "film",
+      "platform": "Cinéma",
+      "platformUrl": "https://www.themoviedb.org/movie/55",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "tags": [],
+      "categories": [
+        "Drame",
+        "Thriller"
+      ],
+      "cast": [],
+      "desc": "Mexico. Un tragique accident de voiture mêle les extrêmes de la vie, sous l'angle de trois histoires radicalement différentes : Octavio, un adolescent qui a décidé de s'enfuir avec la femme de son frère; Daniel, un quadragénaire qui quitte sa femme et ses enfants pour aller vivre avec un top model; El Chivo, un ex-guérillero communiste devenu tueur à gages, qui n'attend plus rien de la vie.",
+      "note": "7.6",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Official Trailer",
+          "url": "https://www.youtube.com/watch?v=_P29GF_NbDc"
+        },
+        {
+          "lang": "VO",
+          "label": "AMORES PERROS shakes up Mexico City (w/ Gael García Bernal) | MUBI Podcast",
+          "url": "https://www.youtube.com/watch?v=0sdXFYUoK14"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/9mr1hIjIA2yv6hB0sCMZF2w4NSX.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/tJTRLtdKPeVT8HORSbeHpdb8BKg.jpg",
+      "source": "tmdb",
+      "isManual": false
+    },
+    {
+      "id": "tvm-intl-44778",
+      "date": "2026-06-21",
+      "title": "House of the Dragon",
+      "saison": "Saison 3",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "tags": [],
+      "categories": [
+        "Drame",
+        "Action",
+        "Fantasy"
+      ],
+      "cast": [],
+      "desc": "Près de 200 ans avant les évènements de Game of Thrones, le continent de Westeros est en proie à de nombreux dangers. Une guerre civile se prépare dans différents endroits du royaume : cette guerre sera appelée la Danse des Dragons. De son côté, la maison Targaryen se disloque peu à peu et le règne des dragons est menacé.",
+      "note": "8.3",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "House of the Dragon – Bande-Annonce officielle (VOST)",
+          "url": "https://www.youtube.com/watch?v=a2zgNEUfGyA"
+        },
+        {
+          "lang": "VF",
+          "label": "Bande-annonce [VOST]",
+          "url": "https://www.youtube.com/watch?v=r8RE9m3YhUY"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/lP73xk4HGJ9CPxDWouzKzK6j82o.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/577eXC8wFQT0eUrJcgznSiFPRmk.jpg",
+      "source": "tvmaze",
+      "isManual": false
+    },
+    {
+      "id": "qc-casse-gueule-2026",
+      "date": "2026-09-01",
+      "title": "Casse-Gueule",
+      "saison": "Saison 1",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "lang": [
+        "FR"
+      ],
+      "tags": [
+        "QC"
+      ],
+      "categories": [
+        "Comédie"
+      ],
+      "cast": [
+        "Zouheir Zerhouni",
+        "Emile Schneider",
+        "Mylène Mackay"
+      ],
+      "desc": "Comédie québécoise scénarisée par Frédéric Ouellet en collaboration avec Daniel Chiasson. Disponible sur Crave en 2026.",
+      "note": null,
+      "trailers": [],
+      "poster": null,
+      "backdrop": null,
+      "isManual": true
+    },
+    {
+      "id": "qc-ravages-2026",
+      "date": "2026-09-01",
+      "title": "Ravages",
+      "saison": "Saison 1",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "Club Illico",
+      "platformUrl": "https://www.illico.com",
+      "lang": [
+        "FR"
+      ],
+      "tags": [
+        "QC"
+      ],
+      "categories": [
+        "Thriller",
+        "Drame"
+      ],
+      "cast": [
+        "Caroline Dhavernas",
+        "Robin Aubert",
+        "Benoit Brière"
+      ],
+      "desc": "Thriller environnemental réalisé par Sophie Deraspe (Antigone, Bergers). L'avocate Sarah Deléan voit sa vie bouleversée par la découverte d'un cadavre, menant une enquête au Québec et en Amérique latine.",
+      "note": null,
+      "trailers": [],
+      "poster": null,
+      "backdrop": null,
+      "isManual": true
+    },
+    {
+      "id": "qc-exemple-001",
+      "date": "2026-09-15",
+      "title": "Exemple — Remplacez par vrai titre",
+      "saison": "Saison 1",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "Club Illico",
+      "platformUrl": "https://www.illico.com",
+      "lang": [
+        "FR"
+      ],
+      "tags": [
+        "QC"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Acteur 1",
+        "Acteur 2"
+      ],
+      "desc": "Description de la série. Ajoutez ici le synopsis.",
+      "note": null,
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Bande-annonce officielle",
+          "url": "https://www.youtube.com/watch?v=XXXXXXXXXXX"
+        }
+      ],
+      "poster": null,
+      "backdrop": null,
+      "isManual": true
+    },
+    {
+      "id": "qc-angles-morts-2026",
+      "date": "2026-10-01",
+      "title": "Angles morts",
+      "saison": "Saison 1",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "ICI TOU.TV",
+      "platformUrl": "https://ici.tou.tv",
+      "lang": [
+        "FR"
+      ],
+      "tags": [
+        "QC"
+      ],
+      "categories": [
+        "Thriller",
+        "Drame"
+      ],
+      "cast": [
+        "Mani Soleymanlou",
+        "Pier-Luc Funk",
+        "Guillaume Cyr"
+      ],
+      "desc": "Minisérie policière sur ICI Télé. Trois acteurs incontournables du théâtre et de la télévision québécoise réunis dans un thriller haletant.",
+      "note": null,
+      "trailers": [],
+      "poster": null,
+      "backdrop": null,
+      "isManual": true
+    }
+  ]
 }
