@@ -1,0 +1,41 @@
+name: Update Calendar Data
+
+on:
+  schedule:
+    # Chaque lundi à 6h00 UTC (2h00 heure de Montréal)
+    - cron: '0 6 * * 1'
+  # Permettre de lancer manuellement depuis l'onglet Actions
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run update script
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: |
+          python scripts/update.py
+
+      - name: Commit updated data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions"
+          git add public/data.json
+          git diff --staged --quiet || git commit -m "🔄 Mise à jour automatique des données — $(date '+%Y-%m-%d')"
+          git push
