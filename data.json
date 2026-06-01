@@ -1,7 +1,7 @@
 {
   "version": "5.0",
-  "generated_at": "2026-06-01T02:31:48Z",
-  "total": 1407,
+  "generated_at": "2026-06-01T11:44:55Z",
+  "total": 1409,
   "events": [
     {
       "id": "ca-71912",
@@ -23775,7 +23775,7 @@
       "saison": "S2026E07",
       "saison_num": 2026,
       "ep_num": 7,
-      "ep_status": "finale",
+      "ep_status": "normal",
       "status": "sorti",
       "type": "serie",
       "platform": "Autre",
@@ -24211,65 +24211,6 @@
       "poster": "https://image.tmdb.org/t/p/w300/gYoCc7c8yrqUCUpiPU9eGud1WiV.jpg",
       "backdrop": "https://image.tmdb.org/t/p/w780/7V9u07eIv6zCta8yP0SgrVCj7as.jpg",
       "source": "tvmaze-world",
-      "isManual": false
-    },
-    {
-      "id": "tmdb-serie-259819",
-      "date": "2026-03-15",
-      "title": "Rooster Fighter",
-      "saison": "Saison 1",
-      "saison_num": 1,
-      "ep_num": null,
-      "ep_status": "premiere",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Netflix",
-      "platformUrl": "https://www.netflix.com",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Animation",
-        "Action",
-        "SF"
-      ],
-      "cast": [
-        "Kenta Miyake",
-        "本多真梨子",
-        "遠野ひかる"
-      ],
-      "desc": "D'étranges créatures attaquent, mais Keiji les affronte en poussant son cri de guerre: Kokekokko!",
-      "note": "8.9",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Official Anime Trailer #2 (English Dub)",
-          "url": "https://www.youtube.com/watch?v=ICDmiq2bW8M"
-        },
-        {
-          "lang": "VO",
-          "label": "Official Anime Trailer #2 [Subtitled]",
-          "url": "https://www.youtube.com/watch?v=N3_Hc-nutLQ"
-        },
-        {
-          "lang": "VO",
-          "label": "Official Trailer 2 (English Dub)",
-          "url": "https://www.youtube.com/watch?v=pzPuxAcq81g"
-        },
-        {
-          "lang": "VO",
-          "label": "March 14",
-          "url": "https://www.youtube.com/watch?v=hvsCxN8olc8"
-        }
-      ],
-      "poster": "https://image.tmdb.org/t/p/w300/iCtbr0sIdaKZjhQH3Wr7hW6A1IU.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/nTDL4UmMLDBCeMtYh8F1LZtgmLV.jpg",
-      "source": "tmdb-serie",
       "isManual": false
     },
     {
@@ -26710,7 +26651,7 @@
       "id": "world-35489",
       "date": "2026-03-22",
       "title": "Café De Mol",
-      "saison": "Saison 8 — 9 ep.",
+      "saison": "Saison 8",
       "saison_num": 8,
       "ep_num": null,
       "ep_status": "normal",
@@ -30395,57 +30336,6 @@
       "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/624/1561499.jpg",
       "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/624/1561499.jpg",
       "source": "tvmaze-world",
-      "isManual": false
-    },
-    {
-      "id": "tmdb-serie-258036",
-      "date": "2026-04-05",
-      "title": "The Audacity",
-      "saison": "Saison 1",
-      "saison_num": 1,
-      "ep_num": null,
-      "ep_status": "premiere",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Netflix",
-      "platformUrl": "https://www.netflix.com",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame",
-        "Comedie"
-      ],
-      "cast": [
-        "Billy Magnussen",
-        "Meaghan Rath",
-        "Zach Galifianakis",
-        "Lucy Punch",
-        "Simon Helberg",
-        "Sarah Goldberg"
-      ],
-      "desc": "Une psychologue, qui suit des titans de la haute technologie au sein de la Silicon Valley, est en désaccord avec un PDG autoproclamé \"inventeur du futur\", en raison d'un scandale déclenché par l’exploitation de données personnelles.",
-      "note": "6.9",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Official Trailer",
-          "url": "https://www.youtube.com/watch?v=ryijrW6nKgA"
-        },
-        {
-          "lang": "VO",
-          "label": "Great News",
-          "url": "https://www.youtube.com/watch?v=LCRc1Y4YFE0"
-        }
-      ],
-      "poster": "https://image.tmdb.org/t/p/w300/ea6hHjW8yWjROSYwynpWsYc4mYZ.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/4X86dOxMsrZudL0PdsMv30NGBWZ.jpg",
-      "source": "tmdb-serie",
       "isManual": false
     },
     {
@@ -34847,7 +34737,7 @@
       "saison": "S01E09",
       "saison_num": 1,
       "ep_num": 9,
-      "ep_status": "finale",
+      "ep_status": "normal",
       "status": "sorti",
       "type": "serie",
       "platform": "Autre",
@@ -41335,6 +41225,46 @@
       "isManual": false
     },
     {
+      "id": "tmdb-serie-322302",
+      "date": "2026-05-11",
+      "title": "Pop Culture Jeopardy!",
+      "saison": "Saison 1 — 20 ep.",
+      "saison_num": 1,
+      "ep_num": null,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Netflix",
+      "platformUrl": "https://www.netflix.com",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Telerealite"
+      ],
+      "cast": [
+        "Colin Jost"
+      ],
+      "desc": "Musique, télévision, cinéma… et bien plus encore ! Des équipes s'affrontent pour tenter de décrocher 300 000 dollars dans ce quiz de pop culture animé par Colin Jost.",
+      "note": "3.3",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Official Trailer",
+          "url": "https://www.youtube.com/watch?v=ooyhfmyOKGQ"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/gsXVzxzxL1SUn3F3arfe6CqJvml.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/zrMMHLtutjrk0q7bpF5AO1GySAu.jpg",
+      "source": "tmdb-serie",
+      "isManual": false
+    },
+    {
       "id": "world-91157",
       "date": "2026-05-12",
       "title": "U.S. Against the World: Four Years with the Men's National Soccer Team",
@@ -43933,6 +43863,92 @@
       "isManual": false
     },
     {
+      "id": "tmdb-serie-320430",
+      "date": "2026-05-18",
+      "title": "You're Killing Me",
+      "saison": "Saison 1 — 6 ep.",
+      "saison_num": 1,
+      "ep_num": null,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Netflix",
+      "platformUrl": "https://www.netflix.com",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "CA",
+      "tags": [
+        "CA"
+      ],
+      "categories": [
+        "Crime"
+      ],
+      "cast": [
+        "Brooke Shields",
+        "Amalia Williamson",
+        "Tom Cavanagh"
+      ],
+      "desc": "In a quaint New England town, bestselling novelist Allie forms an unlikely alliance with aspiring writer and podcaster Andi to find the killer of a close friend.",
+      "note": "8.3",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "You're Killing Me Starring Brooke Shields | Official Trailer | Premieres May 18 on Acorn TV",
+          "url": "https://www.youtube.com/watch?v=2yAHMpe1guU"
+        },
+        {
+          "lang": "VO",
+          "label": "New Series Official Teaser",
+          "url": "https://www.youtube.com/watch?v=1AYwgHhqMNQ"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/vxPvBU1V84mX5O5089N3pNzXfrW.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/wKSZnV70x2oZ20BPWAfPepOn0OH.jpg",
+      "source": "tmdb-serie",
+      "isManual": false
+    },
+    {
+      "id": "tmdb-serie-320315",
+      "date": "2026-05-18",
+      "title": "Guardián de mi vida",
+      "saison": "Saison 1 — 14 ep.",
+      "saison_num": 1,
+      "ep_num": null,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Netflix",
+      "platformUrl": "https://www.netflix.com",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Silvia Navarro",
+        "Daniel Arenas",
+        "Paulina Goto",
+        "Diego Klein",
+        "Sergio Sendel",
+        "Rodolfo Salas"
+      ],
+      "desc": "Sofía Peralta-Avitia Villaseñor, a successful businesswoman and great mother, who feels lonely in her marriage to Gonzalo Balmori-Ricci Nava. At the same time, her daughter, Bárbara Balmori-Ricci Peralta-Avitia, and her young bodyguard, Salvador \"Chava\" Reyes Encino, will transform their rebelliousness into passion. But none of them know that the evil, ambitious people around them will try to meddle in their paths on their road to love.",
+      "note": "9.7",
+      "trailers": [],
+      "poster": "https://image.tmdb.org/t/p/w300/ppdrvfUyukqtFkl1HY7x6qHd7st.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/wy3dhydGawctPp3S9mVqb1ONFBR.jpg",
+      "source": "tmdb-serie",
+      "isManual": false
+    },
+    {
       "id": "world-90456",
       "date": "2026-05-19",
       "title": "In the City",
@@ -45844,7 +45860,7 @@
         "Sam Spruell"
       ],
       "desc": "Alors que l’équipe de foot d’Angleterre traverse l’une des périodes les plus sombres de son histoire, Gareth Southgate prend les commandes avec la volonté de faire oublier son triste record de pire équipe au monde aux tirs au but. Ancien joueur marqué par ses propres échecs, Southgate sait qu’il doit affronter les fantômes du passé pour briser une longue série d’échecs. Dans une nation qui a accumulé les désillusions, il tente l’impossible : réconcilier l’Angleterre avec la victoire.",
-      "note": null,
+      "note": "8.0",
       "trailers": [
         {
           "lang": "VO",
@@ -47615,7 +47631,8 @@
       "country": "USA",
       "tags": [],
       "categories": [
-        "Thriller"
+        "Thriller",
+        "SF"
       ],
       "cast": [
         "Brandon Black",
@@ -48350,6 +48367,39 @@
       "trailers": [],
       "poster": null,
       "backdrop": "https://image.tmdb.org/t/p/w780/k7jsxBodZ4BW3tt8crgOw2sZXk3.jpg",
+      "source": "tmdb-film",
+      "isManual": false
+    },
+    {
+      "id": "film-1705939",
+      "date": "2026-05-31",
+      "title": "The Leo",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normal",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1705939",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [],
+      "categories": [
+        "Documentaire"
+      ],
+      "cast": [
+        "Leo Boivin",
+        "Ben Hutton"
+      ],
+      "desc": "",
+      "note": null,
+      "trailers": [],
+      "poster": "https://image.tmdb.org/t/p/w300/knHILZVPKonoZqCdxJi7Jx1fvMz.jpg",
+      "backdrop": null,
       "source": "tmdb-film",
       "isManual": false
     },
@@ -50297,8 +50347,7 @@
       "tags": [],
       "categories": [
         "Action",
-        "Comedie",
-        "Musique"
+        "Comedie"
       ],
       "cast": [
         "RuPaul",
