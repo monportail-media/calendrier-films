@@ -63,6 +63,18 @@ PLATFORM_URLS = {
     "TVA+":"https://www.tvaplus.ca",
     "Club Illico":"https://www.illico.com",
     "Cinéma":"https://www.themoviedb.org",
+    "AMC":          "https://www.amc.com",
+"CBS":          "https://www.cbs.com",
+"ABC":          "https://abc.com",
+"NBC":          "https://www.nbc.com",
+"Fox":          "https://www.fox.com",
+"Peacock":      "https://www.peacocktv.com",
+"Paramount+":   "https://www.paramountplus.com",
+"Hulu":         "https://www.hulu.com",
+"Showtime":     "https://www.showtime.com",
+"Starz":        "https://www.starz.com",
+"FX":           "https://www.fxnetworks.com",
+"BBC":          "https://www.bbc.co.uk",
 }
 
 # Correspondance TMDb network_id → plateforme
