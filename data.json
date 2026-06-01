@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "generated_at": "2026-06-01T00:10:22Z",
+  "generated_at": "2026-06-01T00:22:08Z",
   "total": 259,
   "rc_announcements": [],
   "events": [
@@ -4184,7 +4184,7 @@
       "status": "sorti",
       "type": "serie",
       "platform": "CBS",
-      "platformUrl": "#",
+      "platformUrl": "https://www.cbs.com",
       "lang": [
         "FR",
         "EN"
@@ -4988,7 +4988,7 @@
       "status": "sorti",
       "type": "serie",
       "platform": "AMC",
-      "platformUrl": "#",
+      "platformUrl": "https://www.amc.com",
       "lang": [
         "FR",
         "EN"
@@ -7554,7 +7554,7 @@
       "status": "sorti",
       "type": "serie",
       "platform": "Peacock",
-      "platformUrl": "#",
+      "platformUrl": "https://www.peacocktv.com",
       "lang": [
         "FR",
         "EN"
