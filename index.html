@@ -773,10 +773,30 @@ const FR_M  = ['janvier','février','mars','avril','mai','juin','juillet','août
 const TODAY = new Date().toISOString().slice(0,10);
 
 const PLAT_C = {
-  'Netflix':'#e50914','Prime Video':'#00a8e0','Disney+':'#1a3eb5',
-  'Apple TV+':'#888','Crave':'#a855f7','ICI TOU.TV':'#ef4444',
-  'Télé-Québec':'#10b981','Club Illico':'#f97316','TVA+':'#e11d48',
-  'Cinéma':'#64748b','HBO':'#9d174d'
+  'Netflix':      '#e50914',
+  'Prime Video':  '#00a8e0',
+  'Disney+':      '#1a3eb5',
+  'Apple TV+':    '#888888',
+  'Crave':        '#a855f7',
+  'ICI TOU.TV':   '#ef4444',
+  'Télé-Québec':  '#10b981',
+  'Club Illico':  '#f97316',
+  'TVA+':         '#e11d48',
+  'Cinéma':       '#64748b',
+  'AMC':          '#b91c1c',
+  'Amazon':       '#00a8e0',
+  'CBS':          '#1d4ed8',
+  'ABC':          '#1d4ed8',
+  'NBC':          '#2563eb',
+  'Fox':          '#f59e0b',
+  'Peacock':      '#7c3aed',
+  'Paramount+':   '#0ea5e9',
+  'Hulu':         '#1ce783',
+  'HBO':          '#9d174d',
+  'Showtime':     '#dc2626',
+  'Starz':        '#000000',
+  'FX':           '#1e40af',
+  'BBC':          '#dc2626',
 };
 const pc = p => PLAT_C[p] || '#666';
 const ps = p => ({'Netflix':'N','Prime Video':'P','Disney+':'D+','Apple TV+':'A','Crave':'C','ICI TOU.TV':'T','Télé-Québec':'TQ','Club Illico':'I','TVA+':'TVA','Cinéma':'🎬'})[p] || '?';
