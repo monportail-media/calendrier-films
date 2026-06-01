@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
 """
-Script de mise à jour automatique du calendrier films & séries.
-Version 2 — fenêtre élargie, plus de titres, historique 2025 complet.
+Script de mise a jour automatique du calendrier films & series.
+Version finale — fenetre elargie, vraies plateformes, historique 2025 complet.
+Sources : TVmaze (CA + US), TMDb (films + series), RSS Radio-Canada
 """
 
-import json
-import os
-import re
-import requests
-import xml.etree.ElementTree as ET
+import json, os, re, requests, xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 from pathlib import Path
 
-# ─── CONFIG ──────────────────────────────────────────────────────────────────
+# ── CONFIG ────────────────────────────────────────────────────────────────────
 TMDB_KEY    = os.environ.get("TMDB_API_KEY", "")
 TMDB_BASE   = "https://api.themoviedb.org/3"
 TMDB_IMG    = "https://image.tmdb.org/t/p"
@@ -21,115 +18,75 @@ RC_RSS      = "https://ici.radio-canada.ca/rss/4159"
 DATA_PATH   = Path("data.json")
 QC_PATH     = Path("data-qc.json")
 TODAY       = datetime.now()
+TODAY_STR   = TODAY.strftime("%Y-%m-%d")
+HISTORY_DAYS = 548  # 18 mois
+FUTURE_DAYS  = 180  # 6 mois
 
-# Fenêtre : 18 mois d'historique + 6 mois futur
-HISTORY_DAYS = 548   # ~18 mois
-FUTURE_DAYS  = 180   # 6 mois
+# ── RESEAUX QUEBECOIS / CANADIENS ─────────────────────────────────────────────
+QC_NETWORKS = {
+    "ICI Radio-Canada Télé","ICI TOU.TV","Radio-Canada","Télé-Québec",
+    "TVA","Noovo","Club Illico","Crave","Super Écran","Séries+",
+    "Canal Vie","Historia","Savoir Media","ARTV","CTV","CBC","Global",
+    "CTV Drama Channel","CTV Sci-Fi Channel","W Network","Showcase","Slice",
+}
 
-# Réseaux québécois/canadiens reconnus sur TVmaze
-QC_NETWORKS = [
-    "ICI Radio-Canada Télé", "ICI TOU.TV", "Radio-Canada",
-    "Télé-Québec", "TVA", "Noovo", "Club Illico", "Crave",
-    "Super Écran", "Séries+", "Canal Vie", "Historia",
-    "Savoir Media", "ARTV", "CTV", "CBC", "Global",
-    "CTV Drama Channel", "CTV Sci-Fi Channel", "W Network",
-    "Showcase", "Slice", "Documentary Channel",
-]
-
-NETWORK_MAP = {
-    "ICI Radio-Canada Télé": "ICI TOU.TV",
-    "ICI TOU.TV":            "ICI TOU.TV",
-    "Radio-Canada":          "ICI TOU.TV",
-    "Télé-Québec":           "Télé-Québec",
-    "TVA":                   "TVA+",
-    "Noovo":                 "Club Illico",
-    "Club Illico":           "Club Illico",
-    "Super Écran":           "Club Illico",
-    "Crave":                 "Crave",
-    "Séries+":               "Club Illico",
-    "Canal Vie":             "Club Illico",
-    "Historia":              "Club Illico",
-    "Savoir Media":          "Télé-Québec",
-    "ARTV":                  "ICI TOU.TV",
-    "CTV":                   "Crave",
-    "CBC":                   "ICI TOU.TV",
-    "Global":                "Crave",
-    "CTV Drama Channel":     "Crave",
-    "CTV Sci-Fi Channel":    "Crave",
-    "W Network":             "Crave",
-    "Showcase":              "Crave",
+NETWORK_TO_PLATFORM = {
+    "ICI Radio-Canada Télé":"ICI TOU.TV","ICI TOU.TV":"ICI TOU.TV",
+    "Radio-Canada":"ICI TOU.TV","Télé-Québec":"Télé-Québec",
+    "TVA":"TVA+","Noovo":"Club Illico","Club Illico":"Club Illico",
+    "Super Écran":"Club Illico","Séries+":"Club Illico",
+    "Canal Vie":"Club Illico","Historia":"Club Illico",
+    "Savoir Media":"Télé-Québec","ARTV":"ICI TOU.TV",
+    "CTV":"Crave","CBC":"ICI TOU.TV","Global":"Crave",
+    "CTV Drama Channel":"Crave","CTV Sci-Fi Channel":"Crave",
+    "W Network":"Crave","Showcase":"Crave","Slice":"Club Illico",
+    # Plateformes américaines
+    "Netflix":"Netflix","HBO":"Crave","Max":"Crave","HBO Max":"Crave",
+    "Amazon":"Prime Video","Prime Video":"Prime Video",
+    "Apple TV+":"Apple TV+","Disney+":"Disney+","Hulu":"Disney+",
+    "Peacock":"Prime Video","Paramount+":"Prime Video",
+    "AMC":"Prime Video","FX":"Disney+","Showtime":"Crave",
+    "Starz":"Prime Video","Syfy":"Prime Video","USA Network":"Prime Video",
+    "TNT":"Prime Video","TBS":"Prime Video","Adult Swim":"Prime Video",
+    "Comedy Central":"Prime Video","Bravo":"Prime Video",
+    "NBC":"Prime Video","ABC":"Disney+","CBS":"Prime Video","Fox":"Disney+",
 }
 
 PLATFORM_URLS = {
-    "ICI TOU.TV":   "https://ici.tou.tv",
-    "Télé-Québec":  "https://www.telequebec.tv",
-    "TVA+":         "https://www.tvaplus.ca",
-    "Club Illico":  "https://www.illico.com",
-    "Crave":        "https://www.crave.ca",
-    "Netflix":      "https://www.netflix.com",
-    "Prime Video":  "https://www.primevideo.com",
-    "Disney+":      "https://www.disneyplus.com",
-    "Apple TV+":    "https://tv.apple.com",
+    "Netflix":"https://www.netflix.com",
+    "Prime Video":"https://www.primevideo.com",
+    "Disney+":"https://www.disneyplus.com",
+    "Apple TV+":"https://tv.apple.com",
+    "Crave":"https://www.crave.ca",
+    "ICI TOU.TV":"https://ici.tou.tv",
+    "Télé-Québec":"https://www.telequebec.tv",
+    "TVA+":"https://www.tvaplus.ca",
+    "Club Illico":"https://www.illico.com",
+    "Cinéma":"https://www.themoviedb.org",
 }
 
-# Plateformes internationales majeures
-INTL_PLATFORMS = {
-    "netflix":    "Netflix",
-    "hbo":        "Crave",
-    "max":        "Crave",
-    "amazon":     "Prime Video",
-    "prime":      "Prime Video",
-    "apple":      "Apple TV+",
-    "disney":     "Disney+",
-    "hulu":       "Disney+",
-    "peacock":    "Prime Video",
-    "paramount":  "Prime Video",
+# Correspondance TMDb network_id → plateforme
+TMDB_NETWORK_MAP = {
+    213:"Netflix", 49:"HBO", 2739:"Disney+", 1024:"Amazon",
+    2552:"Apple TV+", 453:"Hulu", 4330:"Peacock", 4353:"Paramount+",
+    174:"AMC", 88:"AMC", 19:"FOX", 2:"ABC", 6:"NBC", 16:"CBS",
+    67:"Showtime", 318:"Starz", 73:"BBC One", 332:"BBC Two",
+    56:"Crave", 1556:"Crave",
 }
 
-# ─── HELPERS ─────────────────────────────────────────────────────────────────
-def log(msg): print(f"  {msg}", flush=True)
-
-def safe_get(url, params=None, timeout=15):
-    try:
-        r = requests.get(url, params=params, timeout=timeout)
-        r.raise_for_status()
-        return r.json()
-    except Exception as e:
-        log(f"⚠ {url[:50]}... : {e}")
-        return None
-
-def date_in_window(date_str):
-    if not date_str: return False
-    try:
-        d = datetime.strptime(date_str[:10], "%Y-%m-%d")
-        start = TODAY - timedelta(days=HISTORY_DAYS)
-        end   = TODAY + timedelta(days=FUTURE_DAYS)
-        return start <= d <= end
-    except: return False
-
-def tmdb_poster(path, size="w300"):
-    return f"{TMDB_IMG}/{size}{path}" if path else None
-
-def make_id(prefix, val):
-    clean = re.sub(r'[^a-z0-9]', '-', str(val).lower())
-    return f"{prefix}-{clean}"
-
-def strip_html(text):
-    if not text: return ""
-    clean = re.sub(r'<[^>]+>', '', text)
-    return re.sub(r'\s+', ' ', clean).strip()[:800]
-
-# ─── GENRES ──────────────────────────────────────────────────────────────────
-GENRE_MAP = {
+# ── GENRES ───────────────────────────────────────────────────────────────────
+TVMAZE_GENRE_MAP = {
     "Drama":"Drame","Comedy":"Comédie","Thriller":"Thriller",
     "Action":"Action","Adventure":"Action","Horror":"Horreur",
     "Science-Fiction":"SF","Fantasy":"Fantasy","Crime":"Crime",
     "Mystery":"Policier","Documentary":"Documentaire","Romance":"Romance",
     "Animation":"Animation","Family":"Jeunesse","Children":"Jeunesse",
-    "Reality":"Téléréalité","Soap":"Drame","Talk":"Divertissement",
-    "Music":"Musique","History":"Drame","War":"Action","Western":"Action",
-    "Espionage":"Thriller","Legal":"Drame","Medical":"Drame",
-    "Sports":"Documentaire","Supernatural":"Horreur","Adult":"Drame",
+    "Reality":"Téléréalité","Music":"Musique","History":"Drame",
+    "War":"Action","Western":"Action","Espionage":"Thriller",
+    "Legal":"Drame","Medical":"Drame","Sports":"Documentaire",
+    "Supernatural":"Horreur","Nature":"Documentaire","Food":"Documentaire",
+    "Travel":"Documentaire","DIY":"Téléréalité","Game Show":"Téléréalité",
+    "Talk Show":"Divertissement","Anime":"Animation",
 }
 
 TMDB_GENRE_IDS = {
@@ -142,400 +99,343 @@ TMDB_GENRE_IDS = {
     10766:"Drame",10767:"Divertissement",10768:"Action",
 }
 
-def map_genres(gl): return list({GENRE_MAP.get(g) for g in gl if GENRE_MAP.get(g)}) or ["Drame"]
-def map_genre_ids(ids): return list({TMDB_GENRE_IDS.get(i) for i in ids if TMDB_GENRE_IDS.get(i)}) or ["Film"]
+def map_tvmaze_genres(gl):
+    cats = [TVMAZE_GENRE_MAP[g] for g in gl if g in TVMAZE_GENRE_MAP]
+    return list(dict.fromkeys(cats)) or ["Drame"]
 
-# ─── TMDB ENRICHISSEMENT ─────────────────────────────────────────────────────
-def tmdb_enrich(title, media_type="tv", year=None):
-    if not TMDB_KEY: return {}
-    ep = f"{TMDB_BASE}/search/{'tv' if media_type=='tv' else 'movie'}"
-    params = {"api_key": TMDB_KEY, "query": title, "language": "fr-FR"}
-    if year: params["first_air_date_year" if media_type=="tv" else "year"] = year
+def map_tmdb_genre_ids(ids):
+    cats = [TMDB_GENRE_IDS[i] for i in ids if i in TMDB_GENRE_IDS]
+    return list(dict.fromkeys(cats)) or ["Film"]
 
-    data = safe_get(ep, params)
-    if not data or not data.get("results"):
-        params["language"] = "en-US"
-        data = safe_get(ep, params)
-    if not data or not data.get("results"): return {}
+# ── HELPERS ───────────────────────────────────────────────────────────────────
+def log(msg): print(f"  {msg}", flush=True)
 
-    r = data["results"][0]
-    tid = r.get("id")
-    score = r.get("vote_average")
-    note = f"{score:.1f}" if score and score > 0 else None
+def safe_get(url, params=None, timeout=15):
+    try:
+        r = requests.get(url, params=params, timeout=timeout)
+        r.raise_for_status()
+        return r.json()
+    except Exception as e:
+        log(f"⚠ {url[:55]}... : {e}")
+        return None
 
+def in_window(date_str):
+    if not date_str: return False
+    try:
+        d = datetime.strptime(date_str[:10], "%Y-%m-%d")
+        return (TODAY - timedelta(days=HISTORY_DAYS)) <= d <= (TODAY + timedelta(days=FUTURE_DAYS))
+    except: return False
+
+def img(path, size="w300"):
+    return f"{TMDB_IMG}/{size}{path}" if path else None
+
+def uid(prefix, val):
+    return f"{prefix}-{re.sub(r'[^a-z0-9]', '-', str(val).lower())}"
+
+def clean_html(text):
+    if not text: return ""
+    return re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', text)).strip()[:800]
+
+def get_trailers(tmdb_id, media="tv"):
     trailers = []
-    if tid:
-        for lang in ["fr-FR", "en-US"]:
-            vd = safe_get(f"{TMDB_BASE}/{'tv' if media_type=='tv' else 'movie'}/{tid}/videos",
-                         {"api_key": TMDB_KEY, "language": lang})
-            if vd:
-                for v in vd.get("results", []):
-                    if v.get("site")=="YouTube" and v.get("type") in ("Trailer","Teaser"):
-                        trailers.append({
-                            "lang": "VF" if lang=="fr-FR" else "VO",
-                            "label": v.get("name", "Bande-annonce"),
-                            "url": f"https://www.youtube.com/watch?v={v['key']}"
-                        })
-            if trailers: break
+    for lang in ["fr-FR", "en-US"]:
+        vd = safe_get(f"{TMDB_BASE}/{media}/{tmdb_id}/videos",
+                      {"api_key": TMDB_KEY, "language": lang})
+        if vd:
+            for v in vd.get("results", []):
+                if v.get("site") == "YouTube" and v.get("type") in ("Trailer","Teaser"):
+                    trailers.append({
+                        "lang": "VF" if lang == "fr-FR" else "VO",
+                        "label": v.get("name", "Bande-annonce"),
+                        "url": f"https://www.youtube.com/watch?v={v['key']}"
+                    })
+        if trailers: break
+    return trailers[:4]
 
-    return {
-        "tmdb_id": tid, "note": note,
-        "poster":   tmdb_poster(r.get("poster_path")),
-        "backdrop": tmdb_poster(r.get("backdrop_path"), "w780"),
-        "desc":     r.get("overview") or "",
-        "trailers": trailers[:4],
-    }
+def tmdb_platform_from_networks(networks):
+    """Détermine la plateforme depuis les networks TMDb."""
+    for n in networks:
+        nid = n.get("id")
+        name = n.get("name", "")
+        if nid in TMDB_NETWORK_MAP:
+            return TMDB_NETWORK_MAP[nid]
+        # Cherche par nom
+        for key, plat in NETWORK_TO_PLATFORM.items():
+            if key.lower() in name.lower():
+                return plat
+    return "Netflix"  # défaut
 
-# ─── TVMAZE CANADA ───────────────────────────────────────────────────────────
-def fetch_tvmaze_canada():
-    log("TVmaze Canada — historique + futur...")
-    events = []
-    seen = set()
+def tvmaze_platform(show):
+    """Détermine la plateforme depuis un show TVmaze."""
+    for src in [show.get("webChannel"), show.get("network")]:
+        if not src: continue
+        name = src.get("name", "")
+        if name in NETWORK_TO_PLATFORM:
+            return NETWORK_TO_PLATFORM[name], name in QC_NETWORKS
+        for key, plat in NETWORK_TO_PLATFORM.items():
+            if key.lower() in name.lower():
+                return plat, name in QC_NETWORKS
+    return None, False
 
-    # Calendrier CA : on couvre toute la fenêtre par tranches de 7 jours
+def tmdb_enrich(title, media="tv"):
+    """Enrichit avec poster, note, desc, trailers depuis TMDb."""
+    if not TMDB_KEY: return {}
+    ep = f"{TMDB_BASE}/search/{'tv' if media=='tv' else 'movie'}"
+    for lang in ["fr-FR", "en-US"]:
+        data = safe_get(ep, {"api_key": TMDB_KEY, "query": title, "language": lang})
+        if data and data.get("results"):
+            r = data["results"][0]
+            tid = r.get("id")
+            score = r.get("vote_average")
+            trailers = get_trailers(tid, media) if tid else []
+            return {
+                "note":     f"{score:.1f}" if score and score > 0 else None,
+                "poster":   img(r.get("poster_path")),
+                "backdrop": img(r.get("backdrop_path"), "w780"),
+                "desc":     r.get("overview") or "",
+                "trailers": trailers,
+            }
+    return {}
+
+# ── TVMAZE CANADA ─────────────────────────────────────────────────────────────
+def fetch_canada():
+    log("TVmaze Canada — 18 mois d'historique + 6 mois futur...")
+    events, seen = [], set()
     start = TODAY - timedelta(days=HISTORY_DAYS)
-    total_days = HISTORY_DAYS + FUTURE_DAYS
 
-    for offset in range(0, total_days, 7):
+    for offset in range(0, HISTORY_DAYS + FUTURE_DAYS, 7):
         d = (start + timedelta(days=offset)).strftime("%Y-%m-%d")
-        url = f"{TVMAZE_BASE}/schedule?country=CA&date={d}"
-        episodes = safe_get(url) or []
+        eps = safe_get(f"{TVMAZE_BASE}/schedule?country=CA&date={d}") or []
 
-        for ep in episodes:
+        for ep in eps:
             show = ep.get("_embedded", {}).get("show") or ep.get("show") or {}
-            show_id = show.get("id")
-            if not show_id or show_id in seen: continue
+            sid = show.get("id")
+            if not sid or sid in seen: continue
 
-            network = show.get("network") or show.get("webChannel") or {}
-            net_name = network.get("name", "")
-            country = (network.get("country") or {}).get("code", "")
+            plat, is_qc = tvmaze_platform(show)
+            if not plat: continue
 
-            if net_name not in QC_NETWORKS and country not in ("CA",):
-                continue
+            air = ep.get("airdate", "")
+            if not in_window(air): continue
+            seen.add(sid)
 
-            air_date = ep.get("airdate", "")
-            if not date_in_window(air_date): continue
-            seen.add(show_id)
+            lang_qc = ["FR"] if is_qc and any(
+                x in (show.get("network") or show.get("webChannel") or {}).get("name","")
+                for x in ["Radio-Canada","Télé","TVA","Noovo","Club","ARTV","ICI"]
+            ) else ["FR","EN"]
 
-            platform = NETWORK_MAP.get(net_name, net_name)
-            lang = ["FR"] if any(x in net_name for x in
-                ["Radio-Canada","Télé","TVA","Noovo","Club","ARTV","ICI"]) else ["EN","FR"]
-
-            tags = ["QC"] if net_name in QC_NETWORKS else ["CA"]
-            cats = map_genres(show.get("genres", []))
-            season_num = ep.get("season", 1)
+            tags = ["QC"] if is_qc else ["CA"]
             rating = (show.get("rating") or {}).get("average")
-
             entry = {
-                "id":          make_id("tvmaze-ca", show_id),
-                "date":        air_date,
-                "title":       show.get("name", ""),
-                "saison":      f"Saison {season_num}",
-                "status":      "sorti" if air_date <= TODAY.strftime("%Y-%m-%d") else "a-venir",
+                "id":          uid("ca", sid),
+                "date":        air,
+                "title":       show.get("name",""),
+                "saison":      f"Saison {ep.get('season',1)}",
+                "status":      "sorti" if air <= TODAY_STR else "a-venir",
                 "type":        "serie",
-                "platform":    platform,
-                "platformUrl": PLATFORM_URLS.get(platform, "#"),
-                "lang":        lang,
+                "platform":    plat,
+                "platformUrl": PLATFORM_URLS.get(plat,"#"),
+                "lang":        lang_qc,
                 "tags":        tags,
-                "categories":  cats,
+                "categories":  map_tvmaze_genres(show.get("genres",[])),
                 "cast":        [],
-                "desc":        strip_html(show.get("summary") or ""),
+                "desc":        clean_html(show.get("summary","")),
                 "note":        f"{rating:.1f}" if rating else None,
                 "trailers":    [],
                 "poster":      (show.get("image") or {}).get("medium"),
                 "backdrop":    (show.get("image") or {}).get("original"),
-                "source":      "tvmaze",
+                "source":      "tvmaze-ca",
                 "isManual":    False,
             }
-
             if TMDB_KEY:
-                enriched = tmdb_enrich(show.get("name",""), "tv")
-                if enriched:
-                    for k in ("note","trailers","desc","poster","backdrop"):
-                        if enriched.get(k): entry[k] = enriched[k]
-
+                e = tmdb_enrich(show.get("name",""), "tv")
+                for k in ("note","trailers","desc","poster","backdrop"):
+                    if e.get(k): entry[k] = e[k]
             events.append(entry)
 
-    log(f"  → {len(events)} séries canadiennes")
+    log(f"  → {len(events)} séries canadiennes/québécoises")
     return events
 
-# ─── TVMAZE INTERNATIONAL POPULAIRE ──────────────────────────────────────────
-def fetch_tvmaze_international():
-    log("TVmaze international — séries populaires 2025-2026...")
-    events = []
-    seen = set()
+# ── TVMAZE US POPULAIRE ───────────────────────────────────────────────────────
+def fetch_us_popular():
+    log("TVmaze US — séries populaires...")
+    events, seen = [], set()
 
-    # Stratégie 1 : Top shows TVmaze (les plus populaires tous temps)
-    for page in range(0, 5):
-        data = safe_get(f"{TVMAZE_BASE}/shows?page={page}") or []
-        for show in data:
-            show_id = show.get("id")
-            if show_id in seen: continue
-
-            # Filtre qualité
+    # Top shows tous temps
+    for page in range(0, 8):
+        shows = safe_get(f"{TVMAZE_BASE}/shows?page={page}") or []
+        for show in shows:
+            sid = show.get("id")
+            if sid in seen: continue
             rating = (show.get("rating") or {}).get("average") or 0
             weight = show.get("weight", 0)
             if rating < 7.5 and weight < 85: continue
-
-            # Détermine la plateforme
-            web_ch = (show.get("webChannel") or {}).get("name", "").lower()
-            net_nm = (show.get("network") or {}).get("name", "").lower()
-            plat_raw = web_ch or net_nm
-            platform = None
-            for k, v in INTL_PLATFORMS.items():
-                if k in plat_raw: platform = v; break
-            if not platform: continue
-
-            # Date de première diffusion
-            premiered = show.get("premiered", "")
-            if not premiered or not date_in_window(premiered): continue
-            seen.add(show_id)
-
-            cats = map_genres(show.get("genres", []))
-            entry = {
-                "id":          make_id("tvm-intl", show_id),
-                "date":        premiered,
-                "title":       show.get("name", ""),
-                "saison":      "Saison 1",
-                "status":      "sorti" if premiered <= TODAY.strftime("%Y-%m-%d") else "a-venir",
-                "type":        "serie",
-                "platform":    platform,
-                "platformUrl": PLATFORM_URLS.get(platform, "#"),
-                "lang":        ["FR","EN"],
-                "tags":        [],
-                "categories":  cats,
-                "cast":        [],
-                "desc":        strip_html(show.get("summary") or ""),
-                "note":        f"{rating:.1f}" if rating else None,
-                "trailers":    [],
-                "poster":      (show.get("image") or {}).get("medium"),
-                "backdrop":    (show.get("image") or {}).get("original"),
-                "source":      "tvmaze",
-                "isManual":    False,
-            }
-
+            plat, _ = tvmaze_platform(show)
+            if not plat: continue
+            premiered = show.get("premiered","")
+            if not premiered or not in_window(premiered): continue
+            seen.add(sid)
+            entry = _make_show_entry(show, premiered, plat, "tvmaze-top", ep_season=1)
             if TMDB_KEY:
-                enriched = tmdb_enrich(show.get("name",""), "tv")
-                if enriched:
-                    for k in ("note","trailers","desc","poster","backdrop"):
-                        if enriched.get(k): entry[k] = enriched[k]
-
+                e = tmdb_enrich(show.get("name",""), "tv")
+                for k in ("note","trailers","desc","poster","backdrop"):
+                    if e.get(k): entry[k] = e[k]
             events.append(entry)
 
-    # Stratégie 2 : Calendrier US récent (7 derniers mois + futur)
+    # Calendrier US — 7 mois passés + futur
     for offset in range(-210, FUTURE_DAYS, 14):
         d = (TODAY + timedelta(days=offset)).strftime("%Y-%m-%d")
-        episodes = safe_get(f"{TVMAZE_BASE}/schedule?country=US&date={d}") or []
-        for ep in episodes:
-            show = ep.get("_embedded", {}).get("show") or ep.get("show") or {}
-            show_id = show.get("id")
-            if not show_id or show_id in seen: continue
-
+        eps = safe_get(f"{TVMAZE_BASE}/schedule?country=US&date={d}") or []
+        for ep in eps:
+            show = ep.get("_embedded",{}).get("show") or ep.get("show") or {}
+            sid = show.get("id")
+            if not sid or sid in seen: continue
             rating = (show.get("rating") or {}).get("average") or 0
-            weight = show.get("weight", 0)
-            if rating < 7.0 and weight < 80: continue
-
-            web_ch = (show.get("webChannel") or {}).get("name","").lower()
-            net_nm = (show.get("network") or {}).get("name","").lower()
-            plat_raw = web_ch or net_nm
-            platform = None
-            for k, v in INTL_PLATFORMS.items():
-                if k in plat_raw: platform = v; break
-            if not platform: continue
-
-            air_date = ep.get("airdate","")
-            if not date_in_window(air_date): continue
-            seen.add(show_id)
-
-            season_num = ep.get("season", 1)
-            cats = map_genres(show.get("genres", []))
-
-            entry = {
-                "id":          make_id("tvm-us", show_id),
-                "date":        air_date,
-                "title":       show.get("name",""),
-                "saison":      f"Saison {season_num}",
-                "status":      "sorti" if air_date <= TODAY.strftime("%Y-%m-%d") else "a-venir",
-                "type":        "serie",
-                "platform":    platform,
-                "platformUrl": PLATFORM_URLS.get(platform,"#"),
-                "lang":        ["FR","EN"],
-                "tags":        [],
-                "categories":  cats,
-                "cast":        [],
-                "desc":        strip_html(show.get("summary") or ""),
-                "note":        f"{rating:.1f}" if rating else None,
-                "trailers":    [],
-                "poster":      (show.get("image") or {}).get("medium"),
-                "backdrop":    (show.get("image") or {}).get("original"),
-                "source":      "tvmaze",
-                "isManual":    False,
-            }
-
+            weight = show.get("weight",0)
+            if rating < 6.5 and weight < 75: continue
+            plat, _ = tvmaze_platform(show)
+            if not plat: continue
+            air = ep.get("airdate","")
+            if not in_window(air): continue
+            seen.add(sid)
+            entry = _make_show_entry(show, air, plat, "tvmaze-us", ep.get("season",1))
             if TMDB_KEY:
-                enriched = tmdb_enrich(show.get("name",""), "tv")
-                if enriched:
-                    for k in ("note","trailers","desc","poster","backdrop"):
-                        if enriched.get(k): entry[k] = enriched[k]
-
+                e = tmdb_enrich(show.get("name",""), "tv")
+                for k in ("note","trailers","desc","poster","backdrop"):
+                    if e.get(k): entry[k] = e[k]
             events.append(entry)
 
-    log(f"  → {len(events)} séries internationales")
+    log(f"  → {len(events)} séries US/internationales")
     return events
 
-# ─── TMDB FILMS ──────────────────────────────────────────────────────────────
-def fetch_tmdb_movies():
-    if not TMDB_KEY:
-        log("TMDb : clé manquante")
-        return []
+def _make_show_entry(show, date, plat, source, ep_season=1):
+    rating = (show.get("rating") or {}).get("average")
+    return {
+        "id":          uid(source, show.get("id","")),
+        "date":        date,
+        "title":       show.get("name",""),
+        "saison":      f"Saison {ep_season}",
+        "status":      "sorti" if date <= TODAY_STR else "a-venir",
+        "type":        "serie",
+        "platform":    plat,
+        "platformUrl": PLATFORM_URLS.get(plat,"#"),
+        "lang":        ["FR","EN"],
+        "tags":        [],
+        "categories":  map_tvmaze_genres(show.get("genres",[])),
+        "cast":        [],
+        "desc":        clean_html(show.get("summary","")),
+        "note":        f"{rating:.1f}" if rating else None,
+        "trailers":    [],
+        "poster":      (show.get("image") or {}).get("medium"),
+        "backdrop":    (show.get("image") or {}).get("original"),
+        "source":      source,
+        "isManual":    False,
+    }
 
+# ── TMDB FILMS ────────────────────────────────────────────────────────────────
+def fetch_films():
+    if not TMDB_KEY: return []
     log("TMDb films 2025-2026...")
-    events = []
-    seen = set()
+    events, seen = [], set()
 
-    endpoints = [
-        ("upcoming", {"region": "CA"}),
-        ("now_playing", {"region": "CA"}),
-        ("popular", {"region": "CA"}),
-        ("top_rated", {"region": "CA"}),
-    ]
-
-    for endpoint, extra_params in endpoints:
-        for page in range(1, 6):
-            params = {"api_key": TMDB_KEY, "language": "fr-FR", "page": page}
-            params.update(extra_params)
-            data = safe_get(f"{TMDB_BASE}/movie/{endpoint}", params)
+    for endpoint in ["upcoming","now_playing","popular","top_rated"]:
+        for page in range(1, 8):
+            data = safe_get(f"{TMDB_BASE}/movie/{endpoint}", {
+                "api_key":TMDB_KEY,"language":"fr-FR","page":page,"region":"CA"
+            })
             if not data: break
-
-            for movie in data.get("results", []):
-                mid = movie.get("id")
+            for m in data.get("results",[]):
+                mid = m.get("id")
                 if mid in seen: continue
-                release = movie.get("release_date","")
-                if not release or not date_in_window(release): continue
-
-                score = movie.get("vote_average",0)
-                votes = movie.get("vote_count",0)
-                if score < 4.0 and votes < 50: continue
+                release = m.get("release_date","")
+                if not release or not in_window(release): continue
+                score = m.get("vote_average",0)
+                if score < 4.0 and m.get("vote_count",0) < 50: continue
                 seen.add(mid)
-
-                trailers = []
-                for lang in ["fr-FR","en-US"]:
-                    vd = safe_get(f"{TMDB_BASE}/movie/{mid}/videos",
-                                 {"api_key":TMDB_KEY,"language":lang})
-                    if vd:
-                        for v in vd.get("results",[]):
-                            if v.get("site")=="YouTube" and v.get("type") in ("Trailer","Teaser"):
-                                trailers.append({
-                                    "lang":"VF" if lang=="fr-FR" else "VO",
-                                    "label":v.get("name","Bande-annonce"),
-                                    "url":f"https://www.youtube.com/watch?v={v['key']}"
-                                })
-                    if trailers: break
-
-                cats = map_genre_ids(movie.get("genre_ids",[]))
+                trailers = get_trailers(mid, "movie")
                 events.append({
-                    "id":          make_id("tmdb-film", mid),
+                    "id":          uid("film", mid),
                     "date":        release,
-                    "title":       movie.get("title",""),
+                    "title":       m.get("title",""),
                     "saison":      "Film",
-                    "status":      "sorti" if release <= TODAY.strftime("%Y-%m-%d") else "a-venir",
+                    "status":      "sorti" if release <= TODAY_STR else "a-venir",
                     "type":        "film",
                     "platform":    "Cinéma",
                     "platformUrl": f"https://www.themoviedb.org/movie/{mid}",
                     "lang":        ["FR","EN"],
                     "tags":        [],
-                    "categories":  cats,
+                    "categories":  map_tmdb_genre_ids(m.get("genre_ids",[])),
                     "cast":        [],
-                    "desc":        movie.get("overview",""),
-                    "note":        f"{score:.1f}" if score>0 else None,
-                    "trailers":    trailers[:4],
-                    "poster":      tmdb_poster(movie.get("poster_path")),
-                    "backdrop":    tmdb_poster(movie.get("backdrop_path"),"w780"),
-                    "source":      "tmdb",
+                    "desc":        m.get("overview",""),
+                    "note":        f"{score:.1f}" if score > 0 else None,
+                    "trailers":    trailers,
+                    "poster":      img(m.get("poster_path")),
+                    "backdrop":    img(m.get("backdrop_path"),"w780"),
+                    "source":      "tmdb-film",
                     "isManual":    False,
                 })
 
     log(f"  → {len(events)} films")
     return events
 
-# ─── TMDB SÉRIES POPULAIRES ───────────────────────────────────────────────────
-def fetch_tmdb_series():
-    if not TMDB_KEY:
-        return []
+# ── TMDB SERIES ───────────────────────────────────────────────────────────────
+def fetch_series_tmdb():
+    if not TMDB_KEY: return []
+    log("TMDb séries populaires...")
+    events, seen = [], set()
 
-    log("TMDb séries populaires 2025-2026...")
-    events = []
-    seen = set()
-
-    endpoints = ["popular","top_rated","on_the_air","airing_today"]
-
-    for endpoint in endpoints:
-        for page in range(1, 6):
-            data = safe_get(f"{TMDB_BASE}/tv/{endpoint}",
-                           {"api_key":TMDB_KEY,"language":"fr-FR","page":page})
+    for endpoint in ["popular","top_rated","on_the_air","airing_today"]:
+        for page in range(1, 8):
+            data = safe_get(f"{TMDB_BASE}/tv/{endpoint}", {
+                "api_key":TMDB_KEY,"language":"fr-FR","page":page
+            })
             if not data: break
-
-            for show in data.get("results",[]):
-                sid = show.get("id")
+            for s in data.get("results",[]):
+                sid = s.get("id")
                 if sid in seen: continue
-
-                first_air = show.get("first_air_date","")
-                if not first_air or not date_in_window(first_air): continue
-
-                score = show.get("vote_average",0)
-                votes = show.get("vote_count",0)
-                if score < 5.0 and votes < 100: continue
+                first_air = s.get("first_air_date","")
+                if not first_air or not in_window(first_air): continue
+                score = s.get("vote_average",0)
+                if score < 5.0 and s.get("vote_count",0) < 100: continue
                 seen.add(sid)
 
-                trailers = []
-                for lang in ["fr-FR","en-US"]:
-                    vd = safe_get(f"{TMDB_BASE}/tv/{sid}/videos",
-                                 {"api_key":TMDB_KEY,"language":lang})
-                    if vd:
-                        for v in vd.get("results",[]):
-                            if v.get("site")=="YouTube" and v.get("type") in ("Trailer","Teaser"):
-                                trailers.append({
-                                    "lang":"VF" if lang=="fr-FR" else "VO",
-                                    "label":v.get("name","Bande-annonce"),
-                                    "url":f"https://www.youtube.com/watch?v={v['key']}"
-                                })
-                    if trailers: break
-
-                cats = map_genre_ids(show.get("genre_ids",[]))
-
-                # Détermine la plateforme depuis les networks TMDb
-                platform = "Netflix"  # défaut
-                networks = show.get("networks",[]) or show.get("origin_country",[])
+                # Détail pour avoir les vrais networks
+                detail = safe_get(f"{TMDB_BASE}/tv/{sid}",
+                                  {"api_key":TMDB_KEY,"language":"fr-FR"})
+                networks = (detail or {}).get("networks", [])
+                plat = tmdb_platform_from_networks(networks)
+                trailers = get_trailers(sid, "tv")
+                cats = map_tmdb_genre_ids(s.get("genre_ids",[]))
 
                 events.append({
-                    "id":          make_id("tmdb-serie", sid),
+                    "id":          uid("tmdb-serie", sid),
                     "date":        first_air,
-                    "title":       show.get("name",""),
+                    "title":       s.get("name",""),
                     "saison":      "Saison 1",
-                    "status":      "sorti" if first_air <= TODAY.strftime("%Y-%m-%d") else "a-venir",
+                    "status":      "sorti" if first_air <= TODAY_STR else "a-venir",
                     "type":        "serie",
-                    "platform":    platform,
-                    "platformUrl": PLATFORM_URLS.get(platform,"#"),
+                    "platform":    plat,
+                    "platformUrl": PLATFORM_URLS.get(plat,"#"),
                     "lang":        ["FR","EN"],
                     "tags":        [],
                     "categories":  cats,
                     "cast":        [],
-                    "desc":        show.get("overview",""),
-                    "note":        f"{score:.1f}" if score>0 else None,
-                    "trailers":    trailers[:4],
-                    "poster":      tmdb_poster(show.get("poster_path")),
-                    "backdrop":    tmdb_poster(show.get("backdrop_path"),"w780"),
-                    "source":      "tmdb",
+                    "desc":        s.get("overview",""),
+                    "note":        f"{score:.1f}" if score > 0 else None,
+                    "trailers":    trailers,
+                    "poster":      img(s.get("poster_path")),
+                    "backdrop":    img(s.get("backdrop_path"),"w780"),
+                    "source":      "tmdb-serie",
                     "isManual":    False,
                 })
 
     log(f"  → {len(events)} séries TMDb")
     return events
 
-# ─── RADIO-CANADA RSS ─────────────────────────────────────────────────────────
-def fetch_rc_rss():
+# ── RSS RADIO-CANADA ──────────────────────────────────────────────────────────
+def fetch_rss():
     log("Radio-Canada RSS...")
-    keywords = ["série","saison","tou.tv","télé-québec","illico","crave","émission","diffusion","première"]
+    kw = ["série","saison","tou.tv","télé-québec","illico","crave","émission","diffusion","première"]
     items = []
     try:
         r = requests.get(RC_RSS, timeout=10)
@@ -544,7 +444,7 @@ def fetch_rc_rss():
             if item.tag != "item": continue
             t = (item.findtext("title") or "").lower()
             d = (item.findtext("description") or "").lower()
-            if any(k in t+d for k in keywords):
+            if any(k in t+d for k in kw):
                 items.append({
                     "title": item.findtext("title") or "",
                     "link":  item.findtext("link") or "",
@@ -552,31 +452,41 @@ def fetch_rc_rss():
                 })
         log(f"  → {len(items)} annonces RC")
     except Exception as e:
-        log(f"  ⚠ RSS RC : {e}")
+        log(f"  ⚠ {e}")
     return items
 
-# ─── FUSION ──────────────────────────────────────────────────────────────────
+# ── CHARGEMENT ────────────────────────────────────────────────────────────────
+def load_existing():
+    if DATA_PATH.exists():
+        with open(DATA_PATH,"r",encoding="utf-8") as f:
+            return {e["id"]:e for e in json.load(f).get("events",[])}
+    return {}
+
+def load_qc():
+    if QC_PATH.exists():
+        with open(QC_PATH,"r",encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+# ── FUSION ────────────────────────────────────────────────────────────────────
 def merge(existing, new_events, qc_manual):
     merged = {}
 
-    # Entrées manuelles existantes
+    # Garde les entrées manuelles existantes
     for eid, e in existing.items():
         if e.get("isManual"): merged[eid] = e
 
-    # Nouvelles entrées QC manuelles
+    # Entrées QC manuelles du fichier data-qc.json
     for e in qc_manual:
-        eid = e.get("id", make_id("qc", e.get("title","")))
+        eid = e.get("id", uid("qc", e.get("title","")))
         e["id"] = eid
         e["isManual"] = True
         if not e.get("status"):
-            d = e.get("date","")
-            e["status"] = "sorti" if d and d <= TODAY.strftime("%Y-%m-%d") else "a-venir"
+            e["status"] = "sorti" if e.get("date","") <= TODAY_STR else "a-venir"
         merged[eid] = e
 
     # Nouvelles entrées automatiques — déduplication par titre + mois
-    seen_keys = set()
-    for e in merged.values():
-        seen_keys.add((e.get("title","").lower(), e.get("date","")[:7]))
+    seen_keys = {(e.get("title","").lower(), e.get("date","")[:7]) for e in merged.values()}
 
     for e in new_events:
         key = (e.get("title","").lower(), e.get("date","")[:7])
@@ -586,67 +496,57 @@ def merge(existing, new_events, qc_manual):
 
     return list(merged.values())
 
-def load_existing():
-    if DATA_PATH.exists():
-        with open(DATA_PATH,"r",encoding="utf-8") as f:
-            data = json.load(f)
-            return {e["id"]:e for e in data.get("events",[])}
-    return {}
-
-def load_qc():
-    if QC_PATH.exists():
-        with open(QC_PATH,"r",encoding="utf-8") as f:
-            return json.load(f)
-    return []
-
-# ─── MAIN ─────────────────────────────────────────────────────────────────────
+# ── MAIN ──────────────────────────────────────────────────────────────────────
 def main():
-    print(f"\n🎬 Mise à jour calendrier — {TODAY.strftime('%Y-%m-%d %H:%M')}")
-    print(f"   Clé TMDb : {'✓' if TMDB_KEY else '✗ MANQUANTE'}")
-    print(f"   Fenêtre : {HISTORY_DAYS} jours passés + {FUTURE_DAYS} jours futurs\n")
+    print(f"\n🎬 Mise a jour calendrier — {TODAY.strftime('%Y-%m-%d %H:%M')}")
+    print(f"   Cle TMDb : {'OK' if TMDB_KEY else 'MANQUANTE'}")
+    print(f"   Fenetres : {HISTORY_DAYS}j passes + {FUTURE_DAYS}j futurs\n")
 
     existing = load_existing()
     qc_manual = load_qc()
     log(f"Existant : {len(existing)} | QC manuel : {len(qc_manual)}")
 
     all_new = []
+    print("\n Canada...")
+    all_new.extend(fetch_canada())
 
-    print("\n📡 TVmaze Canada...")
-    all_new.extend(fetch_tvmaze_canada())
+    print("\n US/International...")
+    all_new.extend(fetch_us_popular())
 
-    print("\n📡 TVmaze International...")
-    all_new.extend(fetch_tvmaze_international())
+    print("\n Films TMDb...")
+    all_new.extend(fetch_films())
 
-    print("\n📡 TMDb Films...")
-    all_new.extend(fetch_tmdb_movies())
+    print("\n Series TMDb...")
+    all_new.extend(fetch_series_tmdb())
 
-    print("\n📡 TMDb Séries...")
-    all_new.extend(fetch_tmdb_series())
+    print("\n RSS Radio-Canada...")
+    rc = fetch_rss()
 
-    print("\n📡 RSS Radio-Canada...")
-    rc = fetch_rc_rss()
-
-    print("\n🔀 Fusion...")
+    print("\n Fusion...")
     final = merge(existing, all_new, qc_manual)
-    final = [e for e in final if date_in_window(e.get("date",""))]
+    final = [e for e in final if in_window(e.get("date",""))]
     final.sort(key=lambda e: e.get("date","9999"))
 
     output = {
-        "version":        "2.0",
-        "generated_at":   TODAY.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "total":          len(final),
+        "version":          "2.0",
+        "generated_at":     TODAY.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "total":            len(final),
         "rc_announcements": rc[:10],
-        "events":         final,
+        "events":           final,
     }
 
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(DATA_PATH,"w",encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ {len(final)} événements sauvegardés dans {DATA_PATH}")
-    print(f"   Manuels QC : {sum(1 for e in final if e.get('isManual'))}")
-    print(f"   À venir    : {sum(1 for e in final if e.get('status')=='a-venir')}")
-    print(f"   Déjà sortis: {sum(1 for e in final if e.get('status')=='sorti')}\n")
+    sorti  = sum(1 for e in final if e.get("status")=="sorti")
+    avenir = sum(1 for e in final if e.get("status")=="a-venir")
+    manuel = sum(1 for e in final if e.get("isManual"))
+
+    print(f"\n Termine ! {len(final)} evenements sauvegardes dans {DATA_PATH}")
+    print(f"   Disponibles : {sorti}")
+    print(f"   A venir     : {avenir}")
+    print(f"   QC manuels  : {manuel}\n")
 
 if __name__ == "__main__":
     main()
