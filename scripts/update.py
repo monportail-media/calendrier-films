@@ -8,7 +8,8 @@ Calendrier Films & Series - Script v5
 - Zero filtre de qualite
 """
 
-import json, os, re, time, requests, xml.etree.ElementTree as ET
+import json, os, re, time, requests, urllib3, xml.etree.ElementTree as ET
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -231,7 +232,7 @@ def safe_get(url, params=None, timeout=20, retries=2):
 
 def safe_html(url, timeout=20):
     try:
-        r = requests.get(url, timeout=timeout, headers={
+        r = requests.get(url, timeout=timeout, verify=False, headers={
             "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0"
         })
         r.raise_for_status()
