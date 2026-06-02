@@ -574,7 +574,7 @@ def fetch_tvmaze_episodes():
                 if is_lgbt(desc): tags.append("LGBT")
 
                 # Langue
-                show_lang = show.get("language","").lower()
+                show_lang = (show.get("language") or "").lower()
                 if is_qc or show_lang in ("french","francais"):
                     lang = ["FR"]
                 else:
