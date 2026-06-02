@@ -21,18 +21,24 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Create logos (first time only)
+        run: |
+          python scripts/download_logos.py
 
       - name: Run update script
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-        run: python scripts/update.py
+        run: |
+          python scripts/update.py
 
-      - name: Commit updated data
+      - name: Commit updated data and logos
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions"
-          git add -f data.json
+          git add -f data.json assets/logos/
           git status
-          git diff --staged --quiet || git commit -m "🔄 Mise à jour automatique — $(date '+%Y-%m-%d')"
+          git diff --staged --quiet || git commit -m "🔄 Mise à jour — $(date '+%Y-%m-%d')"
           git push
