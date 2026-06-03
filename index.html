@@ -6,604 +6,839 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Calendrier">
-<meta name="theme-color" content="#0d0f14" id="theme-color-meta">
+<meta name="theme-color" content="#0a0c12" id="theme-color-meta">
 <title>Calendrier Films & Séries</title>
 <link rel="manifest" href="manifest.json">
 <style>
-/* ── THEMES ────────────────────────────────────────────────────────────────── */
-:root { --accent:#4f8ef7; --radius:10px; --radius-lg:14px; }
+/* ── DESIGN TOKENS ────────────────────────────────────────────────────────── */
+:root {
+  --accent: #4f8ef7;
+  --green:  #22c55e;
+  --red:    #ef4444;
+  --amber:  #f59e0b;
+  --purple: #a855f7;
+}
 [data-theme="dark"] {
-  --bg:#0d0f14;--bg2:#131620;--bg3:#1a1d28;--bg4:#20243a;
-  --border:#232840;--border2:#2e3452;
-  --text:#e8edf5;--text2:#8892a8;--text3:#4a5270;
-  --green:#22c55e;--amber:#f59e0b;--red:#ef4444;
-  --shadow:rgba(0,0,0,.5);
+  --bg:      #0a0c12;
+  --bg2:     #111420;
+  --bg3:     #181c2e;
+  --bg4:     #1e2238;
+  --border:  #252a40;
+  --border2: #303660;
+  --text:    #edf0f8;
+  --text2:   #8892b0;
+  --text3:   #454e6e;
+  --shadow:  rgba(0,0,0,.6);
 }
 [data-theme="light"] {
-  --bg:#f0f3fa;--bg2:#fff;--bg3:#f5f7fd;--bg4:#eaedfa;
-  --border:#e0e4f0;--border2:#c8cedf;
-  --text:#0f1629;--text2:#4b5573;--text3:#9aa3bf;
-  --green:#16a34a;--amber:#d97706;--red:#dc2626;
-  --shadow:rgba(0,0,0,.08);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI',system-ui,sans-serif;line-height:1.6;min-height:100vh;transition:background .2s,color .2s;padding-bottom:80px}
-a{color:inherit;text-decoration:none}
-button,input,select{font-family:inherit;font-size:16px}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
-
-/* ── LAYOUT DESKTOP ────────────────────────────────────────────────────────── */
-.desktop-layout{display:none}
-@media(min-width:960px){
-  body{padding-bottom:0}
-  .desktop-layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
-  .mobile-nav{display:none!important}
-  .mobile-header{display:none!important}
-  .main-content{padding:24px 28px}
+  --bg:      #f2f4fb;
+  --bg2:     #ffffff;
+  --bg3:     #f6f8ff;
+  --bg4:     #ebeef9;
+  --border:  #dde2f0;
+  --border2: #c5ccdf;
+  --text:    #0d1029;
+  --text2:   #4a5280;
+  --text3:   #9aa3c0;
+  --shadow:  rgba(0,0,0,.08);
 }
 
-/* ── MOBILE HEADER ─────────────────────────────────────────────────────────── */
-.mobile-header{
-  position:sticky;top:0;z-index:100;
-  background:var(--bg2);border-bottom:1px solid var(--border);
-  padding:12px 16px;display:flex;align-items:center;gap:10px;
+/* ── BASE ─────────────────────────────────────────────────────────────────── */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { font-size:17px; -webkit-text-size-adjust:100%; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
+  line-height:1.6; min-height:100vh;
+  /* Espace pour bottom nav sur mobile */
+  padding-bottom:calc(70px + env(safe-area-inset-bottom));
+  overscroll-behavior-y:contain;
 }
-.mob-title{font-size:20px;font-weight:700;flex:1;letter-spacing:-.3px}
-.mob-filter-btn{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:7px 12px;color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:5px}
-.mob-theme-btn{background:none;border:none;font-size:22px;cursor:pointer;padding:4px}
+@media(min-width:900px){ body{ padding-bottom:0; } }
+a { color:inherit; text-decoration:none; }
+button,input { font-family:inherit; }
+img { display:block; }
+::-webkit-scrollbar { width:4px; height:4px; }
+::-webkit-scrollbar-thumb { background:var(--border2); border-radius:2px; }
 
-/* ── MOBILE NAV (bottom tabs) ──────────────────────────────────────────────── */
-.mobile-nav{
-  position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:var(--bg2);border-top:1px solid var(--border);
-  display:flex;align-items:stretch;
+/* ── LAYOUT DESKTOP ───────────────────────────────────────────────────────── */
+.app { display:flex; min-height:100vh; }
+.sidebar { display:none; }
+@media(min-width:900px) {
+  .sidebar {
+    display:flex; flex-direction:column;
+    width:280px; flex-shrink:0;
+    background:var(--bg2); border-right:1px solid var(--border);
+    position:sticky; top:0; height:100vh; overflow-y:auto;
+  }
+  .main { flex:1; min-width:0; }
+  .bottom-nav { display:none !important; }
+  .mobile-header { display:none !important; }
+}
+
+/* ── SIDEBAR ──────────────────────────────────────────────────────────────── */
+.sb-logo {
+  padding:22px 20px 16px;
+  border-bottom:1px solid var(--border);
+  font-size:20px; font-weight:800; letter-spacing:-.5px;
+}
+.sb-sub { font-size:11px; color:var(--text3); margin-top:3px; text-transform:uppercase; letter-spacing:.7px; }
+
+.stats-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:8px;
+  padding:14px 16px; border-bottom:1px solid var(--border);
+}
+.stat-box {
+  background:var(--bg3); border-radius:10px; padding:10px 12px;
+  cursor:pointer; transition:all .15s; border:1.5px solid transparent;
+}
+.stat-box:hover { border-color:var(--accent); }
+.stat-box.active { border-color:var(--accent); background:var(--bg4); }
+.stat-num { font-size:26px; font-weight:800; color:var(--accent); line-height:1; }
+.stat-lbl { font-size:11px; color:var(--text3); text-transform:uppercase; letter-spacing:.5px; margin-top:3px; }
+
+.theme-row {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 16px; border-bottom:1px solid var(--border);
+  font-size:13px; color:var(--text2);
+}
+.toggle {
+  width:44px; height:24px; border-radius:12px;
+  background:var(--bg4); border:1px solid var(--border);
+  position:relative; cursor:pointer; transition:background .2s; flex-shrink:0; margin-left:auto;
+}
+.toggle.on { background:var(--accent); border-color:var(--accent); }
+.toggle-thumb {
+  position:absolute; width:18px; height:18px; border-radius:50%;
+  background:#fff; top:2px; left:2px; transition:left .2s;
+  box-shadow:0 1px 4px rgba(0,0,0,.3);
+}
+.toggle.on .toggle-thumb { left:22px; }
+
+.search-wrap {
+  padding:10px 16px; border-bottom:1px solid var(--border); position:relative;
+}
+.search {
+  width:100%; background:var(--bg3); border:1.5px solid var(--border);
+  border-radius:10px; color:var(--text);
+  padding:10px 40px 10px 36px; font-size:15px; outline:none;
+  transition:border-color .15s;
+}
+.search:focus { border-color:var(--accent); }
+.search::placeholder { color:var(--text3); }
+.search-ico { position:absolute; left:28px; top:50%; transform:translateY(-50%); color:var(--text3); font-size:15px; pointer-events:none; }
+.search-mic { position:absolute; right:22px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--text3); font-size:20px; cursor:pointer; }
+
+.f-section { padding:10px 16px; border-bottom:1px solid var(--border); }
+.f-lbl { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:1px; font-weight:700; margin-bottom:8px; }
+.chips { display:flex; flex-wrap:wrap; gap:5px; }
+.chip {
+  padding:5px 12px; border-radius:8px; font-size:12px; font-weight:600;
+  cursor:pointer; border:1.5px solid var(--border);
+  background:transparent; color:var(--text2);
+  transition:all .12s; user-select:none; min-height:32px;
+  display:inline-flex; align-items:center;
+}
+.chip:hover { border-color:var(--accent); color:var(--accent); }
+.chip.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+
+.sb-footer {
+  padding:12px 16px; margin-top:auto; border-top:1px solid var(--border);
+  font-size:11px; color:var(--text3); line-height:1.7;
+}
+.reload-btn {
+  display:flex; align-items:center; justify-content:center; gap:5px;
+  width:100%; padding:10px; background:var(--bg3);
+  border:1.5px solid var(--border); border-radius:10px;
+  color:var(--text2); font-size:13px; font-weight:700;
+  cursor:pointer; margin-top:8px; transition:all .15s;
+}
+.reload-btn:hover { border-color:var(--accent); color:var(--accent); }
+
+/* ── MOBILE HEADER ────────────────────────────────────────────────────────── */
+.mobile-header {
+  position:sticky; top:0; z-index:100;
+  background:var(--bg2); border-bottom:1px solid var(--border);
+  padding:12px 18px; display:flex; align-items:center; gap:10px;
+}
+.mob-title { font-size:22px; font-weight:800; letter-spacing:-.4px; flex:1; }
+.mob-btn {
+  background:var(--bg3); border:1.5px solid var(--border); border-radius:9px;
+  padding:7px 12px; color:var(--text2); font-size:13px; font-weight:700;
+  cursor:pointer; display:flex; align-items:center; gap:4px; min-height:38px;
+}
+
+/* ── BOTTOM NAV (iPhone style) ────────────────────────────────────────────── */
+.bottom-nav {
+  position:fixed; bottom:0; left:0; right:0; z-index:200;
+  background:var(--bg2); border-top:1px solid var(--border);
+  display:flex; align-items:stretch;
+  padding-bottom:env(safe-area-inset-bottom);
+  -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(20px);
+}
+.nav-tab {
+  flex:1; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  padding:8px 2px 6px; gap:3px;
+  background:none; border:none; cursor:pointer;
+  color:var(--text3); font-size:10px; font-weight:600;
+  letter-spacing:.2px; transition:color .15s; min-height:58px;
+  position:relative;
+}
+.nav-tab.active { color:var(--accent); }
+.nav-icon { font-size:24px; line-height:1; }
+.nav-dot {
+  position:absolute; top:6px; right:calc(50% - 16px);
+  background:var(--red); color:#fff; font-size:9px; font-weight:800;
+  border-radius:10px; padding:1px 5px; min-width:16px; text-align:center;
+}
+
+/* ── MAIN ─────────────────────────────────────────────────────────────────── */
+.main { flex:1; min-width:0; }
+.content { padding:16px 18px; }
+
+/* ── VIEW BAR ─────────────────────────────────────────────────────────────── */
+.view-bar {
+  display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap;
+}
+.view-toggle {
+  display:flex; background:var(--bg3); border:1.5px solid var(--border);
+  border-radius:10px; overflow:hidden;
+}
+.vbtn {
+  padding:9px 18px; font-size:14px; font-weight:700;
+  background:transparent; color:var(--text2); border:none;
+  cursor:pointer; transition:all .15s; min-height:42px;
+}
+.vbtn.on { background:var(--accent); color:#fff; }
+.result-count { font-size:13px; color:var(--text3); margin-left:auto; }
+
+/* ── PULL TO REFRESH ──────────────────────────────────────────────────────── */
+.ptr-indicator {
+  text-align:center; padding:12px; color:var(--text3); font-size:13px;
+  display:none;
+}
+.ptr-indicator.show { display:block; }
+
+/* ── SECTION TITLE ────────────────────────────────────────────────────────── */
+.section-head {
+  display:flex; align-items:center; gap:10px; margin-bottom:14px; margin-top:4px;
+}
+.section-title { font-size:20px; font-weight:800; letter-spacing:-.3px; }
+.section-badge {
+  background:var(--accent); color:#fff; font-size:12px; font-weight:800;
+  padding:3px 10px; border-radius:20px;
+}
+.section-badge.new  { background:var(--green); }
+.section-badge.soon { background:var(--amber); }
+
+/* ── DAY HEADER ───────────────────────────────────────────────────────────── */
+.day-header {
+  display:flex; align-items:center; gap:10px; margin:22px 0 12px;
+}
+.day-name {
+  font-size:18px; font-weight:800; color:var(--text); letter-spacing:-.2px;
+}
+.day-date { font-size:15px; color:var(--accent); font-weight:600; }
+.day-badge {
+  font-size:11px; font-weight:800; padding:3px 9px; border-radius:20px;
+  background:rgba(34,197,94,.15); color:var(--green);
+}
+.day-sep { flex:1; height:1px; background:var(--border); }
+
+/* ── HERO CARD (vue semaine) ──────────────────────────────────────────────── */
+.hero-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
+  gap:14px; margin-bottom:8px;
+}
+@media(min-width:600px) {
+  .hero-grid { grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); }
+}
+.hero-card {
+  background:var(--bg2); border-radius:14px; overflow:hidden;
+  border:1.5px solid var(--border); cursor:pointer;
+  transition:transform .15s, box-shadow .15s, border-color .15s;
+  position:relative;
+}
+.hero-card:hover {
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px var(--shadow);
+  border-color:var(--accent);
+}
+.hero-card.premiere { border-top:3px solid var(--green); }
+.hero-card.retour   { border-top:3px solid var(--accent); }
+.hero-card.finale   { border-top:3px solid var(--red); }
+
+.hero-poster-wrap { position:relative; padding-top:150%; overflow:hidden; background:var(--bg3); }
+.hero-poster-wrap img {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  transition:transform .3s;
+}
+.hero-card:hover .hero-poster-wrap img { transform:scale(1.04); }
+.hero-poster-ph {
+  position:absolute; inset:0; display:flex; align-items:center;
+  justify-content:center; font-size:48px; background:var(--bg3);
+}
+
+.hero-badge {
+  position:absolute; top:8px; left:8px; z-index:2;
+  font-size:11px; font-weight:800; padding:4px 10px; border-radius:20px;
+  letter-spacing:.3px; text-transform:uppercase;
+}
+.hero-badge.premiere { background:var(--green); color:#fff; }
+.hero-badge.retour   { background:var(--accent); color:#fff; }
+.hero-badge.finale   { background:var(--red); color:#fff; }
+.hero-badge.film     { background:var(--amber); color:#000; }
+
+.hero-body { padding:12px 12px 14px; }
+.hero-plat {
+  display:flex; align-items:center; gap:6px; margin-bottom:6px;
+}
+.hero-plat-logo { width:24px; height:24px; object-fit:contain; border-radius:5px; flex-shrink:0; }
+.hero-plat-name { font-size:12px; font-weight:700; color:var(--accent); }
+.hero-title {
+  font-size:16px; font-weight:800; line-height:1.3; margin-bottom:4px;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.hero-ep {
+  font-size:13px; font-weight:700; margin-bottom:6px;
+}
+.hero-ep.premiere { color:var(--green); }
+.hero-ep.retour   { color:var(--accent); }
+.hero-ep.finale   { color:var(--red); }
+.hero-ep.normal   { color:var(--text3); }
+.hero-date {
+  font-size:14px; font-weight:700; color:var(--text);
+  display:flex; align-items:center; gap:5px; margin-bottom:6px;
+}
+.hero-date-ico { font-size:14px; }
+.hero-tags { display:flex; gap:4px; flex-wrap:wrap; }
+.htag {
+  font-size:10px; font-weight:700; padding:2px 7px; border-radius:5px;
+  background:var(--bg3); color:var(--text3); border:1px solid var(--border);
+}
+.htag.qc   { background:rgba(79,142,247,.12); color:var(--accent); border-color:rgba(79,142,247,.2); }
+.htag.lgbt { background:rgba(168,85,247,.1); color:var(--purple); border-color:rgba(168,85,247,.15); }
+.htag.note { background:rgba(245,158,11,.1); color:var(--amber); border-color:rgba(245,158,11,.15); }
+
+/* ── LIST CARD ────────────────────────────────────────────────────────────── */
+.list-card {
+  display:flex; gap:14px; padding:14px 16px;
+  background:var(--bg2); border:1.5px solid var(--border); border-radius:12px;
+  cursor:pointer; transition:all .13s; margin-bottom:10px; align-items:flex-start;
+}
+.list-card:hover { border-color:var(--accent); background:var(--bg3); transform:translateY(-1px); }
+.list-card.premiere { border-left:4px solid var(--green); }
+.list-card.retour   { border-left:4px solid var(--accent); }
+.list-card.finale   { border-left:4px solid var(--red); }
+
+.list-poster {
+  width:70px; height:105px; object-fit:cover; border-radius:8px;
+  flex-shrink:0; background:var(--bg3);
+}
+.list-poster-ph {
+  width:70px; height:105px; border-radius:8px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:30px; background:var(--bg3); border:1.5px solid var(--border);
+}
+.list-body { flex:1; min-width:0; }
+.list-plat { display:flex; align-items:center; gap:6px; margin-bottom:5px; }
+.list-plat-logo { width:24px; height:24px; object-fit:contain; border-radius:5px; }
+.list-plat-name { font-size:13px; font-weight:700; color:var(--accent); }
+.list-country { font-size:11px; background:var(--bg3); color:var(--text3); border:1px solid var(--border); padding:1px 6px; border-radius:5px; }
+.list-title { font-size:18px; font-weight:800; margin-bottom:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.list-ep { font-size:14px; font-weight:700; margin-bottom:7px; }
+.list-ep.premiere { color:var(--green); }
+.list-ep.retour   { color:var(--accent); }
+.list-ep.finale   { color:var(--red); }
+.list-ep.normal   { color:var(--text3); }
+.list-date { font-size:14px; font-weight:700; color:var(--text); margin-bottom:8px; }
+.list-tags { display:flex; gap:5px; flex-wrap:wrap; }
+.ltag {
+  font-size:11px; font-weight:700; padding:3px 8px; border-radius:6px;
+  background:var(--bg3); color:var(--text3); border:1px solid var(--border);
+}
+.ltag.qc   { background:rgba(79,142,247,.12); color:var(--accent); border-color:rgba(79,142,247,.2); }
+.ltag.lgbt { background:rgba(168,85,247,.1); color:var(--purple); border-color:rgba(168,85,247,.15); }
+.ltag.note { background:rgba(245,158,11,.1); color:var(--amber); border-color:rgba(245,158,11,.15); }
+.ltag.av   { background:rgba(245,158,11,.08); color:var(--amber); border-color:rgba(245,158,11,.1); }
+.ltag.fr   { background:rgba(79,142,247,.08); color:var(--accent); border-color:rgba(79,142,247,.1); }
+.ltag.en   { background:rgba(34,197,94,.08); color:var(--green); border-color:rgba(34,197,94,.1); }
+.ltag.tr   { background:rgba(239,68,68,.08); color:var(--red); border-color:rgba(239,68,68,.1); }
+.list-arrow { font-size:24px; color:var(--text3); flex-shrink:0; align-self:center; }
+
+/* ── CALENDRIER ───────────────────────────────────────────────────────────── */
+.cal-month { margin-bottom:28px; }
+.cal-month-title { font-size:19px; font-weight:800; margin-bottom:10px; letter-spacing:-.2px; }
+.cal-grid {
+  display:grid; grid-template-columns:repeat(7,1fr);
+  gap:1px; background:var(--border); border-radius:12px; overflow:hidden;
+}
+.cal-hd {
+  background:var(--bg3); padding:8px 3px; text-align:center;
+  font-size:11px; color:var(--text3); text-transform:uppercase;
+  letter-spacing:.8px; font-weight:700;
+}
+.cal-cell { background:var(--bg2); padding:6px 4px; min-height:100px; }
+.cal-cell.empty { background:var(--bg); }
+.cal-cell.today { border-top:3px solid var(--accent); }
+.cal-day-num {
+  font-size:13px; font-weight:800; color:var(--text3);
+  margin-bottom:5px;
+}
+.cal-cell.today .cal-day-num { color:var(--accent); }
+.cal-item {
+  display:flex; align-items:center; gap:3px;
+  padding:3px 5px; border-radius:6px; margin-bottom:3px;
+  cursor:pointer; transition:opacity .12s;
+  background:var(--bg3); border:1px solid var(--border);
+  min-height:26px;
+}
+.cal-item:hover { opacity:.75; border-color:var(--accent); }
+.cal-item.premiere { border-left:3px solid var(--green); }
+.cal-item.retour   { border-left:3px solid var(--accent); }
+.cal-item.finale   { border-left:3px solid var(--red); }
+.cal-item-logo { width:14px; height:14px; object-fit:contain; border-radius:2px; flex-shrink:0; }
+.cal-item-title { font-size:10px; font-weight:700; color:var(--text2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; }
+.cal-item-ep { font-size:9px; color:var(--text3); flex-shrink:0; }
+
+/* ── LOADING / EMPTY ──────────────────────────────────────────────────────── */
+.loading {
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; padding:80px 20px; gap:16px;
+}
+.spinner {
+  width:44px; height:44px; border:3px solid var(--border2);
+  border-top-color:var(--accent); border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+.loading-txt { font-size:15px; color:var(--text3); }
+.empty-box { text-align:center; padding:60px 20px; color:var(--text3); font-size:16px; line-height:1.8; }
+
+/* ── RAPPELS BAR ──────────────────────────────────────────────────────────── */
+.rem-bar {
+  background:var(--bg2); border:1.5px solid rgba(245,158,11,.25);
+  border-left:4px solid var(--amber); border-radius:12px;
+  padding:14px 18px; margin-bottom:20px;
+}
+.rem-bar-title { font-size:11px; color:var(--amber); text-transform:uppercase; font-weight:800; letter-spacing:1px; margin-bottom:8px; }
+.rem-item { display:flex; justify-content:space-between; align-items:center; font-size:14px; padding:5px 0; border-bottom:1px solid var(--border); }
+.rem-item:last-child { border:none; }
+.rem-date { font-size:13px; color:var(--amber); font-weight:700; white-space:nowrap; margin-left:10px; }
+
+/* ── MODAL ────────────────────────────────────────────────────────────────── */
+.overlay {
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,.88); z-index:500;
+  align-items:center; justify-content:center; padding:16px;
+}
+.overlay.open { display:flex; }
+.modal {
+  background:var(--bg2); border:1.5px solid var(--border2);
+  border-radius:18px; width:100%; max-width:620px; max-height:92vh;
+  overflow-y:auto; box-shadow:0 24px 80px rgba(0,0,0,.5);
+}
+.modal-top { position:relative; }
+.modal-back { width:100%; height:220px; object-fit:cover; border-radius:18px 18px 0 0; display:block; }
+.modal-back-ph { width:100%; height:90px; border-radius:18px 18px 0 0; background:var(--bg3); }
+.modal-close {
+  position:absolute; top:12px; right:12px;
+  background:rgba(0,0,0,.75); border:none; border-radius:50%;
+  width:38px; height:38px; color:#fff; font-size:20px;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  min-height:38px; min-width:38px;
+}
+.modal-status {
+  position:absolute; top:12px; left:12px;
+  font-size:11px; font-weight:800; padding:4px 12px; border-radius:20px; text-transform:uppercase;
+}
+.modal-body { padding:18px 22px 28px; }
+.modal-poster-row { display:flex; gap:16px; align-items:flex-start; }
+.modal-poster {
+  width:110px; border-radius:12px; object-fit:cover;
+  box-shadow:0 6px 24px rgba(0,0,0,.4); border:2px solid var(--border2); flex-shrink:0;
+}
+.modal-poster.up { margin-top:-60px; }
+.modal-info { flex:1; min-width:0; }
+.modal-tags { display:flex; gap:5px; flex-wrap:wrap; margin-bottom:9px; }
+.modal-title { font-size:24px; font-weight:800; line-height:1.2; margin-bottom:5px; }
+.modal-plat { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.modal-plat-logo { width:28px; height:28px; object-fit:contain; border-radius:6px; }
+.modal-plat-name { font-size:15px; font-weight:700; color:var(--accent); }
+.modal-ep { font-size:16px; font-weight:800; margin-bottom:9px; }
+.modal-meta { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+.modal-langs { display:flex; gap:5px; margin-bottom:14px; }
+.mtag { display:inline-flex; align-items:center; padding:3px 9px; border-radius:6px; font-size:12px; font-weight:700; background:var(--bg3); color:var(--text3); border:1px solid var(--border); }
+.mtag.qc   { background:rgba(79,142,247,.12); color:var(--accent); border-color:rgba(79,142,247,.2); }
+.mtag.lgbt { background:rgba(168,85,247,.1); color:var(--purple); }
+.slbl { font-size:11px; color:var(--text3); text-transform:uppercase; letter-spacing:1px; font-weight:700; margin:16px 0 8px; }
+.modal-desc { font-size:15px; color:var(--text2); line-height:1.75; }
+.cast-list { display:flex; flex-wrap:wrap; gap:6px; }
+.cast-chip { background:var(--bg3); border:1px solid var(--border); color:var(--text2); padding:5px 12px; border-radius:20px; font-size:13px; }
+.trailers { display:flex; flex-direction:column; gap:8px; }
+.tlink {
+  display:flex; align-items:center; gap:10px;
+  background:var(--bg3); border:1.5px solid var(--border); border-radius:10px;
+  padding:11px 14px; color:var(--text); text-decoration:none;
+  transition:border-color .13s; min-height:48px;
+}
+.tlink:hover { border-color:#e50914; }
+.yt-badge { background:#e50914; color:#fff; border-radius:5px; padding:3px 8px; font-size:11px; font-weight:800; flex-shrink:0; }
+.tlink-label { flex:1; font-size:14px; }
+.tlink-lang { font-size:11px; font-weight:800; padding:2px 7px; border-radius:4px; flex-shrink:0; }
+.modal-sep { border:none; border-top:1px solid var(--border); margin:18px 0; }
+.rem-btn {
+  width:100%; padding:14px; border-radius:12px; font-size:15px; font-weight:800;
+  cursor:pointer; border:1.5px solid var(--border); background:var(--bg3);
+  color:var(--text2); transition:all .13s; min-height:50px; margin-bottom:10px;
+}
+.rem-btn.on { background:rgba(34,197,94,.1); border-color:rgba(34,197,94,.3); color:var(--green); }
+.plat-btn {
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:14px; border-radius:12px; font-size:16px; font-weight:800;
+  text-decoration:none; background:var(--accent); color:#fff;
+  transition:opacity .13s; min-height:50px;
+}
+.plat-btn:hover { opacity:.88; }
+.genres-row { display:flex; gap:5px; flex-wrap:wrap; margin-top:12px; }
+.genre-chip { background:var(--bg3); color:var(--text3); padding:4px 10px; border-radius:6px; font-size:12px; border:1px solid var(--border); }
+
+/* ── DRAWER MOBILE ────────────────────────────────────────────────────────── */
+.drawer-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:300; }
+.drawer-overlay.open { display:block; }
+.drawer {
+  position:fixed; bottom:0; left:0; right:0; z-index:301;
+  background:var(--bg2); border-radius:18px 18px 0 0;
+  max-height:85vh; overflow-y:auto;
+  transform:translateY(100%); transition:transform .3s;
   padding-bottom:env(safe-area-inset-bottom);
 }
-.nav-tab{
-  flex:1;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;padding:8px 4px;gap:2px;
-  background:none;border:none;cursor:pointer;
-  color:var(--text3);font-size:10px;font-weight:600;
-  transition:color .15s;min-height:54px;
+.drawer.open { transform:translateY(0); }
+.drawer-handle { width:36px; height:4px; background:var(--border2); border-radius:2px; margin:14px auto 16px; }
+.drawer-title { font-size:18px; font-weight:800; padding:0 18px 14px; border-bottom:1px solid var(--border); }
+.drawer-section { padding:12px 18px; border-bottom:1px solid var(--border); }
+.drawer-apply {
+  margin:16px 18px; width:calc(100% - 36px); padding:14px;
+  background:var(--accent); border:none; border-radius:12px;
+  color:#fff; font-size:16px; font-weight:800; cursor:pointer; min-height:50px;
 }
-.nav-tab.active{color:var(--accent)}
-.nav-tab .nav-icon{font-size:22px;line-height:1}
-.nav-badge{background:var(--red);color:#fff;font-size:9px;font-weight:700;border-radius:10px;padding:1px 5px;position:absolute;top:4px;right:4px}
 
-/* ── SIDEBAR DESKTOP ───────────────────────────────────────────────────────── */
-.sidebar{
-  background:var(--bg2);border-right:1px solid var(--border);
-  display:flex;flex-direction:column;
-  position:sticky;top:0;height:100vh;overflow-y:auto;
+/* ── TODAY BTN ────────────────────────────────────────────────────────────── */
+.today-btn {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:8px 16px; background:var(--accent); color:#fff;
+  border:none; border-radius:20px; font-size:13px; font-weight:800;
+  cursor:pointer; margin-bottom:18px;
 }
-.sb-top{padding:20px 18px 14px;border-bottom:1px solid var(--border)}
-.sb-title{font-size:20px;font-weight:700;letter-spacing:-.3px}
-.sb-sub{font-size:11px;color:var(--text3);margin-top:2px;text-transform:uppercase;letter-spacing:.6px}
 
-/* ── STATS DASHBOARD ───────────────────────────────────────────────────────── */
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:12px 18px;border-bottom:1px solid var(--border)}
-.stat{background:var(--bg3);border-radius:var(--radius);padding:9px 11px;cursor:pointer;transition:border .15s;border:1px solid transparent}
-.stat:hover{border-color:var(--accent)}
-.stat.active-filter{border-color:var(--accent);background:var(--bg4)}
-.stat-v{font-size:24px;font-weight:700;color:var(--accent);line-height:1.1}
-.stat-l{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-.stat-count{font-size:11px;color:var(--accent);margin-top:1px}
+/* ── WEEK SEPARATOR ───────────────────────────────────────────────────────── */
+.week-sep {
+  font-size:11px; color:var(--text3); text-transform:uppercase;
+  letter-spacing:1.5px; font-weight:700; padding:3px 0 10px;
+  border-bottom:1px solid var(--border); margin:8px 0 16px;
+}
 
-/* ── THEME TOGGLE ──────────────────────────────────────────────────────────── */
-.theme-row{display:flex;align-items:center;gap:10px;padding:9px 18px;border-bottom:1px solid var(--border)}
-.theme-lbl{font-size:13px;color:var(--text2);flex:1}
-.toggle-track{width:42px;height:24px;border-radius:12px;background:var(--bg4);border:1px solid var(--border);position:relative;cursor:pointer;transition:background .2s;flex-shrink:0}
-.toggle-track.on{background:var(--accent);border-color:var(--accent)}
-.toggle-thumb{position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
-.toggle-track.on .toggle-thumb{left:20px}
-
-/* ── FILTRES ───────────────────────────────────────────────────────────────── */
-.f-section{padding:10px 18px;border-bottom:1px solid var(--border)}
-.f-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;font-weight:600}
-.chips{display:flex;flex-wrap:wrap;gap:4px}
-.chip{display:inline-flex;align-items:center;padding:5px 11px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text2);transition:all .12s;user-select:none;min-height:32px}
-.chip:hover{border-color:var(--accent);color:var(--accent)}
-.chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
-.search-wrap{padding:10px 18px;border-bottom:1px solid var(--border);position:relative}
-.search-icon{position:absolute;left:30px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px;pointer-events:none}
-.search-mic{position:absolute;right:24px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text3);font-size:18px;cursor:pointer;padding:4px}
-.search{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);padding:10px 40px 10px 34px;font-size:15px;outline:none;transition:border-color .15s}
-.search:focus{border-color:var(--accent)}
-.search::placeholder{color:var(--text3)}
-.update-section{padding:12px 18px;margin-top:auto;border-top:1px solid var(--border)}
-.update-info{font-size:11px;color:var(--text3);line-height:1.7}
-.update-date{color:var(--green);font-weight:600}
-.reload-btn{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;padding:9px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;margin-top:7px;transition:all .15s}
-.reload-btn:hover{border-color:var(--accent);color:var(--accent)}
-
-/* ── MAIN CONTENT ──────────────────────────────────────────────────────────── */
-.main-content{padding:16px;min-width:0}
-
-/* ── HERO WEEK (Cette semaine) ─────────────────────────────────────────────── */
-.hero-section{margin-bottom:24px}
-.section-title{font-size:18px;font-weight:700;margin-bottom:12px;letter-spacing:-.2px;display:flex;align-items:center;gap:8px}
-.section-title .badge{font-size:11px;background:var(--accent);color:#fff;padding:2px 8px;border-radius:20px;font-weight:600}
-.hero-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
-.hero-scroll::-webkit-scrollbar{display:none}
-.hero-card{flex-shrink:0;width:160px;border-radius:var(--radius-lg);overflow:hidden;background:var(--bg2);border:1px solid var(--border);cursor:pointer;transition:transform .15s,box-shadow .15s}
-.hero-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--shadow)}
-.hero-card.ep-premiere{border-top:3px solid var(--green)}
-.hero-card.ep-finale{border-top:3px solid var(--red)}
-.hero-poster{width:100%;height:220px;object-fit:cover;display:block;background:var(--bg3)}
-.hero-poster-ph{width:100%;height:220px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:40px}
-.hero-info{padding:10px}
-.hero-plat{display:flex;align-items:center;gap:5px;margin-bottom:4px}
-.hero-plat-logo{width:18px;height:18px;object-fit:contain;border-radius:3px}
-.hero-plat-name{font-size:10px;color:var(--accent);font-weight:600}
-.hero-title{font-size:14px;font-weight:700;line-height:1.3;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.hero-saison{font-size:11px;color:var(--text3);font-weight:600}
-.hero-tags{display:flex;gap:3px;margin-top:5px;flex-wrap:wrap}
-.htag{font-size:9px;padding:1px 5px;border-radius:3px;font-weight:600;background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
-.htag.qc{background:rgba(79,142,247,.12);color:var(--accent);border-color:rgba(79,142,247,.2)}
-.htag.premiere{background:rgba(34,197,94,.12);color:var(--green);border-color:rgba(34,197,94,.2)}
-.htag.finale{background:rgba(239,68,68,.12);color:var(--red);border-color:rgba(239,68,68,.2)}
-
-/* ── VIEW TOGGLE ───────────────────────────────────────────────────────────── */
-.view-bar{display:flex;gap:8px;margin-bottom:16px;align-items:center;flex-wrap:wrap}
-.view-toggle{display:flex;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;flex-shrink:0}
-.vbtn{padding:8px 16px;font-size:13px;font-weight:600;background:transparent;color:var(--text2);border:none;cursor:pointer;transition:all .15s;min-height:40px}
-.vbtn.on{background:var(--accent);color:#fff}
-.result-count{font-size:12px;color:var(--text3);margin-left:auto}
-
-/* ── RAPPELS ───────────────────────────────────────────────────────────────── */
-.rem-bar{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--radius);padding:12px 16px;margin-bottom:16px}
-.rem-title{font-size:10px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:7px}
-.rem-item{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid var(--border)}
-.rem-item:last-child{border:none}
-.rem-date{color:var(--amber);font-size:11px;white-space:nowrap;margin-left:8px}
-
-/* ── LIST VIEW ─────────────────────────────────────────────────────────────── */
-.today-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;background:var(--accent);color:#fff;border:none;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:16px}
-.week-sep{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1.5px;padding:3px 0 8px;border-bottom:1px solid var(--border);margin:6px 0 12px;font-weight:600}
-.day-block{margin-bottom:16px}
-.day-lbl{font-size:14px;font-weight:700;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.dispo-dot{font-size:10px;background:rgba(34,197,94,.12);color:var(--green);padding:1px 7px;border-radius:20px;font-weight:700}
-
-/* ── EVENT CARD ─────────────────────────────────────────────────────────────── */
-.ecard{display:flex;gap:12px;padding:12px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all .13s;margin-bottom:8px;align-items:flex-start}
-.ecard:hover{border-color:var(--accent);background:var(--bg3);transform:translateY(-1px)}
-.ecard.ep-premiere{border-left:3px solid var(--green)}
-.ecard.ep-finale{border-left:3px solid var(--red)}
-.ecard.qc{border-left:3px solid var(--accent)}
-.eposter{width:62px;height:92px;object-fit:cover;border-radius:7px;flex-shrink:0;background:var(--bg3)}
-.eplaceholder{width:62px;height:92px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:26px;background:var(--bg3);border:1px solid var(--border)}
-.ebody{flex:1;min-width:0}
-.etitle{font-size:17px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
-.eplat-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
-.eplat-logo{width:18px;height:18px;object-fit:contain;border-radius:3px;flex-shrink:0}
-.eplat-name{font-size:12px;font-weight:600;color:var(--accent)}
-.ecountry{font-size:10px;background:var(--bg3);color:var(--text3);border:1px solid var(--border);padding:1px 5px;border-radius:4px}
-.esaison{font-size:13px;font-weight:700;margin-bottom:6px}
-.etags{display:flex;gap:4px;flex-wrap:wrap}
-.tag{display:inline-flex;align-items:center;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600;background:var(--bg3);color:var(--text3);border:1px solid var(--border)}
-.tag.qc{background:rgba(79,142,247,.12);color:var(--accent);border-color:rgba(79,142,247,.2)}
-.tag.lgbt{background:rgba(168,85,247,.12);color:#a855f7;border-color:rgba(168,85,247,.2)}
-.tag.note{background:rgba(245,158,11,.1);color:var(--amber);border-color:rgba(245,158,11,.15)}
-.tag.avenir{background:rgba(245,158,11,.08);color:var(--amber);border-color:rgba(245,158,11,.12)}
-.tag.lang-fr{background:rgba(79,142,247,.08);color:var(--accent);border-color:rgba(79,142,247,.12)}
-.tag.lang-en{background:rgba(34,197,94,.08);color:var(--green);border-color:rgba(34,197,94,.12)}
-.tag.trailer{background:rgba(239,68,68,.08);color:var(--red);border-color:rgba(239,68,68,.12)}
-.earrow{font-size:22px;color:var(--text3);flex-shrink:0;align-self:center}
-
-/* ── CALENDRIER ─────────────────────────────────────────────────────────────── */
-.cal-month{margin-bottom:24px}
-.cal-mtitle{font-size:17px;font-weight:700;margin-bottom:8px}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden}
-.cal-hd{background:var(--bg3);padding:6px 2px;text-align:center;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.7px;font-weight:600}
-.cal-cell{background:var(--bg2);padding:4px;min-height:80px}
-.cal-cell.today{border-top:2px solid var(--accent)}
-.cal-cell.empty{background:var(--bg)}
-.cal-n{font-size:11px;color:var(--text3);font-weight:700;margin-bottom:3px}
-.cal-cell.today .cal-n{color:var(--accent)}
-.cal-dot{display:flex;align-items:center;gap:3px;font-size:10px;padding:2px 4px;border-radius:4px;margin-bottom:3px;cursor:pointer;background:var(--bg3);border:1px solid var(--border);transition:opacity .12s;min-height:22px}
-.cal-dot:hover{opacity:.75;border-color:var(--accent)}
-.cal-dot.ep-premiere{border-left:2px solid var(--green)}
-.cal-dot.ep-finale{border-left:2px solid var(--red)}
-.cal-dot.qc{border-left:2px solid var(--accent)}
-.cal-dot-logo{width:12px;height:12px;object-fit:contain;border-radius:2px;flex-shrink:0}
-.cal-dot-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;color:var(--text2);flex:1;font-size:9px}
-.cal-dot-ep{font-size:8px;color:var(--text3);flex-shrink:0}
-
-/* ── LOADING / EMPTY ────────────────────────────────────────────────────────── */
-.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:14px}
-.spinner{width:40px;height:40px;border:3px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.loading-txt{font-size:14px;color:var(--text3)}
-.empty-box{text-align:center;padding:50px 20px;color:var(--text3);font-size:15px}
-
-/* ── FILTER DRAWER (mobile) ──────────────────────────────────────────────── */
-.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300}
-.drawer-overlay.open{display:block}
-.drawer{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-radius:var(--radius-lg) var(--radius-lg) 0 0;z-index:301;max-height:85vh;overflow-y:auto;transform:translateY(100%);transition:transform .3s}
-.drawer.open{transform:translateY(0)}
-.drawer-handle{width:40px;height:4px;background:var(--border2);border-radius:2px;margin:12px auto 16px}
-.drawer-title{font-size:17px;font-weight:700;padding:0 18px 12px;border-bottom:1px solid var(--border)}
-.drawer-section{padding:12px 18px;border-bottom:1px solid var(--border)}
-
-/* ── MODAL ──────────────────────────────────────────────────────────────────── */
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;align-items:center;justify-content:center;padding:16px}
-.overlay.open{display:flex}
-.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);width:100%;max-width:600px;max-height:92vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.modal-top{position:relative}
-.mback{width:100%;height:200px;object-fit:cover;border-radius:var(--radius-lg) var(--radius-lg) 0 0;display:block}
-.mback-ph{width:100%;height:80px;border-radius:var(--radius-lg) var(--radius-lg) 0 0;background:var(--bg3)}
-.mclose{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.75);border:none;border-radius:50%;width:36px;height:36px;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;min-height:36px}
-.mbadge{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
-.mbody{padding:16px 20px 24px}
-.mposter-row{display:flex;gap:14px;align-items:flex-start}
-.mposter{width:96px;border-radius:var(--radius);object-fit:cover;box-shadow:0 4px 18px rgba(0,0,0,.35);border:2px solid var(--border2);flex-shrink:0}
-.mposter.up{margin-top:-54px}
-.minfo{flex:1;min-width:0}
-.mtags-row{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:7px}
-.mtitle{font-size:22px;font-weight:700;line-height:1.2;margin-bottom:3px}
-.mplat-row{display:flex;align-items:center;gap:7px;margin-bottom:7px}
-.mplat-logo{width:24px;height:24px;object-fit:contain;border-radius:4px}
-.mplat-name{font-size:14px;font-weight:600;color:var(--accent)}
-.msaison{font-size:15px;font-weight:700;margin-bottom:8px}
-.mmeta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:9px}
-.mlangs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
-.slbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;font-weight:600;margin-top:14px}
-.mdesc{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:0}
-.cast-list{display:flex;flex-wrap:wrap;gap:5px}
-.cast-chip{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:20px;font-size:12px}
-.trailers{display:flex;flex-direction:column;gap:6px}
-.tlink{display:flex;align-items:center;gap:9px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;color:var(--text);text-decoration:none;transition:border-color .13s;min-height:44px}
-.tlink:hover{border-color:#e50914}
-.ytbadge{background:#e50914;color:#fff;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:700;flex-shrink:0}
-.tlabel{flex:1;font-size:13px}
-.tlang{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;flex-shrink:0}
-.rem-toggle{width:100%;padding:12px;border-radius:var(--radius);font-size:14px;font-weight:600;cursor:pointer;margin-top:14px;transition:all .13s;border:1px solid var(--border);background:var(--bg3);color:var(--text2);min-height:46px}
-.rem-toggle.on{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:var(--green)}
-.platlink{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;background:var(--accent);color:#fff;margin-top:10px;transition:opacity .13s;min-height:46px}
-.platlink:hover{opacity:.88}
-.genres-row{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:0}
-.genre-chip{background:var(--bg3);color:var(--text3);padding:3px 8px;border-radius:5px;font-size:11px;border:1px solid var(--border)}
-.modal-sep{border:none;border-top:1px solid var(--border);margin:16px 0}
+/* ── SWIPE NAV ────────────────────────────────────────────────────────────── */
+.week-nav {
+  display:flex; align-items:center; gap:10px; margin-bottom:18px;
+}
+.week-nav-btn {
+  background:var(--bg3); border:1.5px solid var(--border); border-radius:10px;
+  padding:8px 14px; color:var(--text2); font-size:20px; font-weight:700;
+  cursor:pointer; transition:all .13s; min-height:40px;
+}
+.week-nav-btn:hover { border-color:var(--accent); color:var(--accent); }
+.week-nav-title { flex:1; text-align:center; font-size:16px; font-weight:800; }
 </style>
 </head>
 <body>
 
-<!-- MOBILE LAYOUT -->
-<div id="mobile-layout">
+<div class="app">
+<!-- ── SIDEBAR DESKTOP ──────────────────────────────────────────────────── -->
+<aside class="sidebar">
+  <div class="sb-logo">🎬 Films &amp; Séries<div class="sb-sub">Québec &amp; International 2026</div></div>
+  <div class="stats-grid">
+    <div class="stat-box" id="sd-total"><div class="stat-num" id="sd-total-n">—</div><div class="stat-lbl">Affiché</div></div>
+    <div class="stat-box" id="sd-avenir"><div class="stat-num" id="sd-avenir-n">—</div><div class="stat-lbl">À venir</div></div>
+    <div class="stat-box" id="sd-qc" onclick="quickFilter('QC')"><div class="stat-num" id="sd-qc-n">—</div><div class="stat-lbl">🍁 Québec</div></div>
+    <div class="stat-box" id="sd-lgbt" onclick="quickFilter('LGBT')"><div class="stat-num" id="sd-lgbt-n">—</div><div class="stat-lbl">🏳️‍🌈 LGBT+</div></div>
+  </div>
+  <div class="theme-row">
+    <span>☀️ Clair &nbsp; 🌙 Sombre</span>
+    <div class="toggle" id="theme-btn" onclick="toggleTheme()"><div class="toggle-thumb"></div></div>
+  </div>
+  <div class="search-wrap">
+    <span class="search-ico">🔍</span>
+    <input class="search" id="search-d" type="text" placeholder="Titre, acteur, genre..." oninput="onSearch(this.value)">
+    <button class="search-mic" onclick="startVoice('search-d')">🎙️</button>
+  </div>
+  <div class="f-section"><div class="f-lbl">Statut</div><div class="chips" id="fd-status"></div></div>
+  <div class="f-section"><div class="f-lbl">Type</div><div class="chips" id="fd-type"></div></div>
+  <div class="f-section"><div class="f-lbl">Langue</div><div class="chips" id="fd-lang"></div></div>
+  <div class="f-section"><div class="f-lbl">Pays</div><div class="chips" id="fd-country"></div></div>
+  <div class="f-section"><div class="f-lbl">Étiquettes</div><div class="chips" id="fd-tags"></div></div>
+  <div class="f-section"><div class="f-lbl">Catégorie</div><div class="chips" id="fd-cats"></div></div>
+  <div class="f-section"><div class="f-lbl">Plateforme</div><div class="chips" id="fd-plat"></div></div>
+  <div class="sb-footer">
+    Mis à jour le <strong id="update-date-d" style="color:var(--green)">—</strong><br>Auto chaque lundi à 6h
+    <button class="reload-btn" onclick="reloadData()">↻ Recharger</button>
+  </div>
+</aside>
+
+<!-- ── MAIN ─────────────────────────────────────────────────────────────── -->
+<main class="main">
+  <!-- Mobile header -->
   <div class="mobile-header">
     <div class="mob-title">🎬 Calendrier</div>
-    <button class="mob-filter-btn" onclick="openDrawer()">⚙️ Filtres</button>
-    <button class="mob-theme-btn" onclick="toggleTheme()" id="mob-theme-icon">🌙</button>
+    <button class="mob-btn" onclick="openDrawer()">⚙️ Filtres</button>
+    <button class="mob-btn" onclick="toggleTheme()" id="mob-theme">🌙</button>
   </div>
-  <div style="padding:12px 16px" id="mobile-content">
-    <div class="loading"><div class="spinner"></div><div class="loading-txt">Chargement...</div></div>
-  </div>
-  <nav class="mobile-nav">
-    <button class="nav-tab active" id="tab-week" onclick="setTab('week')">
-      <span class="nav-icon">✨</span>Cette semaine
-    </button>
-    <button class="nav-tab" id="tab-list" onclick="setTab('list')">
-      <span class="nav-icon">☰</span>Liste
-    </button>
-    <button class="nav-tab" id="tab-cal" onclick="setTab('cal')">
-      <span class="nav-icon">📅</span>Calendrier
-    </button>
-    <button class="nav-tab" id="tab-films" onclick="setTab('films')">
-      <span class="nav-icon">🎬</span>Films
-    </button>
-    <button class="nav-tab" style="position:relative" id="tab-reminders" onclick="setTab('reminders')">
-      <span class="nav-icon">🔔</span>Rappels
-      <span class="nav-badge" id="rem-badge" style="display:none">0</span>
-    </button>
-  </nav>
-</div>
 
-<!-- DESKTOP LAYOUT -->
-<div class="desktop-layout">
-  <aside class="sidebar">
-    <div class="sb-top">
-      <div class="sb-title">Films &amp; Séries</div>
-      <div class="sb-sub">Québec &amp; International 2026</div>
-    </div>
-    <div class="stats" id="stats-desktop">
-      <div class="stat" id="sd-total"><div class="stat-v">—</div><div class="stat-l">Total affiché</div><div class="stat-count" id="sd-total-v"></div></div>
-      <div class="stat" id="sd-avenir"><div class="stat-v">—</div><div class="stat-l">À venir</div><div class="stat-count" id="sd-avenir-v"></div></div>
-      <div class="stat" id="sd-qc" onclick="toggleQuickFilter('qc')"><div class="stat-v">—</div><div class="stat-l">Québec 🍁</div><div class="stat-count" id="sd-qc-v">Cliquer pour filtrer</div></div>
-      <div class="stat" id="sd-lgbt" onclick="toggleQuickFilter('lgbt')"><div class="stat-v">—</div><div class="stat-l">LGBT+ 🏳️‍🌈</div><div class="stat-count" id="sd-lgbt-v">Cliquer pour filtrer</div></div>
-    </div>
-    <div class="theme-row">
-      <span class="theme-lbl">☀️ Clair / 🌙 Sombre</span>
-      <div class="toggle-track" id="theme-btn" onclick="toggleTheme()"><div class="toggle-thumb"></div></div>
-    </div>
-    <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input class="search" type="text" id="search-d" placeholder="Titre, acteur, genre..." oninput="onSearch(this.value)">
-      <button class="search-mic" onclick="startVoice('search-d')" title="Recherche vocale">🎙️</button>
-    </div>
-    <div class="f-section"><div class="f-label">Statut</div><div class="chips" id="fd-status"></div></div>
-    <div class="f-section"><div class="f-label">Type</div><div class="chips" id="fd-type"></div></div>
-    <div class="f-section"><div class="f-label">Langue</div><div class="chips" id="fd-lang"></div></div>
-    <div class="f-section"><div class="f-label">Pays</div><div class="chips" id="fd-country"></div></div>
-    <div class="f-section"><div class="f-label">Étiquettes</div><div class="chips" id="fd-tags"></div></div>
-    <div class="f-section"><div class="f-label">Catégorie</div><div class="chips" id="fd-cats"></div></div>
-    <div class="f-section"><div class="f-label">Plateforme</div><div class="chips" id="fd-plat"></div></div>
-    <div class="update-section">
-      <div class="update-info">Mis à jour le <span class="update-date" id="update-date-d">—</span><br>Auto chaque lundi à 6h</div>
-      <button class="reload-btn" onclick="reloadData()">↻ Recharger</button>
-    </div>
-  </aside>
-  <main style="min-width:0">
-    <div style="padding:20px 26px">
-      <div class="view-bar">
-        <div class="view-toggle">
-          <button class="vbtn on" id="btn-week-d" onclick="setView('week')">✨ Cette semaine</button>
-          <button class="vbtn" id="btn-list-d" onclick="setView('list')">☰ Liste</button>
-          <button class="vbtn" id="btn-cal-d" onclick="setView('cal')">📅 Cal.</button>
-        </div>
-        <span class="result-count" id="result-count-d">Chargement...</span>
-      </div>
-      <div id="desktop-content">
-        <div class="loading"><div class="spinner"></div><div class="loading-txt">Chargement...</div></div>
+  <div class="content">
+    <div id="rem-bar-wrap" style="display:none">
+      <div class="rem-bar">
+        <div class="rem-bar-title">🔔 Mes rappels</div>
+        <div id="rem-bar-list"></div>
       </div>
     </div>
-  </main>
+
+    <!-- Desktop view bar -->
+    <div class="view-bar" id="view-bar-desktop">
+      <div class="view-toggle">
+        <button class="vbtn on" id="vb-week" onclick="setView('week')">✨ Nouveautés</button>
+        <button class="vbtn" id="vb-list" onclick="setView('list')">☰ Liste</button>
+        <button class="vbtn" id="vb-cal"  onclick="setView('cal')">📅 Calendrier</button>
+      </div>
+      <span class="result-count" id="result-count-d">Chargement...</span>
+    </div>
+
+    <div id="ptr" class="ptr-indicator">↓ Relâchez pour rafraîchir</div>
+    <div id="content"><div class="loading"><div class="spinner"></div><div class="loading-txt">Chargement...</div></div></div>
+  </div>
+</main>
 </div>
 
-<!-- FILTER DRAWER (mobile) -->
-<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<!-- ── BOTTOM NAV ─────────────────────────────────────────────────────────── -->
+<nav class="bottom-nav">
+  <button class="nav-tab active" id="tab-week" onclick="setTab('week')">
+    <span class="nav-icon">✨</span>Nouveautés
+  </button>
+  <button class="nav-tab" id="tab-list" onclick="setTab('list')">
+    <span class="nav-icon">☰</span>Liste
+  </button>
+  <button class="nav-tab" id="tab-cal" onclick="setTab('cal')">
+    <span class="nav-icon">📅</span>Calendrier
+  </button>
+  <button class="nav-tab" id="tab-films" onclick="setTab('films')">
+    <span class="nav-icon">🎬</span>Films
+  </button>
+  <button class="nav-tab" id="tab-rem" onclick="setTab('reminders')" style="position:relative">
+    <span class="nav-icon">🔔</span>Rappels
+    <span class="nav-dot" id="rem-dot" style="display:none">0</span>
+  </button>
+</nav>
+
+<!-- ── DRAWER MOBILE ──────────────────────────────────────────────────────── -->
+<div class="drawer-overlay" id="drawer-ov" onclick="closeDrawer()"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-handle"></div>
   <div class="drawer-title">Filtres</div>
   <div class="drawer-section">
-    <div class="search-wrap" style="padding:0 0 10px">
-      <span class="search-icon" style="left:12px">🔍</span>
-      <input class="search" type="text" id="search-m" placeholder="Titre, acteur, genre..." oninput="onSearch(this.value)">
-      <button class="search-mic" onclick="startVoice('search-m')" title="Recherche vocale">🎙️</button>
+    <div class="search-wrap" style="padding:0 0 2px">
+      <span class="search-ico" style="left:12px">🔍</span>
+      <input class="search" id="search-m" type="text" placeholder="Titre, acteur..." oninput="onSearch(this.value)">
+      <button class="search-mic" onclick="startVoice('search-m')">🎙️</button>
     </div>
   </div>
-  <div class="drawer-section"><div class="f-label">Statut</div><div class="chips" id="fm-status"></div></div>
-  <div class="drawer-section"><div class="f-label">Type</div><div class="chips" id="fm-type"></div></div>
-  <div class="drawer-section"><div class="f-label">Langue</div><div class="chips" id="fm-lang"></div></div>
-  <div class="drawer-section"><div class="f-label">Pays</div><div class="chips" id="fm-country"></div></div>
-  <div class="drawer-section"><div class="f-label">Étiquettes</div><div class="chips" id="fm-tags"></div></div>
-  <div class="drawer-section"><div class="f-label">Catégorie</div><div class="chips" id="fm-cats"></div></div>
-  <div class="drawer-section"><div class="f-label">Plateforme</div><div class="chips" id="fm-plat"></div></div>
-  <div style="padding:16px 18px">
-    <button onclick="closeDrawer()" style="width:100%;padding:12px;background:var(--accent);border:none;border-radius:var(--radius);color:#fff;font-size:15px;font-weight:600;cursor:pointer">Appliquer</button>
-  </div>
+  <div class="drawer-section"><div class="f-lbl">Statut</div><div class="chips" id="fm-status"></div></div>
+  <div class="drawer-section"><div class="f-lbl">Type</div><div class="chips" id="fm-type"></div></div>
+  <div class="drawer-section"><div class="f-lbl">Langue</div><div class="chips" id="fm-lang"></div></div>
+  <div class="drawer-section"><div class="f-lbl">Pays</div><div class="chips" id="fm-country"></div></div>
+  <div class="drawer-section"><div class="f-lbl">Étiquettes</div><div class="chips" id="fm-tags"></div></div>
+  <div class="drawer-section"><div class="f-lbl">Catégorie</div><div class="chips" id="fm-cats"></div></div>
+  <div class="drawer-section"><div class="f-lbl">Plateforme</div><div class="chips" id="fm-plat"></div></div>
+  <button class="drawer-apply" onclick="closeDrawer()">Appliquer les filtres</button>
 </div>
 
-<!-- MODAL -->
+<!-- ── MODAL ──────────────────────────────────────────────────────────────── -->
 <div class="overlay" id="overlay" onclick="closeModal(event)">
-  <div class="modal"><div id="modal-top"></div><div class="mbody" id="modal-body"></div></div>
+  <div class="modal">
+    <div id="modal-top"></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
 </div>
 
 <script>
-// ── THEME ─────────────────────────────────────────────────────────────────────
+// ── THEME ──────────────────────────────────────────────────────────────────
 let isDark = localStorage.getItem('theme') !== 'light';
 function applyTheme() {
-  document.documentElement.setAttribute('data-theme', isDark?'dark':'light');
-  document.getElementById('theme-color-meta').content = isDark?'#0d0f14':'#f0f3fa';
-  const btn = document.getElementById('theme-btn');
-  if(btn) btn.classList.toggle('on', isDark);
-  const mIcon = document.getElementById('mob-theme-icon');
-  if(mIcon) mIcon.textContent = isDark?'☀️':'🌙';
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('theme-color-meta').content = isDark ? '#0a0c12' : '#f2f4fb';
+  document.getElementById('theme-btn').classList.toggle('on', isDark);
+  const mi = document.getElementById('mob-theme');
+  if (mi) mi.textContent = isDark ? '☀️' : '🌙';
 }
-function toggleTheme() { isDark=!isDark; localStorage.setItem('theme',isDark?'dark':'light'); applyTheme(); }
+function toggleTheme() { isDark = !isDark; localStorage.setItem('theme', isDark ? 'dark' : 'light'); applyTheme(); }
 applyTheme();
 
-// ── CONSTANTES ────────────────────────────────────────────────────────────────
-const FR_D=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
-const FR_M=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-const TODAY=new Date().toISOString().slice(0,10);
-const THIS_MONTH=TODAY.slice(0,7);
-const NEXT_WEEK=new Date(Date.now()+14*86400000).toISOString().slice(0,10);
+// ── CONSTANTES ─────────────────────────────────────────────────────────────
+const FR_D = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+const FR_M = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+const TODAY = new Date().toISOString().slice(0,10);
+const THIS_MONTH = TODAY.slice(0,7);
+const COUNTRY_FLAGS = {CA:'🇨🇦',QC:'🍁',USA:'🇺🇸',FR:'🇫🇷',UK:'🇬🇧',AU:'🇦🇺',JP:'🇯🇵',KR:'🇰🇷',EU:'🇪🇺',BR:'🇧🇷',IL:'🇮🇱'};
+const cf = c => COUNTRY_FLAGS[c] || '🌍';
+const fd = s => { const d = new Date(s); return FR_D[d.getDay()] + ' ' + d.getDate() + ' ' + FR_M[d.getMonth()]; };
+const fmth = s => { const [y,m] = s.split('-').map(Number); return FR_M[m-1] + ' ' + y; };
 
-const COUNTRY_FLAGS={'CA':'🇨🇦','QC':'🍁','USA':'🇺🇸','FR':'🇫🇷','UK':'🇬🇧','AU':'🇦🇺','JP':'🇯🇵','KR':'🇰🇷','EU':'🇪🇺','BR':'🇧🇷'};
-const cf=c=>COUNTRY_FLAGS[c]||'🌍';
-const fd=s=>{const d=new Date(s);return FR_D[d.getDay()]+' '+d.getDate()+' '+FR_M[d.getMonth()];};
-const fmth=s=>{const[y,m]=s.split('-').map(Number);return FR_M[m-1]+' '+y;};
-
-// ── ÉTAT ──────────────────────────────────────────────────────────────────────
-let ALL=[];
-let state={
-  search:'',status:'all',
-  types:new Set(['serie']),
-  tags:new Set(),cats:new Set(),
-  plat:'all',lang:'all',country:'all',
-  view:'week',tab:'week',
-  quickFilter:null,
+// ── ÉTAT ───────────────────────────────────────────────────────────────────
+let ALL = [];
+let state = {
+  search:'', status:'all', types:new Set(['serie']),
+  tags:new Set(), cats:new Set(), plat:'all', lang:'all',
+  country:'all', view:'week', weekOffset:0,
 };
-let reminders=JSON.parse(localStorage.getItem('cal_rem')||'[]');
-let curModal=null;
-let notifPerm=false;
+let reminders = JSON.parse(localStorage.getItem('cal_rem') || '[]');
+let curModal = null;
+let quickTag = null;
 
-// ── NOTIFICATIONS PUSH ───────────────────────────────────────────────────────
-async function requestNotifPermission() {
-  if(!('Notification' in window)) return;
-  if(Notification.permission === 'granted') { notifPerm=true; return; }
-  if(Notification.permission !== 'denied') {
-    const perm = await Notification.requestPermission();
-    notifPerm = perm === 'granted';
-  }
-}
-
-function scheduleNotif(event) {
-  if(!notifPerm) return;
-  const d = new Date(event.date);
-  const now = new Date();
-  const diff = d - now;
-  if(diff < 0) return;
-  // Notif le jour J
-  setTimeout(()=>{
-    new Notification(`🎬 ${event.title} sort aujourd'hui!`, {
-      body: `${event.saison} sur ${event.platform}`,
-      icon: event.poster || '',
-      tag: event.id,
-    });
-  }, diff);
-}
-
-// ── CHARGEMENT ────────────────────────────────────────────────────────────────
+// ── CHARGEMENT ─────────────────────────────────────────────────────────────
 async function loadData() {
   try {
-    const r = await fetch('data.json?t='+Date.now());
-    if(!r.ok) throw new Error('HTTP '+r.status);
+    const r = await fetch('data.json?t=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
     const json = await r.json();
-    ALL = (json.events||[]).sort((a,b)=>a.date.localeCompare(b.date));
-    if(json.generated_at) {
+    ALL = (json.events || []).sort((a,b) => a.date.localeCompare(b.date));
+    if (json.generated_at) {
       const d = new Date(json.generated_at);
-      ['update-date-d'].forEach(id=>{
-        const el=document.getElementById(id);
-        if(el) el.textContent=d.getDate()+' '+FR_M[d.getMonth()]+' '+d.getFullYear();
+      ['update-date-d'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = d.getDate() + ' ' + FR_M[d.getMonth()] + ' ' + d.getFullYear();
       });
     }
     initFilters();
     render();
     setTimeout(scrollToToday, 400);
-    requestNotifPermission();
+    if ('Notification' in window && Notification.permission !== 'denied')
+      Notification.requestPermission();
   } catch(e) {
-    const err = '<div class="error-box" style="margin:20px"><strong>Impossible de charger les données.</strong><br>Hébergez sur GitHub Pages.</div>';
-    setContent(err);
+    document.getElementById('content').innerHTML =
+      '<div class="empty-box">⚠️ Impossible de charger les données.<br>Vérifiez votre connexion.</div>';
   }
 }
 
 async function reloadData() {
-  setContent('<div class="loading"><div class="spinner"></div><div class="loading-txt">Rechargement...</div></div>');
+  document.getElementById('content').innerHTML = '<div class="loading"><div class="spinner"></div><div class="loading-txt">Rechargement...</div></div>';
+  ALL = [];
   await loadData();
 }
 
-function setContent(html) {
-  const mc = document.getElementById('mobile-content');
-  const dc = document.getElementById('desktop-content');
-  if(mc) mc.innerHTML = html;
-  if(dc) dc.innerHTML = html;
-}
-
-function scrollToToday() {
-  const el = document.getElementById('today-anchor');
-  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-// ── VOICE SEARCH ─────────────────────────────────────────────────────────────
-function startVoice(inputId) {
-  if(!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    alert('Recherche vocale non supportée sur ce navigateur');
-    return;
+// ── PULL TO REFRESH ────────────────────────────────────────────────────────
+let ptrStart = 0, ptrActive = false;
+document.addEventListener('touchstart', e => { ptrStart = e.touches[0].clientY; }, {passive:true});
+document.addEventListener('touchmove', e => {
+  if (window.scrollY === 0 && e.touches[0].clientY - ptrStart > 60) {
+    ptrActive = true;
+    document.getElementById('ptr').classList.add('show');
   }
+}, {passive:true});
+document.addEventListener('touchend', () => {
+  if (ptrActive) { ptrActive = false; document.getElementById('ptr').classList.remove('show'); reloadData(); }
+});
+
+// ── VOICE SEARCH ───────────────────────────────────────────────────────────
+function startVoice(id) {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const rec = new SR();
-  rec.lang = 'fr-FR';
-  rec.interimResults = false;
-  rec.onresult = e => {
-    const transcript = e.results[0][0].transcript;
-    const input = document.getElementById(inputId);
-    if(input) { input.value = transcript; onSearch(transcript); }
-  };
+  if (!SR) { alert('Non supporté sur ce navigateur'); return; }
+  const rec = new SR(); rec.lang = 'fr-FR'; rec.interimResults = false;
+  rec.onresult = e => { const t = e.results[0][0].transcript; onSearch(t); document.getElementById(id).value = t; };
   rec.start();
 }
 
-// ── QUICK FILTER (stats cliquables) ──────────────────────────────────────────
-function toggleQuickFilter(type) {
-  if(state.quickFilter === type) {
-    state.quickFilter = null;
-    state.tags.delete('QC');
-    state.tags.delete('LGBT');
-    document.getElementById('sd-qc')?.classList.remove('active-filter');
-    document.getElementById('sd-lgbt')?.classList.remove('active-filter');
-  } else {
-    state.quickFilter = type;
-    if(type === 'qc') {
-      state.tags.add('QC');
-      state.tags.delete('LGBT');
-      document.getElementById('sd-qc')?.classList.add('active-filter');
-      document.getElementById('sd-lgbt')?.classList.remove('active-filter');
-    } else {
-      state.tags.add('LGBT');
-      state.tags.delete('QC');
-      document.getElementById('sd-lgbt')?.classList.add('active-filter');
-      document.getElementById('sd-qc')?.classList.remove('active-filter');
-    }
-  }
-  syncChipsToState();
-  render();
-}
-
-// ── FILTRES ───────────────────────────────────────────────────────────────────
+// ── FILTRES ────────────────────────────────────────────────────────────────
 function filtered() {
   const q = state.search.toLowerCase();
   return ALL.filter(e => {
-    if(q && ![e.title,e.desc,...(e.cast||[]),...(e.categories||[]),e.country||'',e.platform||''].join(' ').toLowerCase().includes(q)) return false;
-    if(state.plat !== 'all' && e.platform !== state.plat) return false;
-    if(!state.types.has(e.type)) return false;
-    if(state.cats.size > 0 && !(e.categories||[]).some(c=>state.cats.has(c))) return false;
-    if(state.tags.size > 0 && !(e.tags||[]).some(t=>state.tags.has(t))) return false;
-    if(state.status !== 'all' && e.status !== state.status) return false;
-    if(state.lang === 'fr' && !(e.lang||[]).includes('FR')) return false;
-    if(state.lang === 'en' && !(e.lang||[]).includes('EN')) return false;
-    if(state.country !== 'all' && e.country !== state.country) return false;
+    if (q && ![e.title,e.desc,...(e.cast||[]),...(e.categories||[]),e.country||'',e.platform||''].join(' ').toLowerCase().includes(q)) return false;
+    if (state.plat !== 'all' && e.platform !== state.plat) return false;
+    if (!state.types.has(e.type)) return false;
+    if (state.cats.size > 0 && !(e.categories||[]).some(c=>state.cats.has(c))) return false;
+    if (state.tags.size > 0 && !(e.tags||[]).some(t=>state.tags.has(t))) return false;
+    if (state.status !== 'all' && e.status !== state.status) return false;
+    if (state.lang === 'fr' && !(e.lang||[]).includes('FR')) return false;
+    if (state.lang === 'en' && !(e.lang||[]).includes('EN')) return false;
+    if (state.country !== 'all' && e.country !== state.country) return false;
     return true;
   });
 }
 
 function onSearch(val) {
   state.search = val;
-  // Sync les deux champs search
-  ['search-d','search-m'].forEach(id=>{
-    const el = document.getElementById(id);
-    if(el && el.value !== val) el.value = val;
-  });
+  ['search-d','search-m'].forEach(id => { const el=document.getElementById(id); if(el&&el.value!==val) el.value=val; });
   render();
 }
 
-function syncChipsToState() {
-  // Sync visuellement les chips avec l'état
-  document.querySelectorAll('.chip[data-group="tags"]').forEach(c => {
+function quickFilter(tag) {
+  const box = document.getElementById(tag==='QC'?'sd-qc':'sd-lgbt');
+  if (quickTag === tag) {
+    quickTag = null; state.tags.delete(tag);
+    document.querySelectorAll('.stat-box').forEach(b=>b.classList.remove('active'));
+  } else {
+    quickTag = tag; state.tags.clear(); state.tags.add(tag);
+    document.querySelectorAll('.stat-box').forEach(b=>b.classList.remove('active'));
+    box?.classList.add('active');
+  }
+  syncChips();
+  render();
+}
+
+function syncChips() {
+  document.querySelectorAll('.chip[data-sk="tags"]').forEach(c => {
     c.classList.toggle('on', state.tags.has(c.dataset.val));
   });
 }
 
 function initFilters() {
-  const allCats = [...new Set(ALL.flatMap(e=>e.categories||[]))].sort();
-  const allPlats = [...new Set(ALL.map(e=>e.platform).filter(Boolean))].sort();
+  const allCats    = [...new Set(ALL.flatMap(e=>e.categories||[]))].sort();
+  const allPlats   = [...new Set(ALL.map(e=>e.platform).filter(Boolean))].sort();
   const allCountries = [...new Set(ALL.map(e=>e.country).filter(Boolean))].sort();
 
-  const FILTER_DEFS = [
-    {id:'status', items:[['all','Tout'],['sorti','Disponible'],['a-venir','À venir']], stateKey:'status', isSet:false},
-    {id:'lang',   items:[['all','Tout'],['fr','🇫🇷 FR'],['en','🇬🇧 EN']], stateKey:'lang', isSet:false},
-    {id:'type',   items:[['serie','📺 Séries'],['film','🎬 Films']], stateKey:'types', isSet:true},
-    {id:'tags',   items:[['QC','🍁 Québec'],['CA','🇨🇦 Canada'],['LGBT','🏳️‍🌈 LGBT+'],['USA','🇺🇸 USA'],['FR','🇫🇷 France']], stateKey:'tags', isSet:true, group:'tags'},
-    {id:'cats',   items:allCats.map(c=>[c,c]), stateKey:'cats', isSet:true},
-    {id:'plat',   items:[['all','Toutes'],...allPlats.map(p=>[p,p])], stateKey:'plat', isSet:false},
-    {id:'country',items:[['all','Tous'],...allCountries.map(c=>[c,cf(c)+' '+c])], stateKey:'country', isSet:false},
+  const DEFS = [
+    {id:'status',  items:[['all','Tout'],['sorti','Disponible'],['a-venir','À venir']], sk:'status', set:false},
+    {id:'lang',    items:[['all','Tout'],['fr','🇫🇷 FR'],['en','🇬🇧 EN']], sk:'lang', set:false},
+    {id:'type',    items:[['serie','📺 Séries'],['film','🎬 Films']], sk:'types', set:true},
+    {id:'tags',    items:[['QC','🍁 Québec'],['CA','🇨🇦 Canada'],['LGBT','🏳️‍🌈 LGBT+']], sk:'tags', set:true},
+    {id:'cats',    items:allCats.map(c=>[c,c]), sk:'cats', set:true},
+    {id:'plat',    items:[['all','Toutes'],...allPlats.map(p=>[p,p])], sk:'plat', set:false},
+    {id:'country', items:[['all','Tous'],...allCountries.map(c=>[c,cf(c)+' '+c])], sk:'country', set:false},
   ];
 
-  FILTER_DEFS.forEach(def => {
-    ['d','m'].forEach(prefix => {
-      const el = document.getElementById(`f${prefix}-${def.id}`);
-      if(!el) return;
+  DEFS.forEach(def => {
+    ['d','m'].forEach(pfx => {
+      const el = document.getElementById(`f${pfx}-${def.id}`);
+      if (!el) return;
       el.innerHTML = '';
       def.items.forEach(([val,lbl]) => {
         const sp = document.createElement('span');
         sp.className = 'chip';
         sp.dataset.val = val;
-        if(def.group) sp.dataset.group = def.group;
+        sp.dataset.sk  = def.sk;
         sp.textContent = lbl;
-        const isOn = def.isSet ? state[def.stateKey].has(val) : state[def.stateKey]===val;
-        if(isOn) sp.classList.add('on');
+        const isOn = def.set ? state[def.sk].has(val) : state[def.sk]===val;
+        if (isOn) sp.classList.add('on');
         sp.onclick = () => {
-          if(def.isSet) {
-            const s = state[def.stateKey];
-            if(s.has(val)) { if(def.stateKey==='types'&&s.size===1)return; s.delete(val); sp.classList.remove('on'); }
+          if (def.set) {
+            const s = state[def.sk];
+            if (s.has(val)) { if(def.sk==='types'&&s.size===1)return; s.delete(val); sp.classList.remove('on'); }
             else { s.add(val); sp.classList.add('on'); }
-            // Sync autre prefix
-            const other = document.querySelector(`#f${prefix==='d'?'m':'d'}-${def.id} .chip[data-val="${val}"]`);
-            if(other) other.classList.toggle('on', s.has(val));
+            document.querySelectorAll(`[id$="-${def.id}"] .chip[data-val="${val}"]`).forEach(c=>c.classList.toggle('on',s.has(val)));
           } else {
-            document.querySelectorAll(`[id^="f"][id$="-${def.id}"] .chip`).forEach(c=>c.classList.remove('on'));
-            state[def.stateKey] = val;
-            document.querySelectorAll(`[id^="f"][id$="-${def.id}"] .chip[data-val="${val}"]`).forEach(c=>c.classList.add('on'));
+            document.querySelectorAll(`[id$="-${def.id}"] .chip`).forEach(c=>c.classList.remove('on'));
+            state[def.sk] = val;
+            document.querySelectorAll(`[id$="-${def.id}"] .chip[data-val="${val}"]`).forEach(c=>c.classList.add('on'));
           }
           render();
         };
@@ -612,182 +847,254 @@ function initFilters() {
     });
   });
 
-  // Activer defaults
-  document.querySelectorAll('[id^="fd-status"] .chip[data-val="all"],[id^="fm-status"] .chip[data-val="all"],[id^="fd-lang"] .chip[data-val="all"],[id^="fm-lang"] .chip[data-val="all"],[id^="fd-plat"] .chip[data-val="all"],[id^="fm-plat"] .chip[data-val="all"],[id^="fd-country"] .chip[data-val="all"],[id^="fm-country"] .chip[data-val="all"]').forEach(c=>c.classList.add('on'));
-  document.querySelectorAll('[id^="fd-type"] .chip[data-val="serie"],[id^="fm-type"] .chip[data-val="serie"]').forEach(c=>c.classList.add('on'));
+  // Defaults
+  ['status','lang','plat','country'].forEach(id => {
+    document.querySelectorAll(`[id$="-${id}"] .chip[data-val="all"]`).forEach(c=>{c.classList.add('on');});
+  });
+  document.querySelectorAll('[id$="-type"] .chip[data-val="serie"]').forEach(c=>c.classList.add('on'));
 }
 
-// ── RENDER PRINCIPAL ──────────────────────────────────────────────────────────
+// ── RENDER ─────────────────────────────────────────────────────────────────
 function render() {
   const evs = filtered();
   const av = evs.filter(e=>e.status==='a-venir').length;
   const qc = evs.filter(e=>(e.tags||[]).includes('QC')).length;
   const lgbt = evs.filter(e=>(e.tags||[]).includes('LGBT')).length;
 
-  // Stats desktop
-  const setV = (id,v) => { const el=document.getElementById(id); if(el) el.querySelector('.stat-v').textContent=v; };
-  setV('sd-total', evs.length);
-  setV('sd-avenir', av);
-  setV('sd-qc', qc);
-  setV('sd-lgbt', lgbt);
+  const setN = (id,v) => { const el=document.getElementById(id); if(el) el.textContent=v; };
+  setN('sd-total-n', evs.length);
+  setN('sd-avenir-n', av);
+  setN('sd-qc-n', qc);
+  setN('sd-lgbt-n', lgbt);
+  setN('result-count-d', evs.length+' titre'+(evs.length!==1?'s':'')+' — '+av+' à venir');
 
-  const countEl = document.getElementById('result-count-d');
-  if(countEl) countEl.textContent = evs.length+' titre'+(evs.length!==1?'s':'')+' — '+av+' à venir';
+  const dot = document.getElementById('rem-dot');
+  if (dot) { dot.textContent=reminders.length; dot.style.display=reminders.length?'block':'none'; }
 
-  // Rappels badge
-  const badge = document.getElementById('rem-badge');
-  if(badge) { badge.textContent=reminders.length; badge.style.display=reminders.length?'block':'none'; }
+  renderRemBar();
 
-  // Render contenu selon vue
-  const view = state.view || state.tab;
+  const view = state.view;
   let html = '';
+  if      (view==='week')      html = renderWeek(evs);
+  else if (view==='list')      html = renderList(evs);
+  else if (view==='cal')       html = renderCal(evs);
+  else if (view==='films')     html = renderList(ALL.filter(e=>e.type==='film'));
+  else if (view==='reminders') html = renderRemPage();
 
-  if(view === 'week') html = renderWeek(evs);
-  else if(view === 'list') html = renderList(evs);
-  else if(view === 'cal') html = renderCal(evs);
-  else if(view === 'films') html = renderList(ALL.filter(e=>e.type==='film'&&filtered().includes(e)));
-  else if(view === 'reminders') html = renderRemindersPage();
-
-  // Desktop
-  const dc = document.getElementById('desktop-content');
-  if(dc) dc.innerHTML = html;
-
-  // Mobile
-  const mc = document.getElementById('mobile-content');
-  if(mc) mc.innerHTML = html;
+  document.getElementById('content').innerHTML = html;
 }
 
-// ── RENDER CETTE SEMAINE ──────────────────────────────────────────────────────
+// ── VUE NOUVEAUTÉS ─────────────────────────────────────────────────────────
 function renderWeek(evs) {
-  const thisWeek = evs.filter(e => e.date >= TODAY && e.date <= NEXT_WEEK);
-  const toShow = thisWeek.length > 0 ? thisWeek : evs.filter(e=>e.date>TODAY).slice(0,20);
-  const label = thisWeek.length > 0 ? 'Cette semaine' : 'Prochaines sorties';
-  const count = toShow.length;
+  // Seulement premières et retours de saison
+  const novelties = evs.filter(e =>
+    e.ep_status === 'premiere' || e.ep_status === 'retour' || e.ep_num === 1
+  );
 
-  let html = `<div class="hero-section">
-    <div class="section-title">${label} <span class="badge">${count}</span></div>
-    <div class="hero-scroll">
-      ${toShow.map(e => heroCardHTML(e)).join('')}
-    </div>
-  </div>`;
+  if (!novelties.length) return '<div class="empty-box">Aucune nouveauté pour ces filtres.</div>';
 
-  // Suite: prochains mois
-  const upcoming = evs.filter(e=>e.date>NEXT_WEEK&&e.status==='a-venir').slice(0,30);
-  if(upcoming.length) {
-    html += `<div class="section-title" style="margin-bottom:12px">À venir <span class="badge" style="background:var(--amber)">${upcoming.length}</span></div>`;
-    html += `<div style="display:flex;flex-direction:column;gap:8px">${upcoming.map(e=>cardHTML(e)).join('')}</div>`;
+  // Grouper par semaine avec navigation
+  const weekStart = new Date();
+  weekStart.setDate(weekStart.getDate() - weekStart.getDay() + (state.weekOffset * 7));
+  const weekEnd   = new Date(weekStart); weekEnd.setDate(weekStart.getDate() + 13); // 2 semaines
+
+  const ws = weekStart.toISOString().slice(0,10);
+  const we = weekEnd.toISOString().slice(0,10);
+
+  const weekEvs = novelties.filter(e => e.date >= ws && e.date <= we);
+  const upcoming = novelties.filter(e => e.date > we).slice(0, 30);
+  const recent   = novelties.filter(e => e.date < ws && e.date >= (new Date(Date.now()-30*86400000)).toISOString().slice(0,10));
+
+  // Navigation semaines
+  const weekLabel = `${fd(ws)} — ${fd(we)}`;
+  let html = `
+    <div class="week-nav">
+      <button class="week-nav-btn" onclick="changeWeek(-1)">‹</button>
+      <div class="week-nav-title">📅 ${weekLabel}</div>
+      <button class="week-nav-btn" onclick="changeWeek(1)">›</button>
+    </div>`;
+
+  // Cette période
+  if (weekEvs.length) {
+    // Grouper par jour
+    const byDay = {};
+    weekEvs.forEach(e => {
+      if (!byDay[e.date]) byDay[e.date] = [];
+      byDay[e.date].push(e);
+    });
+
+    html += `<div class="section-head"><div class="section-title">Nouveautés</div><div class="section-badge new">${weekEvs.length}</div></div>`;
+
+    Object.keys(byDay).sort().forEach(day => {
+      const d = new Date(day);
+      const isPast = day <= TODAY;
+      html += `<div class="day-header">
+        <div class="day-name">${FR_D[d.getDay()]}</div>
+        <div class="day-date">${d.getDate()} ${FR_M[d.getMonth()]}</div>
+        ${isPast ? '<div class="day-badge">DISPO</div>' : ''}
+        <div class="day-sep"></div>
+      </div>`;
+      html += `<div class="hero-grid">`;
+      byDay[day].forEach(e => html += heroCard(e));
+      html += `</div>`;
+    });
+  } else {
+    html += `<div class="empty-box">Aucune nouveauté cette période.<br>Navigue avec les flèches ↑↓</div>`;
   }
+
+  // Prochaines sorties
+  if (upcoming.length) {
+    html += `<div class="section-head" style="margin-top:28px"><div class="section-title">Prochainement</div><div class="section-badge soon">${upcoming.length}</div></div>`;
+    html += `<div class="hero-grid">`;
+    upcoming.slice(0,12).forEach(e => html += heroCard(e));
+    html += `</div>`;
+  }
+
   return html;
 }
 
-function heroCardHTML(e) {
+function changeWeek(dir) { state.weekOffset += dir; render(); }
+
+function badgeClass(e) {
+  if (e.ep_status === 'finale')  return 'finale';
+  if (e.ep_num === 1 && e.saison_num > 1) return 'retour';
+  if (e.ep_status === 'premiere' || e.ep_num === 1) return 'premiere';
+  return 'normal';
+}
+function badgeLabel(e) {
+  if (e.type === 'film')          return 'FILM';
+  if (e.ep_status === 'finale')   return 'FINALE';
+  if (e.ep_num === 1 && (e.saison_num||1) > 1) return 'RETOUR';
+  if (e.ep_status === 'premiere' || e.ep_num === 1) return 'NOUVEAU';
+  return '';
+}
+
+function heroCard(e) {
+  const bc  = badgeClass(e);
+  const lbl = badgeLabel(e);
   const isQC = (e.tags||[]).includes('QC');
-  const epCls = e.ep_status==='premiere'?' ep-premiere':e.ep_status==='finale'?' ep-finale':'';
-  return `<div class="hero-card${epCls}" onclick="openModal('${e.id}')">
-    ${e.poster
-      ? `<img class="hero-poster" src="${e.poster}" alt="${e.title}" onerror="this.style.display='none'">`
-      : `<div class="hero-poster-ph">${e.type==='film'?'🎬':'📺'}</div>`}
-    <div class="hero-info">
+  return `<div class="hero-card ${bc}" onclick="openModal('${e.id}')">
+    <div class="hero-poster-wrap">
+      ${e.poster
+        ? `<img src="${e.poster}" alt="${e.title}" loading="lazy" onerror="this.style.display='none'">`
+        : `<div class="hero-poster-ph">${e.type==='film'?'🎬':'📺'}</div>`}
+      ${lbl?`<div class="hero-badge ${bc}">${lbl}</div>`:''}
+    </div>
+    <div class="hero-body">
       <div class="hero-plat">
         ${e.platformLogo?`<img class="hero-plat-logo" src="${e.platformLogo}" alt="" onerror="this.style.display='none'">` : ''}
         <span class="hero-plat-name">${e.platform||'—'}</span>
       </div>
       <div class="hero-title">${e.title}</div>
-      <div class="hero-saison">${e.saison||''}</div>
+      <div class="hero-ep ${bc}">${e.saison||''}</div>
+      <div class="hero-date"><span class="hero-date-ico">📅</span>${fd(e.date)}</div>
       <div class="hero-tags">
         ${isQC?'<span class="htag qc">🍁 QC</span>':''}
-        ${e.ep_status==='premiere'?'<span class="htag premiere">PREMIÈRE</span>':''}
-        ${e.ep_status==='finale'?'<span class="htag finale">FINALE</span>':''}
-        ${fd(e.date)?`<span class="htag">${fd(e.date).split(' ').slice(0,3).join(' ')}</span>`:''}
+        ${(e.tags||[]).includes('LGBT')?'<span class="htag lgbt">🏳️‍🌈</span>':''}
+        ${e.note?`<span class="htag note">★ ${e.note}</span>`:''}
       </div>
     </div>
   </div>`;
 }
 
-// ── RENDER LIST ───────────────────────────────────────────────────────────────
+// ── VUE LISTE ──────────────────────────────────────────────────────────────
 function renderList(evs) {
-  if(!evs.length) return '<div class="empty-box">Aucun résultat pour ces filtres.</div>';
+  if (!evs.length) return '<div class="empty-box">Aucun résultat pour ces filtres.</div>';
+
   const groups = {};
   evs.forEach(e => {
-    const d = new Date(e.date); const sun = new Date(d); sun.setDate(d.getDate()-d.getDay());
-    const wk = sun.toISOString().slice(0,10);
-    if(!groups[wk]) groups[wk] = {};
-    if(!groups[wk][e.date]) groups[wk][e.date] = [];
+    const d=new Date(e.date); const sun=new Date(d); sun.setDate(d.getDate()-d.getDay());
+    const wk=sun.toISOString().slice(0,10);
+    if(!groups[wk]) groups[wk]={};
+    if(!groups[wk][e.date]) groups[wk][e.date]=[];
     groups[wk][e.date].push(e);
   });
+
   let html = '<button class="today-btn" onclick="scrollToToday()">📅 Mois courant</button>';
   let foundToday = false;
+
   Object.keys(groups).sort().forEach(wk => {
     const wd=new Date(wk); const ed=new Date(wk); ed.setDate(wd.getDate()+6);
-    const wkM=wk.slice(0,7); const edM=ed.toISOString().slice(0,7);
-    if(!foundToday&&(wkM===THIS_MONTH||edM===THIS_MONTH)){html+=`<div id="today-anchor"></div>`;foundToday=true;}
+    if (!foundToday && (wk.slice(0,7)===THIS_MONTH || ed.toISOString().slice(0,7)===THIS_MONTH)) {
+      html += `<div id="today-anchor"></div>`; foundToday=true;
+    }
     html += `<div class="week-sep">${wd.getDate()} ${FR_M[wd.getMonth()]} — ${ed.getDate()} ${FR_M[ed.getMonth()]} ${ed.getFullYear()}</div>`;
     Object.keys(groups[wk]).sort().forEach(day => {
       const d=new Date(day); const isPast=day<=TODAY;
-      html += `<div class="day-block"><div class="day-lbl">${FR_D[d.getDay()]} ${d.getDate()} ${FR_M[d.getMonth()]}${isPast?'<span class="dispo-dot">DISPO</span>':''}</div>`;
-      groups[wk][day].forEach(e=>html+=cardHTML(e));
-      html += '</div>';
+      html += `<div class="day-header">
+        <div class="day-name">${FR_D[d.getDay()]}</div>
+        <div class="day-date">${d.getDate()} ${FR_M[d.getMonth()]}</div>
+        ${isPast?'<div class="day-badge">DISPO</div>':''}
+        <div class="day-sep"></div>
+      </div>`;
+      groups[wk][day].forEach(e => html += listCard(e));
     });
   });
   return html;
 }
 
-function cardHTML(e) {
+function listCard(e) {
+  const bc   = badgeClass(e);
+  const lbl  = badgeLabel(e);
   const isQC = (e.tags||[]).includes('QC');
-  const epCls = e.ep_status==='premiere'?' ep-premiere':e.ep_status==='finale'?' ep-finale':isQC?' qc':'';
-  const saison_color = e.ep_status==='premiere'?'var(--green)':e.ep_status==='finale'?'var(--red)':'var(--accent)';
   const country = e.country||'';
-  return `<div class="ecard${epCls}" onclick="openModal('${e.id}')">
-    ${e.poster?`<img class="eposter" src="${e.poster}" alt="" onerror="this.style.display='none'">`:
-    `<div class="eplaceholder">${e.type==='film'?'🎬':'📺'}</div>`}
-    <div class="ebody">
-      <div class="etitle">${e.title}</div>
-      <div class="eplat-row">
-        ${e.platformLogo?`<img class="eplat-logo" src="${e.platformLogo}" alt="" onerror="this.style.display='none'">` : ''}
-        <span class="eplat-name">${e.platform||'—'}</span>
-        ${country&&country!=='USA'?`<span class="ecountry">${cf(country)} ${country}</span>`:''}
+  return `<div class="list-card ${bc}" onclick="openModal('${e.id}')">
+    ${e.poster
+      ? `<img class="list-poster" src="${e.poster}" alt="" loading="lazy" onerror="this.style.display='none'">`
+      : `<div class="list-poster-ph">${e.type==='film'?'🎬':'📺'}</div>`}
+    <div class="list-body">
+      <div class="list-plat">
+        ${e.platformLogo?`<img class="list-plat-logo" src="${e.platformLogo}" alt="" onerror="this.style.display='none'">` : ''}
+        <span class="list-plat-name">${e.platform||'—'}</span>
+        ${country&&country!=='USA'?`<span class="list-country">${cf(country)} ${country}</span>`:''}
       </div>
-      <div class="esaison" style="color:${saison_color}">${e.saison||''}</div>
-      <div class="etags">
-        ${(e.tags||[]).includes('QC')?'<span class="tag qc">🍁 QC</span>':''}
-        ${(e.tags||[]).includes('LGBT')?'<span class="tag lgbt">🏳️‍🌈 LGBT+</span>':''}
-        ${e.note?`<span class="tag note">★ ${e.note}</span>`:''}
-        ${e.status==='a-venir'?'<span class="tag avenir">À VENIR</span>':''}
-        ${(e.lang||[]).map(l=>`<span class="tag ${l==='FR'?'lang-fr':'lang-en'}">${l==='FR'?'🇫🇷':'🇬🇧'} ${l}</span>`).join('')}
-        ${(e.trailers||[]).length?`<span class="tag trailer">▶ ${e.trailers.length}</span>`:''}
+      <div class="list-title">${e.title}</div>
+      <div class="list-ep ${bc}">${e.saison||''}</div>
+      <div class="list-date">📅 ${fd(e.date)}</div>
+      <div class="list-tags">
+        ${lbl&&bc!=='normal'?`<span class="ltag tr">${lbl}</span>`:''}
+        ${isQC?'<span class="ltag qc">🍁 QC</span>':''}
+        ${(e.tags||[]).includes('LGBT')?'<span class="ltag lgbt">🏳️‍🌈 LGBT+</span>':''}
+        ${e.note?`<span class="ltag note">★ ${e.note}</span>`:''}
+        ${e.status==='a-venir'?'<span class="ltag av">À VENIR</span>':''}
+        ${(e.lang||[]).map(l=>`<span class="ltag ${l==='FR'?'fr':'en'}">${l==='FR'?'🇫🇷':'🇬🇧'} ${l}</span>`).join('')}
+        ${(e.trailers||[]).length?`<span class="ltag tr">▶ ${e.trailers.length}</span>`:''}
       </div>
     </div>
-    <div class="earrow">›</div>
+    <div class="list-arrow">›</div>
   </div>`;
 }
 
-// ── RENDER CALENDRIER ─────────────────────────────────────────────────────────
+// ── VUE CALENDRIER ─────────────────────────────────────────────────────────
 function renderCal(evs) {
   const months = [...new Set(evs.map(e=>e.date.slice(0,7)))].sort();
-  if(!months.length) return '<div class="empty-box">Aucun résultat.</div>';
+  if (!months.length) return '<div class="empty-box">Aucun résultat.</div>';
+
   let html = '<button class="today-btn" onclick="scrollToToday()">📅 Mois courant</button>';
   let foundToday = false;
+
   months.forEach(ms => {
-    if(!foundToday&&ms===THIS_MONTH){html+=`<div id="today-anchor"></div>`;foundToday=true;}
-    const[y,m]=ms.split('-').map(Number);
-    const first=new Date(y,m-1,1).getDay();
-    const days=new Date(y,m,0).getDate();
-    html += `<div class="cal-month"><div class="cal-mtitle">${fmth(ms)}</div><div class="cal-grid">
+    if (!foundToday && ms===THIS_MONTH) { html+=`<div id="today-anchor"></div>`; foundToday=true; }
+    const [y,m] = ms.split('-').map(Number);
+    const first = new Date(y,m-1,1).getDay();
+    const days  = new Date(y,m,0).getDate();
+
+    html += `<div class="cal-month"><div class="cal-month-title">${fmth(ms)}</div><div class="cal-grid">
       ${FR_D.map(d=>`<div class="cal-hd">${d}</div>`).join('')}
       ${Array(first).fill('<div class="cal-cell empty"></div>').join('')}
       ${Array.from({length:days},(_,i)=>{
         const d=i+1;
         const ds=`${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
         const de=evs.filter(e=>e.date===ds);
-        return`<div class="cal-cell${ds===TODAY?' today':''}">
-          <div class="cal-n">${d}</div>
+        return `<div class="cal-cell${ds===TODAY?' today':''}">
+          <div class="cal-day-num">${d}</div>
           ${de.map(e=>{
+            const bc=badgeClass(e);
             const isQC=(e.tags||[]).includes('QC');
-            const epCls=e.ep_status==='premiere'?' ep-premiere':e.ep_status==='finale'?' ep-finale':isQC?' qc':'';
-            return`<div class="cal-dot${epCls}" onclick="openModal('${e.id}')" title="${e.title} — ${e.saison}">
-              ${e.platformLogo?`<img class="cal-dot-logo" src="${e.platformLogo}" alt="" onerror="this.style.display='none'">` : ''}
-              <span class="cal-dot-text">${isQC?'🍁 ':''}${e.title}</span>
-              <span class="cal-dot-ep">${e.saison||''}</span>
+            return `<div class="cal-item ${bc}" onclick="openModal('${e.id}')" title="${e.title} — ${e.saison}">
+              ${e.platformLogo?`<img class="cal-item-logo" src="${e.platformLogo}" alt="" onerror="this.style.display='none'">` : ''}
+              <span class="cal-item-title">${isQC?'🍁 ':''}${e.title}</span>
+              <span class="cal-item-ep">${e.saison||''}</span>
             </div>`;
           }).join('')}
         </div>`;
@@ -797,73 +1104,102 @@ function renderCal(evs) {
   return html;
 }
 
-// ── RENDER RAPPELS PAGE ───────────────────────────────────────────────────────
-function renderRemindersPage() {
+// ── RAPPELS ────────────────────────────────────────────────────────────────
+function renderRemPage() {
   const evs = ALL.filter(e=>reminders.includes(e.id));
-  if(!evs.length) return '<div class="empty-box">🔔 Aucun rappel activé.<br><br>Ouvrez une fiche et activez un rappel pour une sortie à venir.</div>';
-  return `<div class="section-title" style="margin-bottom:12px">Mes rappels (${evs.length})</div>
-    ${evs.map(e=>cardHTML(e)).join('')}`;
+  if (!evs.length) return '<div class="empty-box">🔔 Aucun rappel activé.<br><br>Ouvre une fiche et active un rappel.</div>';
+  return `<div class="section-head"><div class="section-title">Mes rappels</div><div class="section-badge">${evs.length}</div></div>` +
+    evs.map(e=>listCard(e)).join('');
 }
 
-// ── MODAL ─────────────────────────────────────────────────────────────────────
+function renderRemBar() {
+  const wrap = document.getElementById('rem-bar-wrap');
+  const list = document.getElementById('rem-bar-list');
+  if (!wrap || !list) return;
+  const evs = ALL.filter(e=>reminders.includes(e.id));
+  if (!evs.length) { wrap.style.display='none'; return; }
+  wrap.style.display = 'block';
+  list.innerHTML = evs.map(e=>`
+    <div class="rem-item">
+      <span>${e.title} <span style="color:var(--text3)">— ${e.saison}</span></span>
+      <span class="rem-date">${fd(e.date)}</span>
+    </div>`).join('');
+}
+
+function toggleReminder(id) {
+  const e = ALL.find(x=>x.id===id);
+  reminders = reminders.includes(id) ? reminders.filter(x=>x!==id) : [...reminders,id];
+  localStorage.setItem('cal_rem', JSON.stringify(reminders));
+  if (e && reminders.includes(id) && 'Notification' in window && Notification.permission==='granted') {
+    const d = new Date(e.date); const diff = d - Date.now();
+    if (diff > 0) setTimeout(()=>new Notification(`🎬 ${e.title} sort aujourd'hui!`, {body:e.saison+' sur '+e.platform, icon:e.poster||''}), diff);
+  }
+  if (curModal?.id===id) openModal(id);
+  render();
+}
+
+// ── MODAL ──────────────────────────────────────────────────────────────────
 function openModal(id) {
   const e = ALL.find(x=>x.id===id); if(!e) return;
-  curModal=e;
-  const isOut=e.status==='sorti'; const hasR=reminders.includes(id);
-  const country=e.country||'';
-  const epColor=e.ep_status==='premiere'?'var(--green)':e.ep_status==='finale'?'var(--red)':'var(--accent)';
+  curModal = e;
+  const isOut = e.status==='sorti';
+  const hasR  = reminders.includes(id);
+  const bc    = badgeClass(e);
+  const lbl   = badgeLabel(e);
+  const epColor = bc==='finale'?'var(--red)':bc==='premiere'||bc==='retour'?'var(--green)':'var(--accent)';
 
   document.getElementById('modal-top').innerHTML = `
-    ${e.backdrop?`<img class="mback" src="${e.backdrop}" alt="" onerror="this.style.display='none'">`:
-    `<div class="mback-ph"></div>`}
-    <button class="mclose" onclick="document.getElementById('overlay').classList.remove('open')">✕</button>
-    <div class="mbadge" style="background:${isOut?'#22c55e':'#f59e0b'};color:#000">${isOut?'DISPONIBLE':'À VENIR'}</div>`;
+    ${e.backdrop?`<img class="modal-back" src="${e.backdrop}" alt="" onerror="this.style.display='none'">`:
+    `<div class="modal-back-ph" style="background:linear-gradient(135deg,var(--bg3),var(--bg2))"></div>`}
+    <button class="modal-close" onclick="document.getElementById('overlay').classList.remove('open')">✕</button>
+    <div class="modal-status" style="background:${isOut?'var(--green)':'var(--amber)'};color:#000">${isOut?'DISPONIBLE':'À VENIR'}</div>`;
 
   const trailers = [...(e.trailers||[])].sort((a,b)=>a.lang==='VF'?-1:1);
 
   document.getElementById('modal-body').innerHTML = `
-    <div class="mposter-row">
-      ${e.poster?`<img class="mposter${e.backdrop?' up':''}" src="${e.poster}" alt="${e.title}" onerror="this.style.display='none'">` : ''}
-      <div class="minfo">
-        <div class="mtags-row">
-          ${(e.tags||[]).includes('QC')?'<span class="tag qc">🍁 QC</span>':''}
-          ${(e.tags||[]).includes('LGBT')?'<span class="tag lgbt">🏳️‍🌈 LGBT+</span>':''}
-          ${country?`<span style="font-size:12px">${cf(country)} ${country}</span>`:''}
+    <div class="modal-poster-row">
+      ${e.poster?`<img class="modal-poster${e.backdrop?' up':''}" src="${e.poster}" alt="${e.title}" onerror="this.style.display='none'">` : ''}
+      <div class="modal-info">
+        <div class="modal-tags">
+          ${lbl?`<span class="mtag" style="background:${bc==='finale'?'rgba(239,68,68,.15)':'rgba(34,197,94,.15)'};color:${bc==='finale'?'var(--red)':'var(--green)'}">${lbl}</span>`:''}
+          ${(e.tags||[]).includes('QC')?'<span class="mtag qc">🍁 QC</span>':''}
+          ${(e.tags||[]).includes('LGBT')?'<span class="mtag lgbt">🏳️‍🌈 LGBT+</span>':''}
+          ${e.country?`<span class="mtag">${cf(e.country)} ${e.country}</span>`:''}
         </div>
-        <div class="mtitle">${e.title}</div>
-        <div class="mplat-row">
-          ${e.platformLogo?`<img class="mplat-logo" src="${e.platformLogo}" alt="" onerror="this.style.display='none'">` : ''}
-          <span class="mplat-name">${e.platform||'—'}</span>
+        <div class="modal-title">${e.title}</div>
+        <div class="modal-plat">
+          ${e.platformLogo?`<img class="modal-plat-logo" src="${e.platformLogo}" alt="" onerror="this.style.display='none'">` : ''}
+          <span class="modal-plat-name">${e.platform||'—'}</span>
         </div>
-        <div class="msaison" style="color:${epColor}">${e.saison||''}</div>
-        <div class="mmeta">
-          <span class="tag">${e.type==='film'?'🎬 Film':'📺 Série'}</span>
-          ${e.note?`<span class="tag note">★ ${e.note}</span>`:''}
-          <span class="tag" style="background:var(--bg3);color:var(--text3)">📅 ${fd(e.date)}</span>
+        <div class="modal-ep" style="color:${epColor}">${e.saison||''}</div>
+        <div class="modal-meta">
+          <span class="mtag">${e.type==='film'?'🎬 Film':'📺 Série'}</span>
+          ${e.note?`<span class="mtag" style="background:rgba(245,158,11,.1);color:var(--amber)">★ ${e.note}</span>`:''}
+          <span class="mtag">📅 ${fd(e.date)}</span>
         </div>
-        <div class="mlangs">
-          ${(e.lang||[]).map(l=>`<span class="tag ${l==='FR'?'lang-fr':'lang-en'}">${l==='FR'?'🇫🇷 Français':'🇬🇧 Anglais'}</span>`).join('')}
+        <div class="modal-langs">
+          ${(e.lang||[]).map(l=>`<span class="mtag" style="background:${l==='FR'?'rgba(79,142,247,.15)':'rgba(34,197,94,.1)'};color:${l==='FR'?'var(--accent)':'var(--green)'}">${l==='FR'?'🇫🇷 Français':'🇬🇧 Anglais'}</span>`).join('')}
         </div>
       </div>
     </div>
-    <div class="genres-row" style="margin-top:12px">${(e.categories||[]).map(g=>`<span class="genre-chip">${g}</span>`).join('')}</div>
+    <div class="genres-row">${(e.categories||[]).map(g=>`<span class="genre-chip">${g}</span>`).join('')}</div>
     <div class="slbl">Synopsis</div>
-    <div class="mdesc">${e.desc||'Aucune description disponible.'}</div>
+    <div class="modal-desc">${e.desc||'Aucune description disponible.'}</div>
     ${(e.cast||[]).length?`<div class="slbl">Distribution</div><div class="cast-list">${e.cast.map(c=>`<span class="cast-chip">${c}</span>`).join('')}</div>`:''}
-    ${trailers.length?`<div class="slbl">Bandes-annonces &amp; teasers</div>
+    ${trailers.length?`<div class="slbl">Bandes-annonces</div>
       <div class="trailers">${trailers.map(t=>`
         <a class="tlink" href="${t.url}" target="_blank" rel="noreferrer">
-          <span class="ytbadge">▶ YT</span>
-          <span class="tlabel">${t.label}</span>
-          <span class="tlang" style="background:${t.lang==='VF'?'rgba(79,142,247,.15)':'rgba(34,197,94,.1)'};color:${t.lang==='VF'?'var(--accent)':'var(--green)'}">${t.lang}</span>
+          <span class="yt-badge">▶ YT</span>
+          <span class="tlink-label">${t.label}</span>
+          <span class="tlink-lang" style="background:${t.lang==='VF'?'rgba(79,142,247,.15)':'rgba(34,197,94,.1)'};color:${t.lang==='VF'?'var(--accent)':'var(--green)'}">${t.lang}</span>
         </a>`).join('')}
       </div>`:''}
-    <hr class="modal-sep">
-    ${!isOut?`<button class="rem-toggle${hasR?' on':''}" id="rem-btn" onclick="toggleReminder('${id}')">
-      ${hasR?'🔔 Rappel activé — Retirer':'🔔 Activer un rappel'}
+    <div class="modal-sep"></div>
+    ${!isOut?`<button class="rem-btn${hasR?' on':''}" onclick="toggleReminder('${id}')">
+      ${hasR?'🔔 Rappel activé — Cliquer pour retirer':'🔔 Activer un rappel'}
     </button>`:''}
-    <a class="platlink" href="${e.platformUrl||'#'}" target="_blank" rel="noreferrer">
-      ${e.platformLogo?`<img src="${e.platformLogo}" style="width:22px;height:22px;object-fit:contain;border-radius:4px" alt="" onerror="this.style.display='none'">` : ''}
+    <a class="plat-btn" href="${e.platformUrl||'#'}" target="_blank" rel="noreferrer">
+      ${e.platformLogo?`<img src="${e.platformLogo}" style="width:26px;height:26px;object-fit:contain;border-radius:5px" alt="" onerror="this.style.display='none'">` : ''}
       Voir sur ${e.platform} →
     </a>`;
 
@@ -871,76 +1207,45 @@ function openModal(id) {
 }
 
 function closeModal(ev) {
-  if(ev&&ev.target!==document.getElementById('overlay')) return;
+  if (ev && ev.target !== document.getElementById('overlay')) return;
   document.getElementById('overlay').classList.remove('open');
-  curModal=null;
+  curModal = null;
 }
 
-function toggleReminder(id) {
-  const e = ALL.find(x=>x.id===id);
-  reminders = reminders.includes(id) ? reminders.filter(x=>x!==id) : [...reminders,id];
-  localStorage.setItem('cal_rem', JSON.stringify(reminders));
-  if(e && reminders.includes(id)) scheduleNotif(e);
-  if(curModal?.id===id) openModal(id);
-  render();
-}
-
-// ── NAVIGATION ────────────────────────────────────────────────────────────────
+// ── NAVIGATION ─────────────────────────────────────────────────────────────
 function setView(v) {
-  state.view = v;
-  ['week','list','cal'].forEach(x=>{
-    const btn=document.getElementById(`btn-${x}-d`);
-    if(btn) btn.classList.toggle('on', x===v);
-  });
-  render();
-  setTimeout(scrollToToday,200);
+  state.view = v; state.weekOffset = 0;
+  ['week','list','cal'].forEach(x => document.getElementById(`vb-${x}`)?.classList.toggle('on',x===v));
+  render(); setTimeout(scrollToToday, 200);
 }
 
 function setTab(tab) {
-  state.tab = tab;
-  state.view = tab;
-  // Films: force filtre film
-  if(tab==='films') {
-    state.types = new Set(['film']);
-    document.querySelectorAll('[id^="fd-type"] .chip,[id^="fm-type"] .chip').forEach(c=>{
-      c.classList.toggle('on', c.dataset.val==='film');
-    });
-  } else if(tab==='list'||tab==='week'||tab==='cal') {
-    state.types = new Set(['serie']);
-    document.querySelectorAll('[id^="fd-type"] .chip,[id^="fm-type"] .chip').forEach(c=>{
-      c.classList.toggle('on', c.dataset.val==='serie');
-    });
-  }
+  state.view = tab; state.weekOffset = 0;
+  if (tab==='films') { state.types=new Set(['film']); }
+  else if (tab!=='reminders') { state.types=new Set(['serie']); }
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById(`tab-${tab}`)?.classList.add('active');
-  render();
-  setTimeout(scrollToToday,200);
+  render(); setTimeout(scrollToToday, 200);
 }
 
-// ── DRAWER MOBILE ─────────────────────────────────────────────────────────────
-function openDrawer() {
-  document.getElementById('drawer-overlay').classList.add('open');
-  document.getElementById('drawer').classList.add('open');
-}
-function closeDrawer() {
-  document.getElementById('drawer-overlay').classList.remove('open');
-  document.getElementById('drawer').classList.remove('open');
+function scrollToToday() {
+  const el = document.getElementById('today-anchor');
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-// ── CLAVIER ───────────────────────────────────────────────────────────────────
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') {
-    document.getElementById('overlay').classList.remove('open');
-    closeDrawer();
-  }
+// ── DRAWER ─────────────────────────────────────────────────────────────────
+function openDrawer()  { document.getElementById('drawer-ov').classList.add('open'); document.getElementById('drawer').classList.add('open'); }
+function closeDrawer() { document.getElementById('drawer-ov').classList.remove('open'); document.getElementById('drawer').classList.remove('open'); }
+
+// ── KEYBOARD ───────────────────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape') { document.getElementById('overlay').classList.remove('open'); closeDrawer(); }
 });
 
-// ── PWA ───────────────────────────────────────────────────────────────────────
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(()=>{});
-}
+// ── PWA ────────────────────────────────────────────────────────────────────
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 
-// ── INIT ──────────────────────────────────────────────────────────────────────
+// ── INIT ───────────────────────────────────────────────────────────────────
 loadData();
 </script>
 </body>
