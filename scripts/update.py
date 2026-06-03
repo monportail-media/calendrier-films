@@ -50,7 +50,6 @@ LOGO_MAP = {
     "Prime Video":  "assets/logos/prime.svg",
     "Disney+":      "assets/logos/disney.svg",
     "Apple TV+":    "assets/logos/apple.svg",
-    "Max":          "assets/logos/max.svg",
     "Hulu":         "assets/logos/hulu.svg",
     "Paramount+":   "assets/logos/paramount.svg",
     "Peacock":      "assets/logos/peacock.svg",
@@ -77,8 +76,10 @@ def get_logo(platform):
 # Plateformes streaming qui doublent SYSTEMATIQUEMENT en francais au Quebec
 STREAMING_GIANTS = {
     "netflix", "apple tv+", "disney+", "amazon", "prime video",
-    "max", "hbo max", "paramount+", "hulu", "peacock", "crave",
+    "paramount+", "hulu", "peacock", "crave",
     "apple", "disney", "amazon prime",
+    # HBO inclus car disponible via Crave avec VF
+    "hbo",
 }
 
 # Reseaux QC/CA -> plateforme normalisee
@@ -111,56 +112,29 @@ QC_NETWORK_MAP = {
     "ONF":                   "ONF",
 }
 
-# Reseaux streaming US/Int -> plateforme normalisee
+# Reseaux streaming UNIQUEMENT avec contenu double en francais au Quebec
+# REGLE: Seulement les plateformes qui ont contractuellement la VF pour leurs originaux
 STREAMING_NETWORK_MAP = {
+    # Plateformes qui doublent TOUS leurs originaux en francais au Quebec
     "Netflix":          "Netflix",
-    "HBO":              "Crave",
-    "Max":              "Max",
-    "HBO Max":          "Max",
-    "Amazon":           "Prime Video",
-    "Prime Video":      "Prime Video",
     "Apple TV+":        "Apple TV+",
     "Disney+":          "Disney+",
-    "Hulu":             "Hulu",
-    "Peacock":          "Peacock",
-    "Paramount+":       "Paramount+",
-    "AMC+":             "Prime Video",
-    "Showtime":         "Crave",
-    "Starz":            "Prime Video",
-    "BritBox":          "Prime Video",
-    "Acorn TV":         "Prime Video",
-    "Discovery+":       "Prime Video",
-    "Crunchyroll":      "Prime Video",
-    "Adult Swim":       "Max",
-    "Cartoon Network":  "Max",
+    "Amazon":           "Prime Video",
+    "Prime Video":      "Prime Video",
+    # HBO/Crave: originaux HBO disponibles en VF sur Crave
+    "HBO":              "Crave",
+    # Hulu: originaux disponibles en VF via Disney+ au Canada
+    "Hulu":             "Disney+",
+    # FX: originaux sur Disney+ en VF
     "FX":               "Disney+",
+    # National Geographic: sur Disney+ en VF
     "National Geographic": "Disney+",
-    "CBS":              "Paramount+",
-    "NBC":              "Peacock",
-    "ABC":              "Disney+",
-    "Fox":              "Disney+",
-    "CW":               "Max",
-    "AMC":              "Prime Video",
-    "Comedy Central":   "Paramount+",
-    "Bravo":            "Peacock",
-    "Syfy":             "Peacock",
-    "USA Network":      "Peacock",
-    "TNT":              "Max",
-    "TBS":              "Max",
-    "Freeform":         "Disney+",
-    "BBC One":          "Prime Video",
-    "BBC Two":          "Prime Video",
-    "BBC Three":        "Prime Video",
-    "ITV":              "Prime Video",
-    "Channel 4":        "Prime Video",
-    "Sky":              "Prime Video",
-    "Sky One":          "Prime Video",
-    "Lifetime":         "Prime Video",
-    "BET":              "Paramount+",
-    "OWN":              "Prime Video",
-    "MTV":              "Paramount+",
-    "VH1":              "Paramount+",
-    "Hallmark Channel": "Prime Video",
+    # Peacock: originaux Peacock disponibles en VF sur Prime Video CA
+    "Peacock":          "Peacock",
+    # Paramount+: seulement les ORIGINAUX Paramount+ (pas CBS)
+    "Paramount+":       "Paramount+",
+    # Crunchyroll: anime souvent double en francais
+    "Crunchyroll":      "Prime Video",
 }
 
 PLATFORM_URLS = {
@@ -168,7 +142,6 @@ PLATFORM_URLS = {
     "Prime Video":  "https://www.primevideo.com",
     "Disney+":      "https://www.disneyplus.com",
     "Apple TV+":    "https://tv.apple.com",
-    "Max":          "https://www.max.com",
     "Hulu":         "https://www.hulu.com",
     "Paramount+":   "https://www.paramountplus.com",
     "Peacock":      "https://www.peacocktv.com",
