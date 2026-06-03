@@ -431,8 +431,9 @@ def valider_vraie_vf(tmdb_id, type_contenu="tv"):
             VF_CACHE[tmdb_id] = True
             return True
 
-        # REGLE 4: Popularite > 15 = distribution mondiale = doublage probable
-        if data.get("popularity", 0) < 15.0:
+        # REGLE 4: Popularite > 5.0 = visible internationalement = doublage probable
+        # (seuil abaisse de 15 a 5 - Gemini etait trop restrictif)
+        if data.get("popularity", 0) < 5.0:
             VF_CACHE[tmdb_id] = False
             return False
 
@@ -635,18 +636,21 @@ def fetch_tvmaze_qc():
     log(f"  -> {len(events)} episodes CA")
     return events
 
-# ── SOURCE A2: TVMAZE US/UK/AU (Gemini Partie 1 — Validation VF stricte) ──────
+# ── SOURCE A2: TVMAZE STREAMING (Gemini Partie 1 — Validation VF stricte) ─────
 def fetch_tvmaze_intl():
     """
-    TVmaze US/UK/AU - seulement plateformes streaming + validation VF stricte.
+    TVmaze streaming international:
+    1. Schedule US/CA/GB/AU jour par jour - filtre webChannel streaming
+    2. Schedule global (/schedule/web) pour toutes les plateformes streaming
+    Les deux combinés pour couvrir Netflix, Disney+, Apple TV+, Prime, etc.
     """
-    log("TVmaze US/UK/AU (streaming + validation VF)...")
-    events = []
+    log("TVmaze streaming international (schedule + web)...")
+    events   = []
     seen_ep  = set()
-    seen_show = set()  # Pour eviter d'enrichir le meme show plusieurs fois
-    start = TODAY - timedelta(days=HISTORY_DAYS)
+    start    = TODAY - timedelta(days=HISTORY_DAYS)
     total_days = HISTORY_DAYS + FUTURE_DAYS
 
+    # APPROCHE 1: Schedule pays US/GB/AU jour par jour
     for cc in ["US", "GB", "AU"]:
         for offset in range(0, total_days, 1):
             d = (start + timedelta(days=offset)).strftime("%Y-%m-%d")
@@ -668,67 +672,141 @@ def fetch_tvmaze_intl():
                 if not in_window(air):
                     continue
 
-                network = show.get("network") or show.get("webChannel") or {}
-                net_name = (network.get("name") or "")
+                network  = show.get("network") or {}
+                webchan  = show.get("webChannel") or {}
+                net_name = webchan.get("name") or network.get("name") or ""
 
-                # Exclure chaines TV europeennes
                 if net_name in EXCLUDED_EU_NETWORKS:
                     continue
 
-                # Seulement les plateformes streaming connues
                 plat = get_streaming_platform(net_name)
                 if not plat:
-                    continue  # Chaine locale non-streaming -> ignorer
+                    continue
 
                 if ep_id:
                     seen_ep.add(ep_id)
 
-                show_id    = show.get("id")
-                country_cc, country_tag = get_country(show)
+                show_id = show.get("id")
+                _, country_tag = get_country(show)
                 season_num = ep.get("season", 1)
                 ep_num     = ep.get("number")
                 rating     = (show.get("rating") or {}).get("average")
                 desc       = clean(show.get("summary", ""))
-
-                tags = [country_tag]
+                tags       = [country_tag]
                 if is_lgbt(desc):
                     tags.append("LGBT")
 
-                entry = {
-                    "id":          f"intl-ep-{ep_id}" if ep_id else mkid(f"tvm-{cc.lower()}", f"{show_id}{air}{ep_num}"),
-                    "_show_id":    show_id,
-                    "_ep_id":      ep_id,
-                    "date":        air,
-                    "title":       show.get("name", ""),
-                    "ep_title":    ep.get("name", ""),
-                    "saison":      make_saison(season_num, ep_num),
-                    "saison_num":  season_num,
-                    "ep_num":      ep_num,
-                    "ep_status":   ep_status(ep_num, None),
-                    "status":      "sorti" if air <= TODAY_STR else "a-venir",
-                    "type":        "serie",
-                    "platform":    plat,
-                    "platformUrl": PLATFORM_URLS.get(plat, "#"),
+                events.append({
+                    "id":           f"intl-ep-{ep_id}" if ep_id else mkid(f"tvm-{cc.lower()}", f"{show_id}{air}{ep_num}"),
+                    "_show_id":     show_id,
+                    "_ep_id":       ep_id,
+                    "date":         air,
+                    "title":        show.get("name", ""),
+                    "ep_title":     ep.get("name", ""),
+                    "saison":       make_saison(season_num, ep_num),
+                    "saison_num":   season_num,
+                    "ep_num":       ep_num,
+                    "ep_status":    ep_status(ep_num, None),
+                    "status":       "sorti" if air <= TODAY_STR else "a-venir",
+                    "type":         "serie",
+                    "platform":     plat,
+                    "platformUrl":  PLATFORM_URLS.get(plat, "#"),
                     "platformLogo": get_logo(plat),
-                    "lang":        ["FR", "EN"],
-                    "country":     country_tag,
-                    "tags":        tags,
-                    "categories":  map_tv_genres(show.get("genres", [])),
-                    "cast":        [],
-                    "desc":        desc,
-                    "note":        f"{rating:.1f}" if rating else None,
-                    "trailers":    [],
-                    "poster":      (show.get("image") or {}).get("medium"),
-                    "backdrop":    (show.get("image") or {}).get("original"),
-                    "source":      f"tvmaze-{cc.lower()}",
-                    "isManual":    False,
-                    "tmdb_id":     None,
+                    "lang":         ["FR", "EN"],
+                    "country":      country_tag,
+                    "tags":         tags,
+                    "categories":   map_tv_genres(show.get("genres", [])),
+                    "cast":         [],
+                    "desc":         desc,
+                    "note":         f"{rating:.1f}" if rating else None,
+                    "trailers":     [],
+                    "poster":       (show.get("image") or {}).get("medium"),
+                    "backdrop":     (show.get("image") or {}).get("original"),
+                    "source":       f"tvmaze-{cc.lower()}",
+                    "isManual":     False,
+                    "tmdb_id":      None,
                     "_needs_enrich": True,
-                    "_vf_validated": False,
-                }
-                events.append(entry)
+                })
 
-    log(f"  -> {len(events)} episodes US/UK/AU (avant validation VF)")
+    # APPROCHE 2: Schedule web global (/schedule/web) - couvre Netflix/Apple/Disney
+    # C'est l'endpoint cle pour les plateformes streaming mondiales
+    log("  Schedule web global (Netflix/Disney+/Apple TV+/Prime)...")
+    for offset in range(0, total_days, 1):
+        d = (start + timedelta(days=offset)).strftime("%Y-%m-%d")
+        if not d.startswith("2026"):
+            continue
+
+        eps = get(f"{TVMAZE_BASE}/schedule/web?date={d}") or []
+
+        for ep in eps:
+            ep_id = ep.get("id")
+            if ep_id and ep_id in seen_ep:
+                continue
+
+            show = ep.get("_embedded", {}).get("show") or ep.get("show") or {}
+            if not show:
+                continue
+
+            air = ep.get("airdate", "")
+            if not in_window(air):
+                continue
+
+            webchan  = show.get("webChannel") or {}
+            net_name = webchan.get("name") or ""
+
+            if not net_name or net_name in EXCLUDED_EU_NETWORKS:
+                continue
+
+            plat = get_streaming_platform(net_name)
+            if not plat:
+                continue
+
+            if ep_id:
+                seen_ep.add(ep_id)
+
+            show_id = show.get("id")
+            _, country_tag = get_country(show)
+            season_num = ep.get("season", 1)
+            ep_num     = ep.get("number")
+            rating     = (show.get("rating") or {}).get("average")
+            desc       = clean(show.get("summary", ""))
+            tags       = [country_tag]
+            if is_lgbt(desc):
+                tags.append("LGBT")
+
+            events.append({
+                "id":           f"web-ep-{ep_id}" if ep_id else mkid("web", f"{show_id}{air}{ep_num}"),
+                "_show_id":     show_id,
+                "_ep_id":       ep_id,
+                "date":         air,
+                "title":        show.get("name", ""),
+                "ep_title":     ep.get("name", ""),
+                "saison":       make_saison(season_num, ep_num),
+                "saison_num":   season_num,
+                "ep_num":       ep_num,
+                "ep_status":    ep_status(ep_num, None),
+                "status":       "sorti" if air <= TODAY_STR else "a-venir",
+                "type":         "serie",
+                "platform":     plat,
+                "platformUrl":  PLATFORM_URLS.get(plat, "#"),
+                "platformLogo": get_logo(plat),
+                "lang":         ["FR", "EN"],
+                "country":      country_tag,
+                "tags":         tags,
+                "categories":   map_tv_genres(show.get("genres", [])),
+                "cast":         [],
+                "desc":         desc,
+                "note":         f"{rating:.1f}" if rating else None,
+                "trailers":     [],
+                "poster":       (show.get("image") or {}).get("medium"),
+                "backdrop":     (show.get("image") or {}).get("original"),
+                "source":       "tvmaze-web",
+                "isManual":     False,
+                "tmdb_id":      None,
+                "_needs_enrich": True,
+            })
+
+    log(f"  -> {len(events)} episodes streaming (avant validation VF)")
     return events
 
 # ── SOURCE A3: SHOWBIZZ.NET (BeautifulSoup — Gemini Partie 2) ─────────────────
