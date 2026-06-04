@@ -886,10 +886,8 @@ function render() {
 
 // ── VUE NOUVEAUTÉS ─────────────────────────────────────────────────────────
 function renderWeek(evs) {
-  // Seulement premières et retours de saison
-  const novelties = evs.filter(e =>
-    e.ep_status === 'premiere' || e.ep_status === 'retour' || e.ep_num === 1
-  );
+  // Toutes les entrees sont deja 1 par saison - toutes sont des nouveautes
+  const novelties = evs.filter(e => e.type !== 'film');
 
   if (!novelties.length) return '<div class="empty-box">Aucune nouveauté pour ces filtres.</div>';
 
@@ -956,16 +954,19 @@ function renderWeek(evs) {
 function changeWeek(dir) { state.weekOffset += dir; render(); }
 
 function badgeClass(e) {
-  if (e.ep_status === 'finale')  return 'finale';
-  if (e.ep_num === 1 && e.saison_num > 1) return 'retour';
-  if (e.ep_status === 'premiere' || e.ep_num === 1) return 'premiere';
-  return 'normal';
+  if (e.type === 'film')           return 'premiere';
+  if (e.ep_status === 'finale')    return 'finale';
+  if (e.ep_status === 'retour')    return 'retour';
+  if (e.ep_status === 'premiere')  return 'premiere';
+  if ((e.saison_num||1) === 1)     return 'premiere';
+  if ((e.saison_num||1) > 1)       return 'retour';
+  return 'normale';
 }
 function badgeLabel(e) {
-  if (e.type === 'film')          return 'FILM';
-  if (e.ep_status === 'finale')   return 'FINALE';
-  if (e.ep_num === 1 && (e.saison_num||1) > 1) return 'RETOUR';
-  if (e.ep_status === 'premiere' || e.ep_num === 1) return 'NOUVEAU';
+  if (e.type === 'film')           return 'FILM';
+  if (e.ep_status === 'finale')    return 'FINALE';
+  if (e.ep_status === 'retour' || (e.saison_num||1) > 1) return 'RETOUR S'+(e.saison_num||'');
+  if (e.ep_status === 'premiere' || (e.saison_num||1) === 1) return 'NOUVEAU';
   return '';
 }
 
