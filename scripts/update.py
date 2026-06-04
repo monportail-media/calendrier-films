@@ -1260,55 +1260,75 @@ def enrich_all(events):
 # ── FUSION ET DEDUPLICATION ───────────────────────────────────────────────────
 def merge(events):
     """
-    Deduplication intelligente:
-    - Episodes TVmaze: par ep_id unique
-    - Autres sources: par (titre, date)
+    REGROUPEMENT PAR SAISON (pas par episode):
+    - Cle unique: (titre_normalise, saison_num, plateforme)
+    - Garde la date du PREMIER episode de la saison
+    - 1 entree par saison, pas par episode
+    - Pour les films: 1 entree par film
     - Priorite aux sources QC
     """
-    by_ep_id    = {}   # ep_id -> entry
-    by_title_date = {} # (titre_norm, date) -> entry_id
-    final       = {}
+    # Cle: (titre_norm, saison_num, plateforme) -> entry
+    by_season = {}
 
     for e in events:
-        ep_id  = e.get("_ep_id")
-        eid    = e["id"]
-        title  = e.get("title", "").lower().strip()
-        date   = e.get("date", "")
+        title     = e.get("title", "").lower().strip()
+        saison_num = e.get("saison_num", 1)
+        platform  = e.get("platform", "")
+        ep_num    = e.get("ep_num") or 0
+        date      = e.get("date", "")
+        etype     = e.get("type", "serie")
 
-        # Deduplication par episode ID TVmaze
-        if ep_id:
-            if ep_id in by_ep_id:
-                ex = by_ep_id[ep_id]
-                for f in ("poster", "desc", "trailers", "cast", "note", "backdrop"):
-                    if not ex.get(f) and e.get(f):
-                        ex[f] = e[f]
-                continue
-            by_ep_id[ep_id] = e
-            final[eid] = e
-            continue
-
-        # Deduplication par titre + date
-        td_key = (title, date)
-        if td_key in by_title_date:
-            ex_id = by_title_date[td_key]
-            ex    = final.get(ex_id)
-            if ex:
-                for f in ("poster", "desc", "trailers", "cast", "note", "backdrop"):
-                    if not ex.get(f) and e.get(f):
-                        ex[f] = e[f]
-                for tag in (e.get("tags") or []):
-                    if tag not in ex.get("tags", []):
-                        ex["tags"].append(tag)
-                # Preferer source QC
-                if e.get("source") in {"showbizz", "bell-media", "tvmaze-ca"}:
-                    if ex.get("source") not in {"showbizz", "bell-media", "tvmaze-ca"}:
-                        ex["lang"]         = e.get("lang", ex["lang"])
-                        ex["platformLogo"] = e.get("platformLogo", ex["platformLogo"])
+        # Films: cle par titre + date
+        if etype == "film":
+            key = (title, 0, platform)
         else:
-            by_title_date[td_key] = eid
-            final[eid] = e
+            key = (title, saison_num, platform)
 
-    return list(final.values())
+        if key in by_season:
+            ex = by_season[key]
+            # Garder la date la plus ancienne (premier episode)
+            if date < ex.get("date", "9999"):
+                ex["date"]   = date
+                ex["ep_num"] = ep_num
+            # Enrichir si manquant
+            for f in ("poster", "desc", "trailers", "cast", "note", "backdrop"):
+                if not ex.get(f) and e.get(f):
+                    ex[f] = e[f]
+            # Fusionner les tags
+            for tag in (e.get("tags") or []):
+                if tag not in ex.get("tags", []):
+                    ex["tags"].append(tag)
+            # Preferer source QC
+            if e.get("source") in {"showbizz", "bell-media", "tvmaze-ca"}:
+                if ex.get("source") not in {"showbizz", "bell-media", "tvmaze-ca"}:
+                    ex["lang"]         = e.get("lang", ex["lang"])
+                    ex["platformLogo"] = e.get("platformLogo", ex["platformLogo"])
+                    ex["source"]       = e["source"]
+        else:
+            by_season[key] = dict(e)
+
+    # Recalculer ep_status et saison label apres regroupement
+    result = []
+    for e in by_season.values():
+        saison_num = e.get("saison_num", 1)
+        total_eps  = e.get("_total_eps")
+        # Label simple: "Saison 1" ou "Saison 1 — 8 ep." pour les films "Film"
+        if e.get("type") == "film":
+            e["saison"] = "Film"
+        elif total_eps:
+            e["saison"] = f"Saison {saison_num} — {total_eps} ep."
+        else:
+            e["saison"] = f"Saison {saison_num}"
+        # ep_status base sur le numero de saison
+        if saison_num == 1:
+            e["ep_status"] = "premiere"
+        elif saison_num > 1:
+            e["ep_status"] = "retour"
+        else:
+            e["ep_status"] = "normale"
+        result.append(e)
+
+    return result
 
 # ── NETTOYAGE FINAL ───────────────────────────────────────────────────────────
 def cleanup(events):
