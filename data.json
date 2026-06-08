@@ -1,1430 +1,8 @@
 {
   "version": "9.0",
-  "generated_at": "2026-06-04T11:29:33Z",
-  "total": 559,
+  "generated_at": "2026-06-08T17:36:45Z",
+  "total": 565,
   "events": [
-    {
-      "id": "web-ep-3558208",
-      "date": "2026-03-07",
-      "title": "Beastars",
-      "ep_title": "A Threefold Dilemma",
-      "saison": "Saison 3",
-      "saison_num": 3,
-      "ep_num": 13,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Netflix",
-      "platformUrl": "https://www.netflix.com",
-      "platformLogo": "assets/logos/netflix.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Animation"
-      ],
-      "cast": [
-        "Chikahiro Kobayashi",
-        "Sayaka Senbongi",
-        "Yuki Ono"
-      ],
-      "desc": "In a world populated by anthropomorphic animals, herbivores and carnivores coexist with each other. For the adolescences of Cherryton Academy, school life is filled with hope, romance, distrust, and uneasiness.The main character is Regoshi the wolf, a member of the drama club. Despite his menacing appearance, he has a very gentle heart. Throughout most of his life, he has always been an object of fear and hatred by other animals, and he's been quite accustomed to that lifestyle. But soon, he finds himself becoming more involved with his fellow classmates who have their own share of insecurities and finds his life in school changing slowly.",
-      "note": "7.0",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "BEASTARS Final Season Part 1 | Official Trailer | Netflix",
-          "url": "https://www.youtube.com/watch?v=TArSVUJ9XsU"
-        },
-        {
-          "lang": "VO",
-          "label": "BEASTARS Final Season | Official Teaser | Netflix",
-          "url": "https://www.youtube.com/watch?v=FDnXR8oyV0g"
-        },
-        {
-          "lang": "VO",
-          "label": "BEASTARS Season 2 | Official Trailer | Netflix",
-          "url": "https://www.youtube.com/watch?v=IXsURQxoGe8"
-        },
-        {
-          "lang": "VO",
-          "label": "BEASTARS — OFFICIAL TRAILER | English Dub",
-          "url": "https://www.youtube.com/watch?v=qU46kgtDExo"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/208/521199.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/208/521199.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 90937
-    },
-    {
-      "id": "web-ep-3569248",
-      "date": "2026-03-07",
-      "title": "The Great Indian Kapil Show",
-      "ep_title": "Masti Ka Mahamix",
-      "saison": "Saison 4",
-      "saison_num": 4,
-      "ep_num": 12,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Netflix",
-      "platformUrl": "https://www.netflix.com",
-      "platformLogo": "assets/logos/netflix.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Kapil Sharma",
-        "Sunil Grover",
-        "Krishna Abhishek",
-        "Kiku Sharda",
-        "Archana Puran Singh"
-      ],
-      "desc": "Comedian Kapil Sharma hosts this laugh-out-loud variety talk show with celebrity guests, hilarious antics and his signature supporting cast.",
-      "note": "7.9",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Official Trailer",
-          "url": "https://www.youtube.com/watch?v=bftjfqS3v6k"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/609/1522944.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/609/1522944.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 247769
-    },
-    {
-      "id": "ca-ep-3570155",
-      "date": "2026-03-08",
-      "title": "Big Brother Célébrités",
-      "ep_title": "Dimanche : la soirée d'élimination - semaine 9",
-      "saison": "Saison 6",
-      "saison_num": 6,
-      "ep_num": 41,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Noovo",
-      "platformUrl": "https://www.noovo.ca",
-      "platformLogo": "assets/logos/noovo.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Marie-Mai",
-        "Marc Bélanger"
-      ],
-      "desc": "16 Quebec celebrities try to create alliances and avoid eviction in order to win the season of Big Brother Celebrities.",
-      "note": "3.8",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/552/1381736.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/552/1381736.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 113207
-    },
-    {
-      "id": "web-ep-3451616",
-      "date": "2026-03-08",
-      "title": "Como Agua para Chocolate",
-      "ep_title": "Pan de Muerto",
-      "saison": "Saison 2",
-      "saison_num": 2,
-      "ep_num": 4,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Crave",
-      "platformUrl": "https://www.crave.ca",
-      "platformLogo": "assets/logos/crave.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Azul Guaita",
-        "Andres Baida",
-        "Irene Azuela",
-        "Ana Valeria Becerril"
-      ],
-      "desc": "Como Agua para Chocolate explores the idea that sometimes traditions can become a prison, an obstacle for love. Tita de la Garza and Pedro Múzquiz are two souls deeply in love, yet unable to be together due to entrenched family customs. The protagonists navigate a world of magical realism and rich flavors as Tita struggles between the destiny imposed on her by her family and her fight for love. Along the way, the audience will witness her greatest refuge: the kitchen. For Tita, her magical connection to cooking becomes an active resistance against oppression, allowing her to channel her deepest desires and passions into her recipes, transforming those who taste them.",
-      "note": "8.2",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Official Trailer [Subtitled]",
-          "url": "https://www.youtube.com/watch?v=NeVLROw2SEo"
-        },
-        {
-          "lang": "VO",
-          "label": "Official Teaser [Subtitled]",
-          "url": "https://www.youtube.com/watch?v=k2oi8hQ_qBs"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/541/1352733.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/541/1352733.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 235635
-    },
-    {
-      "id": "intl-ep-3534349",
-      "date": "2026-03-08",
-      "title": "DTF St. Louis",
-      "ep_title": "Snag It",
-      "saison": "Saison 1",
-      "saison_num": 1,
-      "ep_num": 2,
-      "ep_status": "premiere",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Crave",
-      "platformUrl": "https://www.crave.ca",
-      "platformLogo": "assets/logos/crave.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame",
-        "Comedie"
-      ],
-      "cast": [
-        "Jason Bateman",
-        "David Harbour",
-        "Linda Cardellini",
-        "Richard Jenkins",
-        "Joy Sunday",
-        "Arlan Ruf"
-      ],
-      "desc": "DTF St. Louis is a darkly comedic limited series about a love triangle between three adults experiencing middle-age malaise, that leads to one of them ending up dead.",
-      "note": "5.5",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "DTF St-Louis | Bande-annonce officielle | HBO Max | VOST",
-          "url": "https://www.youtube.com/watch?v=yNdj7CIrYf0"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/615/1538778.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/615/1538778.jpg",
-      "source": "tvmaze-us",
-      "isManual": false,
-      "tmdb_id": 206828
-    },
-    {
-      "id": "ca-ep-3324119",
-      "date": "2026-03-08",
-      "title": "Family Law",
-      "ep_title": "Knowing Me, Knowing You",
-      "saison": "Saison 4",
-      "saison_num": 4,
-      "ep_num": 7,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Crave",
-      "platformUrl": "https://www.crave.ca",
-      "platformLogo": "assets/logos/crave.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame",
-        "Jeunesse"
-      ],
-      "cast": [
-        "Kathleen Quinlan",
-        "Christopher McDonald",
-        "Dixie Carter",
-        "Tony Danza",
-        "Salli Richardson-Whitfield",
-        "Meredith Eaton"
-      ],
-      "desc": "Set in Vancouver, Canada, Family Law follows lawyer and recovering alcoholic Abigail 'Abby' Bianchi struggling to put her career and family back together after hitting rock bottom. As a condition of her probation, Abby is forced to work at her estranged father's firm, Svensson and Associates, and practice in family law for the first time while forging new relationships with the half-brother and half-sister whom she's never met. The result is a dysfunctional family law firm operating to help other families with their own dysfunctions.",
-      "note": "6.1",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/500/1250727.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/500/1250727.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 9877
-    },
-    {
-      "id": "web-ep-3519607",
-      "date": "2026-03-08",
-      "title": "Hell's Paradise: Jigokuraku",
-      "ep_title": "Love and Karma",
-      "saison": "Saison 2",
-      "saison_num": 2,
-      "ep_num": 9,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Prime Video",
-      "platformUrl": "https://www.primevideo.com",
-      "platformLogo": "assets/logos/prime.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "JP",
-      "tags": [
-        "JP"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Chiaki Kobayashi",
-        "Yumiri Hanamori",
-        "Ryohei Kimura",
-        "Rie Takahashi",
-        "Tetsu Inada",
-        "市川蒼"
-      ],
-      "desc": "Gabimaru the Hollow, a ninja of Iwagakure Village known for being cold and emotionless, was set up by his fellow ninja and is now on death row. Tired of killing and betrayal, he wants to die. However, no method of execution works on him because as much as the seemingly apathetic Gabimaru refuses to admit it, he does have a reason to live. He wants to return to his wife, who was the reason why he softened up and failed to be an effective assassin. Thus, he refuses to die. Asaemon the Decapitator, a famous executioner, sees this and has a proposal for the ninja. He wants Gabimaru to join an expedition to an island south of Japan in search of the elixir of life in exchange for a full pardon by the Shogunate. However, this island isn't a normal island: it's believed to be Paradise. However the",
-      "note": "7.5",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "Trailer VF",
-          "url": "https://www.youtube.com/watch?v=pQTjfM972tc"
-        },
-        {
-          "lang": "VF",
-          "label": "Trailer Officiel",
-          "url": "https://www.youtube.com/watch?v=NvQUhdysL5E"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/608/1520006.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/608/1520006.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 117465
-    },
-    {
-      "id": "ca-ep-3587073",
-      "date": "2026-03-08",
-      "title": "La Voix",
-      "ep_title": "Les duels",
-      "saison": "Saison 11",
-      "saison_num": 11,
-      "ep_num": 8,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "TVA+",
-      "platformUrl": "https://www.tvaplus.ca",
-      "platformLogo": "assets/logos/tva.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Musique"
-      ],
-      "cast": [],
-      "desc": "The Voice is THE singing contest of the moment that conquered the planet! Open to everyone from 16 to 116 years old, the only criteria used to discover the greatest talent in Quebec is the voice, and nothing but the voice.",
-      "note": null,
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/209/523561.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/209/523561.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 58561
-    },
-    {
-      "id": "intl-ep-3564362",
-      "date": "2026-03-08",
-      "title": "Last Week Tonight with John Oliver",
-      "ep_title": "USAID",
-      "saison": "Saison 13",
-      "saison_num": 13,
-      "ep_num": 4,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Crave",
-      "platformUrl": "https://www.crave.ca",
-      "platformLogo": "assets/logos/crave.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Comedie"
-      ],
-      "cast": [
-        "John Oliver"
-      ],
-      "desc": "On Last Week Tonight with John Oliver, John Oliver presents a satirical look at the week in news, politics and current events.",
-      "note": "7.9",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/615/1537812.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/615/1537812.jpg",
-      "source": "tvmaze-us",
-      "isManual": false,
-      "tmdb_id": 60694
-    },
-    {
-      "id": "intl-ep-3540731",
-      "date": "2026-03-08",
-      "title": "Rooster",
-      "ep_title": "Release the Brown Fat",
-      "saison": "Saison 1",
-      "saison_num": 1,
-      "ep_num": 1,
-      "ep_status": "premiere",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Crave",
-      "platformUrl": "https://www.crave.ca",
-      "platformLogo": "assets/logos/crave.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Comedie"
-      ],
-      "cast": [
-        "Kenta Miyake",
-        "本多真梨子",
-        "遠野ひかる"
-      ],
-      "desc": "Rooster follows a middle aged author navigating a complicated relationship with his daughter.",
-      "note": "6.7",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Official Anime Trailer #2 (English Dub)",
-          "url": "https://www.youtube.com/watch?v=ICDmiq2bW8M"
-        },
-        {
-          "lang": "VO",
-          "label": "Official Anime Trailer #2 [Subtitled]",
-          "url": "https://www.youtube.com/watch?v=N3_Hc-nutLQ"
-        },
-        {
-          "lang": "VO",
-          "label": "Official Trailer 2 (English Dub)",
-          "url": "https://www.youtube.com/watch?v=pzPuxAcq81g"
-        },
-        {
-          "lang": "VO",
-          "label": "March 14",
-          "url": "https://www.youtube.com/watch?v=hvsCxN8olc8"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/616/1540316.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/616/1540316.jpg",
-      "source": "tvmaze-us",
-      "isManual": false,
-      "tmdb_id": 259819
-    },
-    {
-      "id": "ca-ep-3569875",
-      "date": "2026-03-08",
-      "title": "Tout le monde en parle",
-      "ep_title": "Episode 17",
-      "saison": "Saison 22",
-      "saison_num": 22,
-      "ep_num": 17,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "ICI TOU.TV",
-      "platformUrl": "https://ici.tou.tv",
-      "platformLogo": "assets/logos/toutv.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Guy A. Lepage"
-      ],
-      "desc": "A weekly talkshow debating various topics.",
-      "note": "4.7",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/95/239005.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/95/239005.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 31351
-    },
-    {
-      "id": "ca-ep-3572518",
-      "date": "2026-03-09",
-      "title": "Antigang",
-      "ep_title": "Épisode 93",
-      "saison": "Saison 1",
-      "saison_num": 1,
-      "ep_num": 93,
-      "ep_status": "premiere",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "ICI TOU.TV",
-      "platformUrl": "https://ici.tou.tv",
-      "platformLogo": "assets/logos/toutv.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame",
-        "Action",
-        "Crime"
-      ],
-      "cast": [
-        "Patrice Robitaille",
-        "Fabien Cloutier",
-        "Karine Gonthier-Hyndman",
-        "Catherine Trudeau",
-        "Vincent Graton",
-        "Irdens Exantus"
-      ],
-      "desc": "Antigang will follow the adventures of detective sergeants Jean-François, Mathilde, Philippe, Carolanne, and Tommy, led by Lieutenant Christian. The squad finds itself at the heart of the conflicts between the country's criminal organizations. Each character experiences personal, familial, and romantic challenges.Antigang will also reveal the repercussions and consequences suffered by the families of the leaders of the underworld, not to mention the anxieties that haunt the daily lives of source agents and informants, torn between the mask of their loyalty and their true betrayals.The series dissects the modus operandi of police forces to better understand their investigative work, their strategies, and how they weave their web around criminal organizations with the ultimate goal of disman",
-      "note": "7.5",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "Antigang | Bande-annonce",
-          "url": "https://www.youtube.com/watch?v=il-ZTGvIE44"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/596/1490161.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/596/1490161.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 298954
-    },
-    {
-      "id": "web-ep-3563023",
-      "date": "2026-03-09",
-      "title": "Days of Our Lives",
-      "ep_title": "Ep. #15330",
-      "saison": "Saison 2026",
-      "saison_num": 2026,
-      "ep_num": 48,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Peacock",
-      "platformUrl": "https://www.peacocktv.com",
-      "platformLogo": "assets/logos/peacock.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame",
-        "Jeunesse",
-        "Romance"
-      ],
-      "cast": [],
-      "desc": "Days of our Lives is set in the fictitious Midwestern town of Salem. The core families are the Bradys, the Hortons and the DiMeras, and the multi-layered storylines involve elements of romance, adventure, mystery, comedy and drama.Beginning on September 12, 2022, DAYS became exclusive to streaming on Peacock.",
-      "note": "7.0",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/598/1496284.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/598/1496284.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 881
-    },
-    {
-      "id": "ca-ep-3562389",
-      "date": "2026-03-09",
-      "title": "Dumas",
-      "ep_title": "Episode 20",
-      "saison": "Saison 2",
-      "saison_num": 2,
-      "ep_num": 20,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "ICI TOU.TV",
-      "platformUrl": "https://ici.tou.tv",
-      "platformLogo": "assets/logos/toutv.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame",
-        "Crime"
-      ],
-      "cast": [
-        "Gildor Roy",
-        "Jason Roy-Léveillée",
-        "Isabel Richer",
-        "Vincent Leclerc",
-        "Marie-Lyne Joncas",
-        "Lili Francke-Robitaille"
-      ],
-      "desc": "Nearly 30 years ago, Jean Dumas started his small business: Intelco. Over the years, minor investigations gave way to much more complex cases: intellectual property theft, industrial espionage, embezzlement, and money laundering. To carry out these missions, Dumas assembled a team of seasoned investigators from law enforcement. They accept mandates clearly defined by rigorous contracts, in accordance with the law. The family business has thus become one of the largest investigative firms in the country.",
-      "note": "8.5",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "Dumas | Bande-annonce",
-          "url": "https://www.youtube.com/watch?v=CsRMsuSyXWE"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/554/1385704.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/554/1385704.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 260635
-    },
-    {
-      "id": "ca-ep-3569880",
-      "date": "2026-03-09",
-      "title": "Indéfendable",
-      "ep_title": "Toutes les voiles dehors",
-      "saison": "Saison 4",
-      "saison_num": 4,
-      "ep_num": 93,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "TVA+",
-      "platformUrl": "https://www.tvaplus.ca",
-      "platformLogo": "assets/logos/tva.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame",
-        "Crime"
-      ],
-      "cast": [],
-      "desc": "Follow the world of Cabinet Lapointe-Macdonald and its criminal defense team; a realistic universe built of human dramas, from the smallest to the largest, all imbued with the same emotion: fear.",
-      "note": "4.2",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/604/1511291.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/604/1511291.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 157616
-    },
-    {
-      "id": "web-ep-3516100",
-      "date": "2026-03-09",
-      "title": "Judy Justice",
-      "ep_title": "Bitter Bloodlines",
-      "saison": "Saison 4",
-      "saison_num": 4,
-      "ep_num": 36,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Prime Video",
-      "platformUrl": "https://www.primevideo.com",
-      "platformLogo": "assets/logos/prime.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Judith Sheindlin",
-        "Kevin Rasco",
-        "Whitney Kumar",
-        "Sarah Rose"
-      ],
-      "desc": "The Honorable Judy Sheindlin, retired Judge of the Manhattan family Court, brings her signature blend of sharp wit and wisdom, hilarious candor and unwavering honesty that has made her America's favorite judge for over 25 years, as she presides over real cases, arbitrates binding decisions and delivers what only she can: Judy Justice.",
-      "note": "6.0",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Court is back in session.",
-          "url": "https://www.youtube.com/watch?v=0i9fBOHQX2U"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/609/1523659.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/609/1523659.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 114294
-    },
-    {
-      "id": "showbizz-killing-eve---saison-42026-03-09",
-      "date": "2026-03-09",
-      "title": "Killing Eve , saison 4",
-      "ep_title": "",
-      "saison": "Saison 1",
-      "saison_num": 1,
-      "ep_num": 1,
-      "ep_status": "premiere",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Max",
-      "platformUrl": "#",
-      "platformLogo": "assets/logos/default.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [],
-      "desc": "",
-      "note": null,
-      "trailers": [],
-      "poster": null,
-      "backdrop": null,
-      "source": "showbizz",
-      "isManual": false,
-      "tmdb_id": null
-    },
-    {
-      "id": "ca-ep-3576999",
-      "date": "2026-03-09",
-      "title": "Les Armes",
-      "ep_title": "Rapport de force",
-      "saison": "Saison 2",
-      "saison_num": 2,
-      "ep_num": 22,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "TVA+",
-      "platformUrl": "https://www.tvaplus.ca",
-      "platformLogo": "assets/logos/tva.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame",
-        "Action"
-      ],
-      "cast": [
-        "Vincent-Guillaume Otis",
-        "Eve Landry",
-        "François Papineau",
-        "Bianca Gervais",
-        "Frédéric Millaire Zouvi",
-        "Larissa Corriveau"
-      ],
-      "desc": "Louis-Philippe Savard is summoned to take charge of operations in Kanawata. The honest officer arrives at the military base plunged into turmoil following the death of an elite soldier during training by the secret JTF 16 commando.",
-      "note": "8.5",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/589/1473925.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/589/1473925.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 270789
-    },
-    {
-      "id": "web-ep-3464776",
-      "date": "2026-03-09",
-      "title": "Paradise",
-      "ep_title": "The Mailman",
-      "saison": "Saison 2",
-      "saison_num": 2,
-      "ep_num": 5,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Disney+",
-      "platformUrl": "https://www.disneyplus.com",
-      "platformLogo": "assets/logos/disney.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame",
-        "Thriller"
-      ],
-      "cast": [
-        "Sterling K. Brown",
-        "Julianne Nicholson",
-        "Sarah Shahi",
-        "Nicole Brydon Bloom",
-        "Krys Marshall",
-        "Enuka Okuma"
-      ],
-      "desc": "Paradise is set in a serene community inhabited by some of the world's most prominent individuals. But this tranquillity explodes when a shocking murder occurs and a high-stakes investigation unfolds.",
-      "note": "7.4",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "PARADISE Bande Annonce VF (2025) Thriller",
-          "url": "https://www.youtube.com/watch?v=CQwGLlsxizY"
-        },
-        {
-          "lang": "VF",
-          "label": "Bande-annonce officielle (VOST)",
-          "url": "https://www.youtube.com/watch?v=F_o4fGPegIs"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/614/1536865.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/614/1536865.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 245927
-    },
-    {
-      "id": "web-ep-3570157",
-      "date": "2026-03-09",
-      "title": "Release that Witch",
-      "ep_title": "Episode 2",
-      "saison": "Saison 1",
-      "saison_num": 1,
-      "ep_num": 2,
-      "ep_status": "premiere",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Prime Video",
-      "platformUrl": "https://www.primevideo.com",
-      "platformLogo": "assets/logos/prime.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Animation"
-      ],
-      "cast": [
-        "陈张太康",
-        "乔苏",
-        "郭政建",
-        "Lu Lifeng"
-      ],
-      "desc": "Roland, a modern man reborn as a prince in the dangerous Border Town, rescues the witches Anna and Nana Pine from the Church. Harnessing their extraordinary powers, he fuses magic and technology to craft weapons, armies, and steam engines to defend his people. As the Demon Moon rises and conspiracies close in on his family, Roland must lead a revolution to protect his allies and reshape the world.",
-      "note": "8.1",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "Trailer Officiel",
-          "url": "https://www.youtube.com/watch?v=TWRd8l6qaYY"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/616/1540786.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/616/1540786.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 298026
-    },
-    {
-      "id": "web-ep-3567958",
-      "date": "2026-03-09",
-      "title": "Sesame Street",
-      "ep_title": "TBA",
-      "saison": "Saison 56",
-      "saison_num": 56,
-      "ep_num": 1,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Netflix",
-      "platformUrl": "https://www.netflix.com",
-      "platformLogo": "assets/logos/netflix.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Jeunesse"
-      ],
-      "cast": [
-        "Frank Oz",
-        "Sonia Manzano",
-        "Roscoe Orman",
-        "Martin P. Robinson",
-        "Suki Lopez",
-        "Violet Tinnirello"
-      ],
-      "desc": "Sunny days are here! This freshly reimagined \"Sesame Street\" series features characters you love, fan-favorite segments — and new ways to play.",
-      "note": "8.0",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/597/1494633.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/597/1494633.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 502
-    },
-    {
-      "id": "ca-ep-3628907",
-      "date": "2026-03-09",
-      "title": "The Good Stuff with Mary Berg",
-      "ep_title": "Episode 113",
-      "saison": "Saison 3",
-      "saison_num": 3,
-      "ep_num": 113,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Crave",
-      "platformUrl": "https://www.crave.ca",
-      "platformLogo": "assets/logos/crave.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Mary Berg"
-      ],
-      "desc": "A daily hour of fun, food, and laughs, featuring lifestyle trends, home hacks, audience games, and inspiring stories – all from top experts.",
-      "note": null,
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "The Good Stuff with Mary Berg premieres Sep 5 on CTV",
-          "url": "https://www.youtube.com/watch?v=eyZ15PdPoi0"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/475/1189655.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/475/1189655.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 240263
-    },
-    {
-      "id": "ca-ep-3629265",
-      "date": "2026-03-09",
-      "title": "The Social",
-      "ep_title": "Episode 120",
-      "saison": "Saison 13",
-      "saison_num": 13,
-      "ep_num": 120,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Crave",
-      "platformUrl": "https://www.crave.ca",
-      "platformLogo": "assets/logos/crave.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Steffi Mercie",
-        "Sarah Bossuwe",
-        "Elias Verwilt",
-        "Michael Amani",
-        "Hariette Sylva",
-        "Aaron De Groeve"
-      ],
-      "desc": "A daily, fresh perspective on the headlines, pop culture and lifestyle topics that matter most to Canadians.",
-      "note": null,
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/206/515195.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/206/515195.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 121362
-    },
-    {
-      "id": "intl-ep-3563171",
-      "date": "2026-03-09",
-      "title": "The Tonight Show Starring Jimmy Fallon",
-      "ep_title": "Kit Harington, Hilary Duff",
-      "saison": "Saison 2026",
-      "saison_num": 2026,
-      "ep_num": 29,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Peacock",
-      "platformUrl": "https://www.peacocktv.com",
-      "platformLogo": "assets/logos/peacock.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Comedie"
-      ],
-      "cast": [
-        "Jimmy Fallon",
-        "Steve Higgins"
-      ],
-      "desc": "Emmy Award and Grammy Award winner Jimmy Fallon brought NBC's \"The Tonight Show\" back to its New York origins when he launched The Tonight Show Starring Jimmy Fallon from Rockefeller Center. Fallon puts his own stamp on the storied NBC late-night franchise with his unique comedic wit, on-point pop culture awareness, welcoming style and impeccable taste in music with the award-winning house band, The Roots.",
-      "note": "4.4",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Trailer (ABC2)",
-          "url": "https://www.youtube.com/watch?v=q-0YafsWK_M"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/534/1335993.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/534/1335993.jpg",
-      "source": "tvmaze-us",
-      "isManual": false,
-      "tmdb_id": 59941
-    },
-    {
-      "id": "intl-ep-3563446",
-      "date": "2026-03-09",
-      "title": "Today 3rd Hour",
-      "ep_title": "Patrick J. Adams, Beau Garrett",
-      "saison": "Saison 2026",
-      "saison_num": 2026,
-      "ep_num": 47,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Peacock",
-      "platformUrl": "https://www.peacocktv.com",
-      "platformLogo": "assets/logos/peacock.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [],
-      "desc": "A news program intended to inform, entertain, inspire and set the agenda each morning. Each daily live broadcast provides current domestic and international news, weather reports, and interviews with newsmakers from the worlds of politics, business, media, entertainment and sports.",
-      "note": null,
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/608/1520443.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/608/1520443.jpg",
-      "source": "tvmaze-us",
-      "isManual": false,
-      "tmdb_id": null
-    },
-    {
-      "id": "web-ep-3443449",
-      "date": "2026-03-09",
-      "title": "WWE Monday Night RAW",
-      "ep_title": "#1711 - Climate Pledge Arena in Seattle, WA",
-      "saison": "Saison 33",
-      "saison_num": 33,
-      "ep_num": 10,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Netflix",
-      "platformUrl": "https://www.netflix.com",
-      "platformLogo": "assets/logos/netflix.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [],
-      "desc": "WWE Monday Night RAW is World Wrestling Entertainment's (formerly the WWF and the WWWF before that) premiere wrestling event and brand. Since its launch in 1993, WWE Monday Night RAW continues to air live on Monday nights. It is generally seen as the company's flagship program due to its prolific history, high ratings, weekly live format, and emphasis on pay-per-views. Monday Night RAW is high profile enough to attract frequent visits from celebrities who usually serve as guest hosts for a single live event. Since its first episode, the show has been broadcast live or recorded from more than 197 different arenas in 165 cities and towns in seven different nations: including the United States, Canada, the United Kingdom twice a year, Afghanistan for a special Tribute to the Troops, Germany, ",
-      "note": "7.5",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "25th Anniversary Trailer",
-          "url": "https://www.youtube.com/watch?v=FVO6mUQMon8"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/627/1568559.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/627/1568559.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 4656
-    },
-    {
-      "id": "ca-ep-3570471",
-      "date": "2026-03-10",
-      "title": "Alertes",
-      "ep_title": "Exobiologie",
-      "saison": "Saison 6",
-      "saison_num": 6,
-      "ep_num": 10,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "TVA+",
-      "platformUrl": "https://www.tvaplus.ca",
-      "platformLogo": "assets/logos/tva.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame",
-        "Crime"
-      ],
-      "cast": [
-        "Mylène St-Sauveur",
-        "Frédéric Pierre",
-        "Sophie Prégent",
-        "Danny Gilmore",
-        "Charles-Alexandre Dubé"
-      ],
-      "desc": "The departure of Marc-André allows Stéphanie to bring order to Quebec Security. The investigation of Anna, who still suffers from amnesia, continues. Her story touches Lily-Rose who is going through difficult times following her assault.",
-      "note": "8.0",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/554/1387494.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/554/1387494.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 118085
-    },
-    {
-      "id": "web-ep-3571866",
-      "date": "2026-03-10",
-      "title": "Escravos da Fé - Os Arautos do Evangelho",
-      "ep_title": "Escravos de Maria",
-      "saison": "Saison 1",
-      "saison_num": 1,
-      "ep_num": 1,
-      "ep_status": "premiere",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Crave",
-      "platformUrl": "https://www.crave.ca",
-      "platformLogo": "assets/logos/crave.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [],
-      "desc": "The series investigates allegations of abuse and psychological manipulation by former members of the Catholic group Heralds of the Gospel.",
-      "note": "7.0",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/617/1544568.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/617/1544568.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 316356
-    },
-    {
-      "id": "web-ep-3552767",
-      "date": "2026-03-10",
-      "title": "Geordie Shore",
-      "ep_title": "Peace at Last",
-      "saison": "Saison 26",
-      "saison_num": 26,
-      "ep_num": 9,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Paramount+",
-      "platformUrl": "https://www.paramountplus.com",
-      "platformLogo": "assets/logos/paramount.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame",
-        "Comedie"
-      ],
-      "cast": [],
-      "desc": "Following on from the International success of Jersey Shore, Geordie Shore follows the real life dramas of a group of Newcastle's finest.",
-      "note": "6.7",
-      "trailers": [],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/613/1532899.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/613/1532899.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 39416
-    },
-    {
-      "id": "web-ep-3554668",
-      "date": "2026-03-10",
-      "title": "NCIS: Sydney",
-      "ep_title": "Van Life",
-      "saison": "Saison 3",
-      "saison_num": 3,
-      "ep_num": 10,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Paramount+",
-      "platformUrl": "https://www.paramountplus.com",
-      "platformLogo": "assets/logos/paramount.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Drame",
-        "Crime"
-      ],
-      "cast": [
-        "Olivia Swann",
-        "Todd Lasance",
-        "Sean Sagar",
-        "Tuuli Narkle",
-        "Mavournee Hazel",
-        "William McInnes"
-      ],
-      "desc": "With rising international tensions in the Indo-Pacific, a brilliant and eclectic team of U.S. NCIS agents and the Australian Federal Police (AFP) are grafted into a multinational taskforce to keep naval crimes in check in the most contested patch of ocean on the planet.",
-      "note": "7.2",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "Bande-annonce VF",
-          "url": "https://www.youtube.com/watch?v=iJ9TXSsNWE4"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/591/1479848.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479848.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 157950
-    },
-    {
-      "id": "web-ep-3113043",
-      "date": "2026-03-10",
-      "title": "One Piece",
-      "ep_title": "The Beginning and the End",
-      "saison": "Saison 2",
-      "saison_num": 2,
-      "ep_num": 1,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "Netflix",
-      "platformUrl": "https://www.netflix.com",
-      "platformLogo": "assets/logos/netflix.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [
-        "USA"
-      ],
-      "categories": [
-        "Action",
-        "Fantasy"
-      ],
-      "cast": [
-        "Iñaki Godoy",
-        "Emily Rudd",
-        "Mackenyu Arata",
-        "Jacob Gibson",
-        "Taz Skylar",
-        "Charithra Chandran"
-      ],
-      "desc": "With his straw hat and ragtag crew, young pirate Monkey D. Luffy goes on an epic voyage for treasure in this live-action adaptation of the popular manga.",
-      "note": "7.7",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "One Piece – Saison 2 | Bande-annonce officielle VF | Netflix France",
-          "url": "https://www.youtube.com/watch?v=J-P9K2QqqeE"
-        },
-        {
-          "lang": "VF",
-          "label": "Bande-annonce finale VF",
-          "url": "https://www.youtube.com/watch?v=3ZRWvs9aSS8"
-        },
-        {
-          "lang": "VF",
-          "label": "Teaser officiel VOSTFR",
-          "url": "https://www.youtube.com/watch?v=Dh4vHsJcwtk"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/617/1543011.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/617/1543011.jpg",
-      "source": "tvmaze-web",
-      "isManual": false,
-      "tmdb_id": 111110
-    },
-    {
-      "id": "ca-ep-3569123",
-      "date": "2026-03-10",
-      "title": "STAT",
-      "ep_title": "Épisode 20",
-      "saison": "Saison 4",
-      "saison_num": 4,
-      "ep_num": 20,
-      "ep_status": "retour",
-      "status": "sorti",
-      "type": "serie",
-      "platform": "ICI TOU.TV",
-      "platformUrl": "https://ici.tou.tv",
-      "platformLogo": "assets/logos/toutv.svg",
-      "lang": [
-        "FR"
-      ],
-      "country": "CA",
-      "tags": [
-        "QC",
-        "CA"
-      ],
-      "categories": [
-        "Drame"
-      ],
-      "cast": [
-        "Suzanne Clément",
-        "Normand D'Amour",
-        "Geneviève Schmidt",
-        "Stéphane Rousseau",
-        "Lou-Pascal Tremblay",
-        "Jean-Nicolas Verreault"
-      ],
-      "desc": "STAT is a look into the daily lives of staff members at St-Vincent Hospital in Montreal. We discover four longtime friends who work within the same walls and who occupy very different positions. The group of friends is still in shock over the passing of François, Emmanuelle's lover and Philippe's best friend, who died a year earlier in troubling circumstances. Around them is a group of characters who bring the different departments of the hospital to life, in this world that never sleeps.",
-      "note": "6.8",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "STAT- SÉRIE QUOTIDIENNE",
-          "url": "https://www.youtube.com/watch?v=VKAfXb17kQk"
-        }
-      ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/446/1115133.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/446/1115133.jpg",
-      "source": "tvmaze-ca",
-      "isManual": false,
-      "tmdb_id": 210078
-    },
     {
       "id": "web-ep-3535969",
       "date": "2026-03-11",
@@ -1468,6 +46,94 @@
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 287390
+    },
+    {
+      "id": "ca-ep-3572520",
+      "date": "2026-03-11",
+      "title": "Antigang",
+      "ep_title": "Épisode 95",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 95,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "ICI TOU.TV",
+      "platformUrl": "https://ici.tou.tv",
+      "platformLogo": "assets/logos/toutv.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame",
+        "Action",
+        "Crime"
+      ],
+      "cast": [
+        "Patrice Robitaille",
+        "Fabien Cloutier",
+        "Karine Gonthier-Hyndman",
+        "Catherine Trudeau",
+        "Vincent Graton",
+        "Irdens Exantus"
+      ],
+      "desc": "Antigang will follow the adventures of detective sergeants Jean-François, Mathilde, Philippe, Carolanne, and Tommy, led by Lieutenant Christian. The squad finds itself at the heart of the conflicts between the country's criminal organizations. Each character experiences personal, familial, and romantic challenges.Antigang will also reveal the repercussions and consequences suffered by the families of the leaders of the underworld, not to mention the anxieties that haunt the daily lives of source agents and informants, torn between the mask of their loyalty and their true betrayals.The series dissects the modus operandi of police forces to better understand their investigative work, their strategies, and how they weave their web around criminal organizations with the ultimate goal of disman",
+      "note": "7.5",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Antigang | Bande-annonce",
+          "url": "https://www.youtube.com/watch?v=il-ZTGvIE44"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/596/1490161.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/596/1490161.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 298954
+    },
+    {
+      "id": "ca-ep-3576990",
+      "date": "2026-03-11",
+      "title": "Big Brother Célébrités",
+      "ep_title": "Mercredi : la quotidienne - semaine 9",
+      "saison": "Saison 6",
+      "saison_num": 6,
+      "ep_num": 44,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Noovo",
+      "platformUrl": "https://www.noovo.ca",
+      "platformLogo": "assets/logos/noovo.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Marie-Mai",
+        "Marc Bélanger"
+      ],
+      "desc": "16 Quebec celebrities try to create alliances and avoid eviction in order to win the season of Big Brother Celebrities.",
+      "note": "3.8",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/552/1381736.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/552/1381736.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 113207
     },
     {
       "id": "web-ep-3391821",
@@ -1520,6 +186,43 @@
       "tmdb_id": 213306
     },
     {
+      "id": "web-ep-3563025",
+      "date": "2026-03-11",
+      "title": "Days of Our Lives",
+      "ep_title": "Ep. #15332",
+      "saison": "Saison 2026",
+      "saison_num": 2026,
+      "ep_num": 50,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Peacock",
+      "platformUrl": "https://www.peacocktv.com",
+      "platformLogo": "assets/logos/peacock.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Jeunesse",
+        "Romance"
+      ],
+      "cast": [],
+      "desc": "Days of our Lives is set in the fictitious Midwestern town of Salem. The core families are the Bradys, the Hortons and the DiMeras, and the multi-layered storylines involve elements of romance, adventure, mystery, comedy and drama.Beginning on September 12, 2022, DAYS became exclusive to streaming on Peacock.",
+      "note": "7.0",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/598/1496284.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/598/1496284.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 881
+    },
+    {
       "id": "ca-ep-3581120",
       "date": "2026-03-11",
       "title": "Indomptables",
@@ -1561,6 +264,88 @@
       "source": "tvmaze-ca",
       "isManual": false,
       "tmdb_id": 310311
+    },
+    {
+      "id": "ca-ep-3573582",
+      "date": "2026-03-11",
+      "title": "Indéfendable",
+      "ep_title": "La grafigne",
+      "saison": "Saison 4",
+      "saison_num": 4,
+      "ep_num": 95,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "TVA+",
+      "platformUrl": "https://www.tvaplus.ca",
+      "platformLogo": "assets/logos/tva.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame",
+        "Crime"
+      ],
+      "cast": [],
+      "desc": "Follow the world of Cabinet Lapointe-Macdonald and its criminal defense team; a realistic universe built of human dramas, from the smallest to the largest, all imbued with the same emotion: fear.",
+      "note": "4.2",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/604/1511291.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/604/1511291.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 157616
+    },
+    {
+      "id": "web-ep-3528137",
+      "date": "2026-03-11",
+      "title": "Judy Justice",
+      "ep_title": "Tire'd and Toxic and Blame in the Ashes",
+      "saison": "Saison 4",
+      "saison_num": 4,
+      "ep_num": 38,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Prime Video",
+      "platformUrl": "https://www.primevideo.com",
+      "platformLogo": "assets/logos/prime.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Judith Sheindlin",
+        "Kevin Rasco",
+        "Whitney Kumar",
+        "Sarah Rose"
+      ],
+      "desc": "The Honorable Judy Sheindlin, retired Judge of the Manhattan family Court, brings her signature blend of sharp wit and wisdom, hilarious candor and unwavering honesty that has made her America's favorite judge for over 25 years, as she presides over real cases, arbitrates binding decisions and delivers what only she can: Judy Justice.",
+      "note": "6.0",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Court is back in session.",
+          "url": "https://www.youtube.com/watch?v=0i9fBOHQX2U"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/609/1523659.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/609/1523659.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 114294
     },
     {
       "id": "web-ep-3564583",
@@ -1693,6 +478,170 @@
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 240740
+    },
+    {
+      "id": "ca-ep-3628909",
+      "date": "2026-03-11",
+      "title": "The Good Stuff with Mary Berg",
+      "ep_title": "Episode 115",
+      "saison": "Saison 3",
+      "saison_num": 3,
+      "ep_num": 115,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Mary Berg"
+      ],
+      "desc": "A daily hour of fun, food, and laughs, featuring lifestyle trends, home hacks, audience games, and inspiring stories – all from top experts.",
+      "note": null,
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "The Good Stuff with Mary Berg premieres Sep 5 on CTV",
+          "url": "https://www.youtube.com/watch?v=eyZ15PdPoi0"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/475/1189655.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/475/1189655.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 240263
+    },
+    {
+      "id": "ca-ep-3629267",
+      "date": "2026-03-11",
+      "title": "The Social",
+      "ep_title": "Episode 122",
+      "saison": "Saison 13",
+      "saison_num": 13,
+      "ep_num": 122,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Steffi Mercie",
+        "Sarah Bossuwe",
+        "Elias Verwilt",
+        "Michael Amani",
+        "Hariette Sylva",
+        "Aaron De Groeve"
+      ],
+      "desc": "A daily, fresh perspective on the headlines, pop culture and lifestyle topics that matter most to Canadians.",
+      "note": null,
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/206/515195.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/206/515195.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 121362
+    },
+    {
+      "id": "intl-ep-3565199",
+      "date": "2026-03-11",
+      "title": "The Tonight Show Starring Jimmy Fallon",
+      "ep_title": "Uma Thurman, Emma Chamberlain, Derrick Stroup",
+      "saison": "Saison 2026",
+      "saison_num": 2026,
+      "ep_num": 31,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Peacock",
+      "platformUrl": "https://www.peacocktv.com",
+      "platformLogo": "assets/logos/peacock.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Comedie"
+      ],
+      "cast": [
+        "Jimmy Fallon",
+        "Steve Higgins"
+      ],
+      "desc": "Emmy Award and Grammy Award winner Jimmy Fallon brought NBC's \"The Tonight Show\" back to its New York origins when he launched The Tonight Show Starring Jimmy Fallon from Rockefeller Center. Fallon puts his own stamp on the storied NBC late-night franchise with his unique comedic wit, on-point pop culture awareness, welcoming style and impeccable taste in music with the award-winning house band, The Roots.",
+      "note": "4.4",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Trailer (ABC2)",
+          "url": "https://www.youtube.com/watch?v=q-0YafsWK_M"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/534/1335993.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/534/1335993.jpg",
+      "source": "tvmaze-us",
+      "isManual": false,
+      "tmdb_id": 59941
+    },
+    {
+      "id": "intl-ep-3563460",
+      "date": "2026-03-11",
+      "title": "Today 3rd Hour",
+      "ep_title": "Rudy Pankow, Stephen Moyer",
+      "saison": "Saison 2026",
+      "saison_num": 2026,
+      "ep_num": 49,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Peacock",
+      "platformUrl": "https://www.peacocktv.com",
+      "platformLogo": "assets/logos/peacock.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [],
+      "desc": "A news program intended to inform, entertain, inspire and set the agenda each morning. Each daily live broadcast provides current domestic and international news, weather reports, and interviews with newsmakers from the worlds of politics, business, media, entertainment and sports.",
+      "note": null,
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/608/1520443.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/608/1520443.jpg",
+      "source": "tvmaze-us",
+      "isManual": false,
+      "tmdb_id": null
     },
     {
       "id": "web-ep-3565460",
@@ -1978,7 +927,7 @@
         "Grace Gummer"
       ],
       "desc": "Love Story is a scripted anthology series of sweeping true love stories that captured the world's attention.",
-      "note": "6.1",
+      "note": "5.7",
       "trailers": [
         {
           "lang": "VF",
@@ -2759,6 +1708,53 @@
       "tmdb_id": 4419
     },
     {
+      "id": "web-ep-3569249",
+      "date": "2026-03-14",
+      "title": "The Great Indian Kapil Show",
+      "ep_title": "Family No. 1 - David Dhawan and Varun Dhawan",
+      "saison": "Saison 4",
+      "saison_num": 4,
+      "ep_num": 13,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Netflix",
+      "platformUrl": "https://www.netflix.com",
+      "platformLogo": "assets/logos/netflix.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Kapil Sharma",
+        "Sunil Grover",
+        "Krishna Abhishek",
+        "Kiku Sharda",
+        "Archana Puran Singh"
+      ],
+      "desc": "Comedian Kapil Sharma hosts this laugh-out-loud variety talk show with celebrity guests, hilarious antics and his signature supporting cast.",
+      "note": "7.9",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Official Trailer",
+          "url": "https://www.youtube.com/watch?v=bftjfqS3v6k"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/609/1522944.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/609/1522944.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 247769
+    },
+    {
       "id": "web-ep-3526056",
       "date": "2026-03-14",
       "title": "The Madison",
@@ -2851,6 +1847,57 @@
       "tmdb_id": null
     },
     {
+      "id": "web-ep-3451617",
+      "date": "2026-03-15",
+      "title": "Como Agua para Chocolate",
+      "ep_title": "Frijoles Gordos a la Tezcucana",
+      "saison": "Saison 2",
+      "saison_num": 2,
+      "ep_num": 5,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Azul Guaita",
+        "Andres Baida",
+        "Irene Azuela",
+        "Ana Valeria Becerril"
+      ],
+      "desc": "Como Agua para Chocolate explores the idea that sometimes traditions can become a prison, an obstacle for love. Tita de la Garza and Pedro Múzquiz are two souls deeply in love, yet unable to be together due to entrenched family customs. The protagonists navigate a world of magical realism and rich flavors as Tita struggles between the destiny imposed on her by her family and her fight for love. Along the way, the audience will witness her greatest refuge: the kitchen. For Tita, her magical connection to cooking becomes an active resistance against oppression, allowing her to channel her deepest desires and passions into her recipes, transforming those who taste them.",
+      "note": "8.2",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Official Trailer [Subtitled]",
+          "url": "https://www.youtube.com/watch?v=NeVLROw2SEo"
+        },
+        {
+          "lang": "VO",
+          "label": "Official Teaser [Subtitled]",
+          "url": "https://www.youtube.com/watch?v=k2oi8hQ_qBs"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/541/1352733.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/541/1352733.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 235635
+    },
+    {
       "id": "ca-ep-3572248",
       "date": "2026-03-15",
       "title": "Crime Beat",
@@ -2899,6 +1946,320 @@
       "source": "tvmaze-ca",
       "isManual": false,
       "tmdb_id": 101106
+    },
+    {
+      "id": "intl-ep-3534350",
+      "date": "2026-03-15",
+      "title": "DTF St. Louis",
+      "ep_title": "The Go Getter",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 3,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Comedie"
+      ],
+      "cast": [
+        "Jason Bateman",
+        "David Harbour",
+        "Linda Cardellini",
+        "Richard Jenkins",
+        "Joy Sunday",
+        "Arlan Ruf"
+      ],
+      "desc": "DTF St. Louis is a darkly comedic limited series about a love triangle between three adults experiencing middle-age malaise, that leads to one of them ending up dead.",
+      "note": "5.5",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "DTF St-Louis | Bande-annonce officielle | HBO Max | VOST",
+          "url": "https://www.youtube.com/watch?v=yNdj7CIrYf0"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/615/1538778.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/615/1538778.jpg",
+      "source": "tvmaze-us",
+      "isManual": false,
+      "tmdb_id": 206828
+    },
+    {
+      "id": "ca-ep-3324120",
+      "date": "2026-03-15",
+      "title": "Family Law",
+      "ep_title": "Valley of the Dolls",
+      "saison": "Saison 4",
+      "saison_num": 4,
+      "ep_num": 8,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame",
+        "Jeunesse"
+      ],
+      "cast": [
+        "Kathleen Quinlan",
+        "Christopher McDonald",
+        "Dixie Carter",
+        "Tony Danza",
+        "Salli Richardson-Whitfield",
+        "Meredith Eaton"
+      ],
+      "desc": "Set in Vancouver, Canada, Family Law follows lawyer and recovering alcoholic Abigail 'Abby' Bianchi struggling to put her career and family back together after hitting rock bottom. As a condition of her probation, Abby is forced to work at her estranged father's firm, Svensson and Associates, and practice in family law for the first time while forging new relationships with the half-brother and half-sister whom she's never met. The result is a dysfunctional family law firm operating to help other families with their own dysfunctions.",
+      "note": "6.1",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/500/1250727.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/500/1250727.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 9877
+    },
+    {
+      "id": "web-ep-3519608",
+      "date": "2026-03-15",
+      "title": "Hell's Paradise: Jigokuraku",
+      "ep_title": "Master and Student",
+      "saison": "Saison 2",
+      "saison_num": 2,
+      "ep_num": 10,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Prime Video",
+      "platformUrl": "https://www.primevideo.com",
+      "platformLogo": "assets/logos/prime.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "JP",
+      "tags": [
+        "JP"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Chiaki Kobayashi",
+        "Yumiri Hanamori",
+        "Ryohei Kimura",
+        "Rie Takahashi",
+        "Tetsu Inada",
+        "市川蒼"
+      ],
+      "desc": "Gabimaru the Hollow, a ninja of Iwagakure Village known for being cold and emotionless, was set up by his fellow ninja and is now on death row. Tired of killing and betrayal, he wants to die. However, no method of execution works on him because as much as the seemingly apathetic Gabimaru refuses to admit it, he does have a reason to live. He wants to return to his wife, who was the reason why he softened up and failed to be an effective assassin. Thus, he refuses to die. Asaemon the Decapitator, a famous executioner, sees this and has a proposal for the ninja. He wants Gabimaru to join an expedition to an island south of Japan in search of the elixir of life in exchange for a full pardon by the Shogunate. However, this island isn't a normal island: it's believed to be Paradise. However the",
+      "note": "7.5",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Trailer VF",
+          "url": "https://www.youtube.com/watch?v=pQTjfM972tc"
+        },
+        {
+          "lang": "VF",
+          "label": "Trailer Officiel",
+          "url": "https://www.youtube.com/watch?v=NvQUhdysL5E"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/608/1520006.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/608/1520006.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 117465
+    },
+    {
+      "id": "ca-ep-3587074",
+      "date": "2026-03-15",
+      "title": "La Voix",
+      "ep_title": "Les qualifications",
+      "saison": "Saison 11",
+      "saison_num": 11,
+      "ep_num": 9,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "TVA+",
+      "platformUrl": "https://www.tvaplus.ca",
+      "platformLogo": "assets/logos/tva.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Musique"
+      ],
+      "cast": [],
+      "desc": "The Voice is THE singing contest of the moment that conquered the planet! Open to everyone from 16 to 116 years old, the only criteria used to discover the greatest talent in Quebec is the voice, and nothing but the voice.",
+      "note": null,
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/209/523561.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/209/523561.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 58561
+    },
+    {
+      "id": "intl-ep-3564363",
+      "date": "2026-03-15",
+      "title": "Last Week Tonight with John Oliver",
+      "ep_title": "JD Vance",
+      "saison": "Saison 13",
+      "saison_num": 13,
+      "ep_num": 5,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Comedie"
+      ],
+      "cast": [
+        "John Oliver"
+      ],
+      "desc": "On Last Week Tonight with John Oliver, John Oliver presents a satirical look at the week in news, politics and current events.",
+      "note": "7.9",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/615/1537812.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/615/1537812.jpg",
+      "source": "tvmaze-us",
+      "isManual": false,
+      "tmdb_id": 60694
+    },
+    {
+      "id": "intl-ep-3563265",
+      "date": "2026-03-15",
+      "title": "Rooster",
+      "ep_title": "Trousers",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 2,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Comedie"
+      ],
+      "cast": [
+        "Kenta Miyake",
+        "本多真梨子",
+        "遠野ひかる"
+      ],
+      "desc": "Rooster follows a middle aged author navigating a complicated relationship with his daughter.",
+      "note": "6.7",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Official Anime Trailer #2 (English Dub)",
+          "url": "https://www.youtube.com/watch?v=ICDmiq2bW8M"
+        },
+        {
+          "lang": "VO",
+          "label": "Official Anime Trailer #2 [Subtitled]",
+          "url": "https://www.youtube.com/watch?v=N3_Hc-nutLQ"
+        },
+        {
+          "lang": "VO",
+          "label": "Official Trailer 2 (English Dub)",
+          "url": "https://www.youtube.com/watch?v=pzPuxAcq81g"
+        },
+        {
+          "lang": "VO",
+          "label": "March 14",
+          "url": "https://www.youtube.com/watch?v=hvsCxN8olc8"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/616/1540316.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/616/1540316.jpg",
+      "source": "tvmaze-us",
+      "isManual": false,
+      "tmdb_id": 259819
+    },
+    {
+      "id": "ca-ep-3573580",
+      "date": "2026-03-15",
+      "title": "Tout le monde en parle",
+      "ep_title": "Episode 18",
+      "saison": "Saison 22",
+      "saison_num": 22,
+      "ep_num": 18,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "ICI TOU.TV",
+      "platformUrl": "https://ici.tou.tv",
+      "platformLogo": "assets/logos/toutv.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Guy A. Lepage"
+      ],
+      "desc": "A weekly talkshow debating various topics.",
+      "note": "4.7",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/95/239005.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/95/239005.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 31351
     },
     {
       "id": "showbizz--vapor-s---victoria-charlton-enqu-te2026-03-15",
@@ -2973,6 +2334,98 @@
       "tmdb_id": null
     },
     {
+      "id": "ca-ep-3570643",
+      "date": "2026-03-16",
+      "title": "Dumas",
+      "ep_title": "Episode 21",
+      "saison": "Saison 2",
+      "saison_num": 2,
+      "ep_num": 21,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "ICI TOU.TV",
+      "platformUrl": "https://ici.tou.tv",
+      "platformLogo": "assets/logos/toutv.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame",
+        "Crime"
+      ],
+      "cast": [
+        "Gildor Roy",
+        "Jason Roy-Léveillée",
+        "Isabel Richer",
+        "Vincent Leclerc",
+        "Marie-Lyne Joncas",
+        "Lili Francke-Robitaille"
+      ],
+      "desc": "Nearly 30 years ago, Jean Dumas started his small business: Intelco. Over the years, minor investigations gave way to much more complex cases: intellectual property theft, industrial espionage, embezzlement, and money laundering. To carry out these missions, Dumas assembled a team of seasoned investigators from law enforcement. They accept mandates clearly defined by rigorous contracts, in accordance with the law. The family business has thus become one of the largest investigative firms in the country.",
+      "note": "8.5",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Dumas | Bande-annonce",
+          "url": "https://www.youtube.com/watch?v=CsRMsuSyXWE"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/554/1385704.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/554/1385704.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 260635
+    },
+    {
+      "id": "ca-ep-3577013",
+      "date": "2026-03-16",
+      "title": "Les Armes",
+      "ep_title": "Avancer dans l'ombre",
+      "saison": "Saison 2",
+      "saison_num": 2,
+      "ep_num": 23,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "TVA+",
+      "platformUrl": "https://www.tvaplus.ca",
+      "platformLogo": "assets/logos/tva.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame",
+        "Action"
+      ],
+      "cast": [
+        "Vincent-Guillaume Otis",
+        "Eve Landry",
+        "François Papineau",
+        "Bianca Gervais",
+        "Frédéric Millaire Zouvi",
+        "Larissa Corriveau"
+      ],
+      "desc": "Louis-Philippe Savard is summoned to take charge of operations in Kanawata. The honest officer arrives at the military base plunged into turmoil following the death of an elite soldier during training by the secret JTF 16 commando.",
+      "note": "8.5",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/589/1473925.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/589/1473925.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 270789
+    },
+    {
       "id": "showbizz-m-lissa--plein-les-bras2026-03-16",
       "date": "2026-03-16",
       "title": "Mélissa. plein les bras",
@@ -3045,6 +2498,60 @@
       "tmdb_id": null
     },
     {
+      "id": "web-ep-3464777",
+      "date": "2026-03-16",
+      "title": "Paradise",
+      "ep_title": "Jane",
+      "saison": "Saison 2",
+      "saison_num": 2,
+      "ep_num": 6,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Disney+",
+      "platformUrl": "https://www.disneyplus.com",
+      "platformLogo": "assets/logos/disney.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Thriller"
+      ],
+      "cast": [
+        "Sterling K. Brown",
+        "Julianne Nicholson",
+        "Sarah Shahi",
+        "Nicole Brydon Bloom",
+        "Krys Marshall",
+        "Enuka Okuma"
+      ],
+      "desc": "Paradise is set in a serene community inhabited by some of the world's most prominent individuals. But this tranquillity explodes when a shocking murder occurs and a high-stakes investigation unfolds.",
+      "note": "7.4",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "PARADISE Bande Annonce VF (2025) Thriller",
+          "url": "https://www.youtube.com/watch?v=CQwGLlsxizY"
+        },
+        {
+          "lang": "VF",
+          "label": "Bande-annonce officielle (VOST)",
+          "url": "https://www.youtube.com/watch?v=F_o4fGPegIs"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/614/1536865.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/614/1536865.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 245927
+    },
+    {
       "id": "showbizz-professeur-t---saison-42026-03-21",
       "date": "2026-03-16",
       "title": "Professeur T , saison 4",
@@ -3078,6 +2585,52 @@
       "source": "showbizz",
       "isManual": false,
       "tmdb_id": null
+    },
+    {
+      "id": "web-ep-3570158",
+      "date": "2026-03-16",
+      "title": "Release that Witch",
+      "ep_title": "Episode 3",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 3,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Prime Video",
+      "platformUrl": "https://www.primevideo.com",
+      "platformLogo": "assets/logos/prime.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Animation"
+      ],
+      "cast": [
+        "陈张太康",
+        "乔苏",
+        "郭政建",
+        "Lu Lifeng"
+      ],
+      "desc": "Roland, a modern man reborn as a prince in the dangerous Border Town, rescues the witches Anna and Nana Pine from the Church. Harnessing their extraordinary powers, he fuses magic and technology to craft weapons, armies, and steam engines to defend his people. As the Demon Moon rises and conspiracies close in on his family, Roland must lead a revolution to protect his allies and reshape the world.",
+      "note": "8.1",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Trailer Officiel",
+          "url": "https://www.youtube.com/watch?v=TWRd8l6qaYY"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/616/1540786.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/616/1540786.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 298026
     },
     {
       "id": "ca-ep-3483018",
@@ -3129,6 +2682,47 @@
       "tmdb_id": 255351
     },
     {
+      "id": "web-ep-3443450",
+      "date": "2026-03-16",
+      "title": "WWE Monday Night RAW",
+      "ep_title": "#1712 - Frost Bank Center in San Antonio, TX",
+      "saison": "Saison 33",
+      "saison_num": 33,
+      "ep_num": 11,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Netflix",
+      "platformUrl": "https://www.netflix.com",
+      "platformLogo": "assets/logos/netflix.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [],
+      "desc": "WWE Monday Night RAW is World Wrestling Entertainment's (formerly the WWF and the WWWF before that) premiere wrestling event and brand. Since its launch in 1993, WWE Monday Night RAW continues to air live on Monday nights. It is generally seen as the company's flagship program due to its prolific history, high ratings, weekly live format, and emphasis on pay-per-views. Monday Night RAW is high profile enough to attract frequent visits from celebrities who usually serve as guest hosts for a single live event. Since its first episode, the show has been broadcast live or recorded from more than 197 different arenas in 165 cities and towns in seven different nations: including the United States, Canada, the United Kingdom twice a year, Afghanistan for a special Tribute to the Troops, Germany, ",
+      "note": "7.5",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "25th Anniversary Trailer",
+          "url": "https://www.youtube.com/watch?v=FVO6mUQMon8"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/627/1568559.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/627/1568559.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 4656
+    },
+    {
       "id": "ca-ep-3585462",
       "date": "2026-03-17",
       "title": "22 Minutes",
@@ -3174,6 +2768,48 @@
       "source": "tvmaze-ca",
       "isManual": false,
       "tmdb_id": 70
+    },
+    {
+      "id": "ca-ep-3577511",
+      "date": "2026-03-17",
+      "title": "Alertes",
+      "ep_title": "Escouade spéciale",
+      "saison": "Saison 6",
+      "saison_num": 6,
+      "ep_num": 11,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "TVA+",
+      "platformUrl": "https://www.tvaplus.ca",
+      "platformLogo": "assets/logos/tva.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame",
+        "Crime"
+      ],
+      "cast": [
+        "Mylène St-Sauveur",
+        "Frédéric Pierre",
+        "Sophie Prégent",
+        "Danny Gilmore",
+        "Charles-Alexandre Dubé"
+      ],
+      "desc": "The departure of Marc-André allows Stéphanie to bring order to Quebec Security. The investigation of Anna, who still suffers from amnesia, continues. Her story touches Lily-Rose who is going through difficult times following her assault.",
+      "note": "8.0",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/554/1387494.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/554/1387494.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 118085
     },
     {
       "id": "showbizz-audrey-est-revenue2026-03-17",
@@ -3259,6 +2895,42 @@
       "tmdb_id": null
     },
     {
+      "id": "web-ep-3552768",
+      "date": "2026-03-17",
+      "title": "Geordie Shore",
+      "ep_title": "Birth, Brides and Bye-byes",
+      "saison": "Saison 26",
+      "saison_num": 26,
+      "ep_num": 10,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Paramount+",
+      "platformUrl": "https://www.paramountplus.com",
+      "platformLogo": "assets/logos/paramount.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Comedie"
+      ],
+      "cast": [],
+      "desc": "Following on from the International success of Jersey Shore, Geordie Shore follows the real life dramas of a group of Newcastle's finest.",
+      "note": "6.7",
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/613/1532899.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/613/1532899.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 39416
+    },
+    {
       "id": "showbizz-le-bonheur---saison-22026-03-17",
       "date": "2026-03-17",
       "title": "Le bonheur , saison 2",
@@ -3292,6 +2964,103 @@
       "source": "showbizz",
       "isManual": false,
       "tmdb_id": null
+    },
+    {
+      "id": "web-ep-3554669",
+      "date": "2026-03-17",
+      "title": "NCIS: Sydney",
+      "ep_title": "Berthed",
+      "saison": "Saison 3",
+      "saison_num": 3,
+      "ep_num": 11,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Paramount+",
+      "platformUrl": "https://www.paramountplus.com",
+      "platformLogo": "assets/logos/paramount.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Crime"
+      ],
+      "cast": [
+        "Olivia Swann",
+        "Todd Lasance",
+        "Sean Sagar",
+        "Tuuli Narkle",
+        "Mavournee Hazel",
+        "William McInnes"
+      ],
+      "desc": "With rising international tensions in the Indo-Pacific, a brilliant and eclectic team of U.S. NCIS agents and the Australian Federal Police (AFP) are grafted into a multinational taskforce to keep naval crimes in check in the most contested patch of ocean on the planet.",
+      "note": "7.2",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Bande-annonce VF",
+          "url": "https://www.youtube.com/watch?v=iJ9TXSsNWE4"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/591/1479848.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479848.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 157950
+    },
+    {
+      "id": "ca-ep-3574332",
+      "date": "2026-03-17",
+      "title": "STAT",
+      "ep_title": "Épisode 21",
+      "saison": "Saison 4",
+      "saison_num": 4,
+      "ep_num": 21,
+      "ep_status": "retour",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "ICI TOU.TV",
+      "platformUrl": "https://ici.tou.tv",
+      "platformLogo": "assets/logos/toutv.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Suzanne Clément",
+        "Normand D'Amour",
+        "Geneviève Schmidt",
+        "Stéphane Rousseau",
+        "Lou-Pascal Tremblay",
+        "Jean-Nicolas Verreault"
+      ],
+      "desc": "STAT is a look into the daily lives of staff members at St-Vincent Hospital in Montreal. We discover four longtime friends who work within the same walls and who occupy very different positions. The group of friends is still in shock over the passing of François, Emmanuelle's lover and Philippe's best friend, who died a year earlier in troubling circumstances. Around them is a group of characters who bring the different departments of the hospital to life, in this world that never sleeps.",
+      "note": "6.8",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "STAT- SÉRIE QUOTIDIENNE",
+          "url": "https://www.youtube.com/watch?v=VKAfXb17kQk"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/446/1115133.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/446/1115133.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 210078
     },
     {
       "id": "ca-ep-3557000",
@@ -4241,64 +4010,6 @@
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 316945
-    },
-    {
-      "id": "film-1266127",
-      "date": "2026-03-19",
-      "title": "Wedding Nightmare : Deuxième partie",
-      "ep_title": "",
-      "saison": "Film",
-      "saison_num": 0,
-      "ep_num": null,
-      "ep_status": "normale",
-      "status": "sorti",
-      "type": "film",
-      "platform": "Cinema",
-      "platformUrl": "https://www.themoviedb.org/movie/1266127",
-      "platformLogo": "assets/logos/cinema.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [],
-      "categories": [
-        "Thriller",
-        "Horreur",
-        "Comedie"
-      ],
-      "cast": [
-        "Samara Weaving",
-        "Kathryn Newton",
-        "Elijah Wood",
-        "Sarah Michelle Gellar",
-        "Shawn Hatosy",
-        "Varun Saranga"
-      ],
-      "desc": "Peu après avoir échappé à l'attaque sans merci de la famille Le Domas, Grace découvre qu'elle vient d'atteindre un nouveau niveau dans ce jeu cauchemardesque, et cette fois, elle aura à ses côtés sa sœur dont elle s'était éloignée, Faith. Grace n’a qu'une seule chance de survivre, de protéger sa sœur et de s’emparer du Trône du Conseil qui dirige le monde. Traquée par quatre familles rivales prêtes à tout pour le pouvoir, elle sait que l’issue de cette chasse à l'homme déterminera qui régnera sur tout.",
-      "note": "7.7",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "Wedding Nightmare : deuxième partie - Spot : Aujourd'hui au cinéma | Searchlight Pictures",
-          "url": "https://www.youtube.com/watch?v=AWisR_f-PYQ"
-        },
-        {
-          "lang": "VF",
-          "label": "Wedding Nightmare : deuxième partie - Première bande-annonce (VOST) | Searchlight Pictures",
-          "url": "https://www.youtube.com/watch?v=ZJYdbhfCZu8"
-        },
-        {
-          "lang": "VF",
-          "label": "Wedding Nightmare : deuxième partie - Première bande-annonce (VF) | Searchlight Pictures",
-          "url": "https://www.youtube.com/watch?v=oReWfTnn5R8"
-        }
-      ],
-      "poster": "https://image.tmdb.org/t/p/w300/tARTqozLyHGjdKQWL734odssfpL.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/qYNJm1GOB4nULxIoTO0zfqjSAkC.jpg",
-      "source": "tmdb-film",
-      "isManual": false,
-      "tmdb_id": 1266127
     },
     {
       "id": "web-ep-3534795",
@@ -5327,7 +5038,7 @@
       "note": "6.8",
       "trailers": [],
       "poster": "https://image.tmdb.org/t/p/w300/iGpMm603GUKH2SiXB2S5m4sZ17t.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/1x9e0qWonw634NhIsRdvnneeqvN.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/ksl01eojCFiGl5zO9kACiyiwpZs.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1523145
@@ -5979,7 +5690,7 @@
         }
       ],
       "poster": "https://image.tmdb.org/t/p/w300/aSQktALDmbunDbwkuZbZFMEWVFr.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/9Z2uDYXqJrlmePznQQJhL6d92Rq.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/kxQiIJ4gVcD3K6o14MJ72p5yRcE.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1226863
@@ -6512,7 +6223,7 @@
         }
       ],
       "poster": "https://image.tmdb.org/t/p/w300/37r0FZuv9OAQgMApDoJ8gvd5LWs.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/b8H1a89qmNxF8rqFGrG93Q9qn52.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/rw1WmxUvmbwRsbAX12m6toIg04j.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1325734
@@ -8991,7 +8702,7 @@
         "George Burgess"
       ],
       "desc": "Patton James abandonne son rêve de pratiquer les arts martiaux mixtes pour subvenir aux besoins de sa femme, Luciana et de leur fils. Lorsque son frère, Malon, subit une grave blessure et doit faire face à des pressions financières, Patton décide de le venger lors d'un combat avec l'aide de l'entraîneur vétéran Sammy.",
-      "note": "6.2",
+      "note": "6.3",
       "trailers": [
         {
           "lang": "VO",
@@ -9005,7 +8716,7 @@
         }
       ],
       "poster": "https://image.tmdb.org/t/p/w300/7NrvUI3vnW8H3rD7ExKcTL7KRcQ.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/hlZGaey4lR9hc4rGxZRAmIEsZOc.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/vmdt6nUXYX4mM0Ahcvh4bgHOjUt.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1292415
@@ -11700,60 +11411,6 @@
       "tmdb_id": null
     },
     {
-      "id": "film-1242265",
-      "date": "2026-04-20",
-      "title": "The Criminals",
-      "ep_title": "",
-      "saison": "Film",
-      "saison_num": 0,
-      "ep_num": null,
-      "ep_status": "normale",
-      "status": "sorti",
-      "type": "film",
-      "platform": "Cinema",
-      "platformUrl": "https://www.themoviedb.org/movie/1242265",
-      "platformLogo": "assets/logos/cinema.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [],
-      "categories": [
-        "Action",
-        "Crime",
-        "Drame",
-        "Thriller"
-      ],
-      "cast": [
-        "Aaron Taylor-Johnson",
-        "Theo James",
-        "Gugu Mbatha-Raw",
-        "Elham Ehsas",
-        "Sam Worthington",
-        "Shaun Mason"
-      ],
-      "desc": "Situé dans le Londres contemporain, Fuze débute après la découverte d’une bombe datant de la Seconde Guerre mondiale sur un chantier de construction, forçant une évacuation massive à l’échelle de la ville. Dans ce climat de tension et de chaos, une audacieuse opération criminelle s’organise, utilisant l’évacuation comme écran de fumée pour un braquage minutieusement orchestré. Tandis que les autorités se lancent dans une course contre la montre pour contenir la crise, les alliances se brouillent et les limites morales sont franchies. Le film entraîne habilement les spectateurs dans une série de rebondissements calculés, offrant un divertissement aussi intense que captivant.",
-      "note": "6.4",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "THE CRIMINALS - Bande-annonce VF",
-          "url": "https://www.youtube.com/watch?v=so02RapruBY"
-        },
-        {
-          "lang": "VF",
-          "label": "THE CRIMINALS - Bande-annonce VOST",
-          "url": "https://www.youtube.com/watch?v=_sEQVrHhFSQ"
-        }
-      ],
-      "poster": "https://image.tmdb.org/t/p/w300/vUvZuBWRsjO2tnUo2yesrdbhKal.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/8wIaBCeGv3UhIn5CJOWQGHT1Cif.jpg",
-      "source": "tmdb-film",
-      "isManual": false,
-      "tmdb_id": 1242265
-    },
-    {
       "id": "showbizz-les-a--de-la-brocante---saison-122026-04-21",
       "date": "2026-04-21",
       "title": "Les a$ de la brocante , saison 12",
@@ -11822,7 +11479,7 @@
         "Rory Wilmot"
       ],
       "desc": "A psychological thriller set in a conservative Christian sect about a dutiful wife who is set on a dangerous path of emancipation and sexual awakening when she encounters an escaped convict.",
-      "note": "5.7",
+      "note": "5.8",
       "trailers": [
         {
           "lang": "VF",
@@ -12581,7 +12238,7 @@
         "Zachary Garred"
       ],
       "desc": "Alors qu'elle teste ses limites en solo dans la nature sauvage australienne, une femme en deuil se retrouve prise au piège d'un jeu tordu avec un tueur qui a fait d'elle sa proie.",
-      "note": "6.7",
+      "note": "6.8",
       "trailers": [
         {
           "lang": "VF",
@@ -13205,7 +12862,7 @@
         "Michael Patric"
       ],
       "desc": "Peinant à terminer son dernier roman, l'Américain Ohm Bauman décide de se rendre en Irlande afin de s'acquitter d'une promesse longtemps différée: répandre les cendres de ses parents à proximité de l'hôtel où le couple avait passé son voyage de noces. Peu après son inscription dans ce même établissement, l'écrivain apprend de la bouche de la barmaid Fiona que la suite nuptiale, interdite d'accès, serait hantée par une sorcière. Quand la jeune employée disparaît mystérieusement, et que des soupçons pèsent sur un vieil homme au passé tragique vivant dans le bois voisin, Bauman ouvre sa propre enquête.",
-      "note": "7.1",
+      "note": "6.8",
       "trailers": [
         {
           "lang": "VF",
@@ -13282,6 +12939,58 @@
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 223386
+    },
+    {
+      "id": "film-1288341",
+      "date": "2026-04-30",
+      "title": "Seven Snipers",
+      "ep_title": "",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normale",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1288341",
+      "platformLogo": "assets/logos/cinema.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [],
+      "categories": [
+        "Action",
+        "Thriller"
+      ],
+      "cast": [
+        "Radha Mitchell",
+        "Tim Roth",
+        "Annabel Wolfe",
+        "Ioan Gruffudd",
+        "Ryan Kwanten",
+        "Lee Tiger Halley"
+      ],
+      "desc": "Une tireuse d'élite à la retraite se cache dans un ranch australien et reconstitue son équipe de tueurs d'élite pour protéger sa fille lorsqu'un seigneur de guerre, en quête de vengeance, la traque.",
+      "note": "6.0",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Official Trailer",
+          "url": "https://www.youtube.com/watch?v=-r-HtsJPgto"
+        },
+        {
+          "lang": "VO",
+          "label": "Trailer",
+          "url": "https://www.youtube.com/watch?v=DiXcl3PH8fQ"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/xIZ8huVdXCL7OMtsjd3XvmFP5sK.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/g2aOpyCO1vEyUZURh3V5uaHu187.jpg",
+      "source": "tmdb-film",
+      "isManual": false,
+      "tmdb_id": 1288341
     },
     {
       "id": "film-1007757",
@@ -13544,6 +13253,55 @@
       "tmdb_id": 1314481
     },
     {
+      "id": "film-1363974",
+      "date": "2026-05-01",
+      "title": "Moi, quand je me réincarne en Slime, le Film - Les larmes de la mer azur",
+      "ep_title": "",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normale",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1363974",
+      "platformLogo": "assets/logos/cinema.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [],
+      "categories": [
+        "Animation",
+        "Fantasy",
+        "Action",
+        "Comedie"
+      ],
+      "cast": [
+        "Okasaki Miho",
+        "Mao Ichimichi",
+        "Tomoaki Maeno",
+        "Makoto Furukawa",
+        "Sayaka Senbongi",
+        "Hisako Kanemoto"
+      ],
+      "desc": "Après la cérémonie d'ouverture de la Fédération des monstres de Tempest, Limule et ses compagnons sont invités par l'Impératrice Elmecia de la grande nation elfique, la Dynastie Magique de Salion, à visiter son île privée. Alors que le groupe profite de ces courtes vacances, une mystérieuse femme nommée Yura fait son apparition. Dans ce paysage paradisiaque, de nouveaux troubles s’annoncent…",
+      "note": "6.2",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Moi, quand je me réincarne en Slime, le Film - Les larmes de la mer azur | TRAILER VOSTFR",
+          "url": "https://www.youtube.com/watch?v=cKUlGaJYrpg"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/q2CqzdaaxHrpH1SKlqjKOBKCUEm.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/4z6VWajbDWZ6CQFC3u4ApKMzGMk.jpg",
+      "source": "tmdb-film",
+      "isManual": false,
+      "tmdb_id": 1363974
+    },
+    {
       "id": "web-ep-3607561",
       "date": "2026-05-01",
       "title": "Travis Japan Summer Vacation!! In the USA",
@@ -13732,7 +13490,7 @@
         "Molly Gordon"
       ],
       "desc": "George est un berger qui lit chaque soir des romans policiers à ses chères brebis, persuadé qu’elles ne peuvent pas les comprendre. Mais lorsqu’un mystérieux incident vient bouleverser la vie à la ferme, les moutons comprennent qu’ils doivent devenir détectives. En suivant les indices et en enquêtant sur des suspects humains, ils prouvent que même des moutons peuvent s'avérer être de brillants individus capables de résoudre des énigmes criminelles.",
-      "note": "7.7",
+      "note": "7.6",
       "trailers": [
         {
           "lang": "VF",
@@ -14029,6 +13787,41 @@
       "poster": "https://image.tmdb.org/t/p/w300/eZ4zsf01UOMZpO8lr4ZtaBvZak8.jpg",
       "backdrop": "https://image.tmdb.org/t/p/w780/rqeLAlEBJExuO7PLRf7m9rZG7fO.jpg",
       "source": "showbizz",
+      "isManual": false,
+      "tmdb_id": null
+    },
+    {
+      "id": "intl-ep-3638630",
+      "date": "2026-05-05",
+      "title": "Designed To Last",
+      "ep_title": "Wind!",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 1,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Disney+",
+      "platformUrl": "https://www.disneyplus.com",
+      "platformLogo": "assets/logos/disney.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [],
+      "desc": "Sponsored content made in collaboration with American Family Insurance. Three teams of home design innovators face off against the worst Mother Nature has to offer to see whose build is truly designed to last. Part competition, part science experiment, each episode tests a different element—until one team reigns supreme and wins the $100,000 prize.",
+      "note": null,
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/628/1570004.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/628/1570004.jpg",
+      "source": "tvmaze-us",
       "isManual": false,
       "tmdb_id": null
     },
@@ -14648,7 +14441,7 @@
         "Maurice Compte"
       ],
       "desc": "Restless in the Florida Keys, Etta Tiger Jonze dreams of a life in Miami's glittering, sub-tropical kingdom. When her family's drug-running business shatters in tragedy, however, Etta embarks on a dangerous journey through Miami's neon-lit underbelly that will define who she is and what she's ultimately capable of.",
-      "note": "6.8",
+      "note": "6.9",
       "trailers": [
         {
           "lang": "VF",
@@ -14787,7 +14580,7 @@
         "Kathy Baker"
       ],
       "desc": "Tova, une veuve âgée, se lie d'une amitié improbable avec Marcellus, une pieuvre géante et pacifique qui vit dans l'aquarium où elle travaille. Sans que Tova le sache, Marcellus s'est donné pour mission de résoudre un mystère qui guérira le cœur de la veuve et la mènera à une découverte qui changera sa vie. Basé sur le livre à succès.",
-      "note": "8.5",
+      "note": "8.6",
       "trailers": [
         {
           "lang": "VO",
@@ -14933,7 +14726,7 @@
         "Martyn Ford",
         "Ludi Lin"
       ],
-      "desc": "Les champions plébiscités par les fans – désormais secondés par Johnny Cage en personne – s’affrontent dans un tournoi ultime, sans foi ni loi, pour tenter de renverser le règne de Shao Kahn, un tyran qui menace l’existence même de l’Earthrealm et de ses partisans.",
+      "desc": "Les champions en arts martiaux de l'Earthrealm, secondés par le héros de films d'action Johnny Cage, s'affrontent dans un tournoi ultime. Leur but: renverser Shao Kahn, un tyran qui menace l'existence même de leur monde. L'arrivée fracassante de Kitana, princesse d'Outworld aux loyautés troubles, vient brouiller davantage les lignes séparant ennemis et alliés. Tandis que de nouvelles alliances se forment, les combattants découvrent que les règles du tournoi ont changé. Entre affrontements spectaculaires et révélations mystiques, ils devront repousser leurs limites.",
       "note": "6.7",
       "trailers": [
         {
@@ -15114,7 +14907,7 @@
         "Colin Jost"
       ],
       "desc": "Pop Culture Jeopardy! is a brand-new twist on the classic quiz show's \"answer-and-question\" format that combines the academic rigor of Jeopardy! with the excitement and unpredictability of pop culture. Contestants, playing in teams of three, will need to be experts in categories from Alternative Rock to The Avengers; Broadway to MMA; Gen Z to Zendaya as they compete in a tournament-style event for the grand prize and ultimate bragging rights.",
-      "note": "3.3",
+      "note": "7.6",
       "trailers": [
         {
           "lang": "VO",
@@ -15628,7 +15421,7 @@
         }
       ],
       "poster": "https://image.tmdb.org/t/p/w300/dQgIcW6Th08kMRf2HBoYWoFE6OD.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/bIy0555ukSqweSqG9MtRnoyisQI.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/oBft4BZeoDQzTT9ZGijClr76qvK.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1122573
@@ -15846,7 +15639,7 @@
         "Elton"
       ],
       "desc": "Michael Bully Herbig presents LOL – Last One Laughing, the first German comedy game show on Amazon Prime. Ten top stars of German comedy join in the ultimate battle to find out who laughs last! Who will be able to stay serious? Which performance won't leave a dry eye in the house? And who will be the last one standing?",
-      "note": "5.3",
+      "note": "5.9",
       "trailers": [],
       "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/301/754067.jpg",
       "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/301/754067.jpg",
@@ -16140,7 +15933,7 @@
         "J.R. Villarreal"
       ],
       "desc": "The Dutton Ranch, home to Beth Dutton and Rip Wheeler, is a testament to the peace they sought, fought for, and nearly died for, as they've come to cherish their 7,000-acre land. With tough times and stiff competition, Beth and Rip do what they must to survive, all while ensuring Carter becomes the man he's supposed to be.As Beth and Rip fight to build a future together - far from the ghosts of Yellowstone - they collide with brutal new realities and a ruthless rival ranch that will stop at nothing to protect its empire. In South Texas, blood runs deeper, forgiveness is fleeting, and the cost of survival might just be your soul.",
-      "note": "7.0",
+      "note": "6.9",
       "trailers": [
         {
           "lang": "VO",
@@ -16197,7 +15990,7 @@
         "Mykelti Williamson"
       ],
       "desc": "La vie de jumelles défigurées, Racine et Anaia, est perturbée lorsque la mère qu'elles croyaient morte depuis longtemps les convoque à son chevet et leur révèle que leur père est responsable de son état et des cicatrices des jeunes filles.",
-      "note": "6.1",
+      "note": "5.9",
       "trailers": [
         {
           "lang": "VO",
@@ -16210,7 +16003,7 @@
           "url": "https://www.youtube.com/watch?v=pgtdkuNFoKk"
         }
       ],
-      "poster": "https://image.tmdb.org/t/p/w300/rCYQGHdoz7qwYsb6wXETJfUfDLX.jpg",
+      "poster": "https://image.tmdb.org/t/p/w300/c3nN8XnbYfj2ZEBcNqqlTbtLiQy.jpg",
       "backdrop": "https://image.tmdb.org/t/p/w780/sZ61Fo6Di1DvXXhrSjyF6Xunr9C.jpg",
       "source": "tmdb-film",
       "isManual": false,
@@ -16262,54 +16055,6 @@
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1073591
-    },
-    {
-      "id": "film-1628367",
-      "date": "2026-05-15",
-      "title": "Kartavya : Le sens du devoir",
-      "ep_title": "",
-      "saison": "Film",
-      "saison_num": 0,
-      "ep_num": null,
-      "ep_status": "normale",
-      "status": "sorti",
-      "type": "film",
-      "platform": "Cinema",
-      "platformUrl": "https://www.themoviedb.org/movie/1628367",
-      "platformLogo": "assets/logos/cinema.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [],
-      "categories": [
-        "Crime",
-        "Drame",
-        "Thriller"
-      ],
-      "cast": [
-        "सैफ अली खान",
-        "Rasika Dugal",
-        "Sanjay Mishra",
-        "Saurabh Dwivedi",
-        "Zakir Hussain",
-        "Manish Chaudhary"
-      ],
-      "desc": "Lorsque la vie de sa famille est menacée et que le danger se rapproche, un policier doit décider jusqu'où il est prêt à aller pour remplir son devoir.",
-      "note": "6.5",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Official Trailer",
-          "url": "https://www.youtube.com/watch?v=WnoY3M1eaeE"
-        }
-      ],
-      "poster": "https://image.tmdb.org/t/p/w300/6OccgP26oyioq8NjfwKIJ2rWjhu.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/mHm73HhpvGWfRkXNErcwc15Czrv.jpg",
-      "source": "tmdb-film",
-      "isManual": false,
-      "tmdb_id": 1628367
     },
     {
       "id": "film-1339713",
@@ -16368,7 +16113,7 @@
         }
       ],
       "poster": "https://image.tmdb.org/t/p/w300/mDCR1frpUvGfIKksuM440VLb7X9.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/rZfmzpixLKLR3Hg2u0WgC7XLFl8.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/5lTZyuBTNOfawsfPT8Q0cIg6qAF.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1339713
@@ -16397,6 +16142,7 @@
       ],
       "categories": [
         "Drame",
+        "Comedie",
         "Romance"
       ],
       "cast": [
@@ -16528,7 +16274,7 @@
         "Son Hyun-joo"
       ],
       "desc": "A goofy group of townies stumbles into superpowers and fights rising evil as doomsday panic grows in this wild, turn-of-the-century action comedy.",
-      "note": "6.5",
+      "note": "6.7",
       "trailers": [
         {
           "lang": "VO",
@@ -16659,7 +16405,7 @@
         "Keith McErlean"
       ],
       "desc": "Un chanteur de mariage et une pop star en déclin collaborent sur une chanson, ce qui entraîne des conséquences comiques.",
-      "note": "9.3",
+      "note": "7.0",
       "trailers": [
         {
           "lang": "VO",
@@ -16966,7 +16712,7 @@
         "Dannii Minogue"
       ],
       "desc": "From her breakout role as Charlene in the '80s Australian soap Neighbours to chart-topping success across five decades, Kylie Minogue has never stopped reinventing herself. Now the new documentary KYLIE explores how she reshaped pop and became one of music's most enduring icons, selling over 80 million records.",
-      "note": "8.3",
+      "note": "8.2",
       "trailers": [
         {
           "lang": "VF",
@@ -17106,64 +16852,6 @@
       "tmdb_id": null
     },
     {
-      "id": "film-1375646",
-      "date": "2026-05-21",
-      "title": "Colony",
-      "ep_title": "",
-      "saison": "Film",
-      "saison_num": 0,
-      "ep_num": null,
-      "ep_status": "normale",
-      "status": "sorti",
-      "type": "film",
-      "platform": "Cinema",
-      "platformUrl": "https://www.themoviedb.org/movie/1375646",
-      "platformLogo": "assets/logos/cinema.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [],
-      "categories": [
-        "Action",
-        "Thriller",
-        "Horreur"
-      ],
-      "cast": [
-        "Jun Ji-hyun",
-        "Koo Kyo-hwan",
-        "Ji Chang-wook",
-        "Kim Shin-Rok",
-        "Shin Hyun-been",
-        "Go Soo"
-      ],
-      "desc": "Se-jeong, professeure de biotechnologie, assiste à une conférence sur le sujet, mais la situation dégénère rapidement lorsqu'un virus à mutation fulgurante se propage. Alors que l'épidémie s'étend et que les personnes infectées commencent à se transformer, les autorités bouclent l'ensemble du complexe, piégeant les survivants face à une menace grandissante…",
-      "note": "6.5",
-      "trailers": [
-        {
-          "lang": "VF",
-          "label": "Après Dernier train pour Busan, découvrez COLONY !",
-          "url": "https://www.youtube.com/watch?v=EqmRexAoUXs"
-        },
-        {
-          "lang": "VF",
-          "label": "Après Dernier train pour Busan, découvrez COLONY !",
-          "url": "https://www.youtube.com/watch?v=UUwuxbCFiKk"
-        },
-        {
-          "lang": "VF",
-          "label": "Après Dernier train pour Busan, découvrez COLONY !",
-          "url": "https://www.youtube.com/watch?v=HH3PcoKfptU"
-        }
-      ],
-      "poster": "https://image.tmdb.org/t/p/w300/thK6glS5pklrlijsgSN6Hw9GLQK.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/jDvxsBemt2Iyslg7qn2WMzgxz23.jpg",
-      "source": "tmdb-film",
-      "isManual": false,
-      "tmdb_id": 1375646
-    },
-    {
       "id": "web-ep-3619210",
       "date": "2026-05-21",
       "title": "James.",
@@ -17199,6 +16887,53 @@
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 321596
+    },
+    {
+      "id": "film-1530510",
+      "date": "2026-05-21",
+      "title": "Le Mondial de Martín",
+      "ep_title": "",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normale",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1530510",
+      "platformLogo": "assets/logos/cinema.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [],
+      "categories": [
+        "Comedie",
+        "Drame"
+      ],
+      "cast": [
+        "Diego Luna",
+        "Karla Souza",
+        "Daniel Giménez Cacho",
+        "Álvaro Guerrero",
+        "Memo Villegas",
+        "Davor Tomić"
+      ],
+      "desc": "Séismes, rivaux américains, drame sportif. Contre toute attente, le Mexique accueille le plus grand tournoi international de foot. Et la vraie histoire est encore plus incroyable.",
+      "note": "7.2",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Le mondial de Martin - Disponible sur Netflix",
+          "url": "https://www.youtube.com/watch?v=pB4l3wOy5Ew"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/1p5tZnJS4uZNhpDWhnmT1ehCYwH.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/5Dkv39CuytJDnJeZjkepFtOWqBr.jpg",
+      "source": "tmdb-film",
+      "isManual": false,
+      "tmdb_id": 1530510
     },
     {
       "id": "showbizz-r-al-d-barque---saison-32026-05-21",
@@ -17408,7 +17143,7 @@
         "Demi Moore"
       ],
       "desc": "Une équipe de boosters (c’est-à-dire des voleurs à l’étalage professionnels) décident de s’en prendre à une papesse de la mode impitoyable.",
-      "note": "4.8",
+      "note": "5.0",
       "trailers": [
         {
           "lang": "VO",
@@ -17426,53 +17161,6 @@
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1227877
-    },
-    {
-      "id": "film-1368881",
-      "date": "2026-05-22",
-      "title": "Ladies First",
-      "ep_title": "",
-      "saison": "Film",
-      "saison_num": 0,
-      "ep_num": null,
-      "ep_status": "normale",
-      "status": "sorti",
-      "type": "film",
-      "platform": "Cinema",
-      "platformUrl": "https://www.themoviedb.org/movie/1368881",
-      "platformLogo": "assets/logos/cinema.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [],
-      "categories": [
-        "Comedie",
-        "Fantasy"
-      ],
-      "cast": [
-        "Sacha Baron Cohen",
-        "Rosamund Pike",
-        "Tom Davis",
-        "Emily Mortimer",
-        "Weruche Opia",
-        "Charles Dance"
-      ],
-      "desc": "Un dragueur arrogant et charismatique qui enchaîne les liaisons voit sa vie d'homme riche et puissant chamboulée quand il se réveille dans un monde parallèle dominé par les femmes.",
-      "note": "6.0",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Official Trailer",
-          "url": "https://www.youtube.com/watch?v=yeetI2DfbaE"
-        }
-      ],
-      "poster": "https://image.tmdb.org/t/p/w300/wkI57tUgF4azrXy4QURO0diuDxD.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/bOy625BjpCskOWnx3tD09MsKVCb.jpg",
-      "source": "tmdb-film",
-      "isManual": false,
-      "tmdb_id": 1368881
     },
     {
       "id": "web-ep-3550049",
@@ -17558,7 +17246,7 @@
         "Bonni Dichone"
       ],
       "desc": "Après s’être arrêté sur la scène d’un terrible accident sur une autoroute isolée, un jeune couple se rend compte qu’ils ne sont pas seuls. Une présence démoniaque connu sous le nom de Passager s’est jointe au voyage, transformant leur virée en van en cauchemar dont ils ne peuvent pas fuir.",
-      "note": "6.1",
+      "note": "6.2",
       "trailers": [
         {
           "lang": "VF",
@@ -17604,7 +17292,7 @@
       ],
       "cast": [],
       "desc": "The Chi is a timely coming-of-age story centering on a group of residents who become linked by coincidence but bonded by the need for connection and redemption. Kevin is the pre-teen who must step past shattered illusions and embrace the normal rites of childhood, while Brandon the dreamer makes his own nearly impossible leap of faith to succeed in life and love with girlfriend Jerrika. Emmett is the carefree teen is thrust into complex responsibility with guidance from his mother Jada, and Ronnie is the drifter whose struggle to love and be loved calls into question his every pursuit.",
-      "note": "5.1",
+      "note": "5.2",
       "trailers": [
         {
           "lang": "VO",
@@ -17674,7 +17362,7 @@
           "url": "https://www.youtube.com/watch?v=T9VYVwyfTYg"
         }
       ],
-      "poster": "https://image.tmdb.org/t/p/w300/eUOVyCSZrUH6aPfhsfd7j0bxGOl.jpg",
+      "poster": "https://image.tmdb.org/t/p/w300/qkH4ntQtO5qnL17RFOvmkNHKpGt.jpg",
       "backdrop": "https://image.tmdb.org/t/p/w780/6zg7A9ICOthNR2TSXlT51KvXrsA.jpg",
       "source": "tmdb-film",
       "isManual": false,
@@ -17707,7 +17395,7 @@
       ],
       "cast": [],
       "desc": "In 1991, four teenage girls were brutally murdered at a frozen yogurt shop in Austin, Texas. What happened that night forever shook the Austin community and continues to mystify the police and haunt the families left in the wake of unthinkable loss. Including interviews with the investigative teams, the victims' parents and siblings, and the two men who served time for the crime, the series explores law enforcement practices and raises complex questions about press coverage and the power of suggestion on memory. The series offers a unique window into the lasting effects of grief and the enduring impact of unrelenting crime coverage in mainstream media through poignant interviews with those closest to the crime and investigation.",
-      "note": "7.0",
+      "note": "7.2",
       "trailers": [
         {
           "lang": "VO",
@@ -18537,7 +18225,7 @@
       ],
       "cast": [],
       "desc": "A defense lawyer uses mindfulness techniques to take over a criminal gang in this deadpan comedy series based on the bestselling novels by Karsten Dusse.",
-      "note": "7.0",
+      "note": "7.3",
       "trailers": [
         {
           "lang": "VO",
@@ -18585,7 +18273,7 @@
         "Avan Jogia"
       ],
       "desc": "Une étrange porte apparaît dans le sous-sol d'un magasin de meubles.",
-      "note": "6.8",
+      "note": "6.9",
       "trailers": [
         {
           "lang": "VF",
@@ -18800,7 +18488,7 @@
         "Con O'Neill"
       ],
       "desc": "Dans les soixante-douze heures précédant le Jour J, le chef météorologue britannique James Stagg est appelé à fournir les prévisions les plus importantes de l'histoire afin que les Alliés puissent débarquer sur les plages normandes.",
-      "note": "8.0",
+      "note": "7.9",
       "trailers": [
         {
           "lang": "VF",
@@ -18882,7 +18570,7 @@
         "Kumail Nanjiani"
       ],
       "desc": "Un homme devient père au foyer et réalise rapidement qu'il ne sait plus où donner de la tête.",
-      "note": "7.5",
+      "note": "6.8",
       "trailers": [
         {
           "lang": "VO",
@@ -18948,54 +18636,6 @@
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 243316
-    },
-    {
-      "id": "film-1662414",
-      "date": "2026-05-28",
-      "title": "Vol de nuit pour Los Angeles",
-      "ep_title": "",
-      "saison": "Film",
-      "saison_num": 0,
-      "ep_num": null,
-      "ep_status": "normale",
-      "status": "sorti",
-      "type": "film",
-      "platform": "Cinema",
-      "platformUrl": "https://www.themoviedb.org/movie/1662414",
-      "platformLogo": "assets/logos/cinema.svg",
-      "lang": [
-        "FR",
-        "EN"
-      ],
-      "country": "USA",
-      "tags": [],
-      "categories": [
-        "Action",
-        "Drame",
-        "Jeunesse"
-      ],
-      "cast": [
-        "Clark Shotwell",
-        "Kelly Eviston-Quinnett",
-        "Ella Bleu Travolta",
-        "Olga Hoffmann",
-        "Charlie Berger",
-        "Margaret Travolta"
-      ],
-      "desc": "En plein âge d'or de l'aviation, un jeune amateur d'avions et sa mère embarquent pour un périple à travers le pays jusqu'à Hollywood. Ce vol deviendra le voyage d'une vie.",
-      "note": "6.4",
-      "trailers": [
-        {
-          "lang": "VO",
-          "label": "Official Trailer",
-          "url": "https://www.youtube.com/watch?v=Nd9fv9rPCMg"
-        }
-      ],
-      "poster": "https://image.tmdb.org/t/p/w300/zoizilI4sXe6xycONzAwZnfhT2v.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/ldUVeDfA5ID2vchHGejrEltoBSN.jpg",
-      "source": "tmdb-film",
-      "isManual": false,
-      "tmdb_id": 1662414
     },
     {
       "id": "web-ep-3571023",
@@ -19217,6 +18857,43 @@
       "tmdb_id": null
     },
     {
+      "id": "film-1572208",
+      "date": "2026-05-30",
+      "title": "On tire pas sur une plante pour qu'elle pousse",
+      "ep_title": "",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normale",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1572208",
+      "platformLogo": "assets/logos/cinema.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "LGBT"
+      ],
+      "categories": [
+        "Documentaire"
+      ],
+      "cast": [
+        "Rosie-Roch L'Allier"
+      ],
+      "desc": "It’s summer in Haute-Gaspésie, and Rosie-Roch recalls intimate memories of her youth and opens up about her burgeoning queer identity between swims and walks.",
+      "note": null,
+      "trailers": [],
+      "poster": "https://image.tmdb.org/t/p/w300/qsE6cMI5Z4g2NWT36CHmJlvTvPU.jpg",
+      "backdrop": null,
+      "source": "tmdb-film",
+      "isManual": false,
+      "tmdb_id": 1572208
+    },
+    {
       "id": "intl-ep-3620765",
       "date": "2026-06-01",
       "title": "Bring Me the Beauties: A Model Cult",
@@ -19325,7 +19002,7 @@
       ],
       "cast": [],
       "desc": "U.S. version of the British show Love Island where a group of singles come to stay in a villa for a few weeks and have to couple up with one another – those who fail to find a partner to couple up with risk being dumped from the island. Islanders are on the lookout for romance, but the road to love doesn't always run smoothly. Challenges abound with new Islander arrivals and dramatic twists as friendships and relationships form. In addition to choosing their partners wisely, Islanders must also win the hearts of viewers who have the opportunity to shape events on screen and ultimately crown one lucky couple the winner, who will then have the chance to walk away with both love and the cash prize.",
-      "note": "5.1",
+      "note": "4.9",
       "trailers": [
         {
           "lang": "VO",
@@ -19598,6 +19275,59 @@
       "tmdb_id": 135934
     },
     {
+      "id": "film-1628448",
+      "date": "2026-06-04",
+      "title": "Maa Behen",
+      "ep_title": "",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normale",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1628448",
+      "platformLogo": "assets/logos/cinema.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [],
+      "categories": [
+        "Comedie",
+        "Thriller",
+        "Drame"
+      ],
+      "cast": [
+        "Madhuri Dixit",
+        "Triptii Dimri",
+        "Ravi Kishan",
+        "Dharna Durga",
+        "Jatin Sarna",
+        "Geetanjali Kulkarni"
+      ],
+      "desc": "Dans cette sombre comédie, une femme appelle ses filles, avec lesquelles elle est en froid, au milieu de la nuit pour leur annoncer une nouvelle effrayante : il y a un cadavre dans sa cuisine.",
+      "note": "10.0",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Maa Behen Trailer | Madhuri Dixit, Triptii Dimri, Ravi Kishan, Dharna Durga| Maa Behen Movie Trailer",
+          "url": "https://www.youtube.com/watch?v=NRGrE-GxWxo"
+        },
+        {
+          "lang": "VO",
+          "label": "Official Teaser",
+          "url": "https://www.youtube.com/watch?v=rSTk9KgrJ3w"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/dpQIeEunpgj0C4rngb6OFb4zSd1.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/3QEwa9vZFC8PyZgFOKYPZx55nv8.jpg",
+      "source": "tmdb-film",
+      "isManual": false,
+      "tmdb_id": 1628448
+    },
+    {
       "id": "showbizz-meurtres-au-paradis---saison-152026-06-11",
       "date": "2026-06-04",
       "title": "Meurtres au paradis , saison 15",
@@ -19780,7 +19510,7 @@
         "Kerry Godliman"
       ],
       "desc": "From 2-year-old to teen, this coming-of-age drama based on true events follows the story of Alex Hanscombe who witnessed his mother's murder in 1992.",
-      "note": null,
+      "note": "6.8",
       "trailers": [
         {
           "lang": "VO",
@@ -19795,6 +19525,144 @@
       "tmdb_id": 280511
     },
     {
+      "id": "web-ep-3638277",
+      "date": "2026-06-05",
+      "title": "Among Us",
+      "ep_title": "A Pizza Party Where Nothing Bad Happens",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 1,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Paramount+",
+      "platformUrl": "https://www.paramountplus.com",
+      "platformLogo": "assets/logos/paramount.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Comedie",
+        "SF"
+      ],
+      "cast": [
+        "Yvette Nicole Brown",
+        "Kimiko Glenn",
+        "Liv Hewson",
+        "Ashley Johnson",
+        "Wayne Knight",
+        "Phil LaMarr"
+      ],
+      "desc": "Eccentric, monochromatic crewmates of a ship transporting junk across the galaxy must root out an Impostor in their midst before they fall victim to its villainous designs. Based on Innersloth's global video game phenomenon of the same name.",
+      "note": "6.3",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Launch Trailer",
+          "url": "https://www.youtube.com/watch?v=sxIxOZnkPoc"
+        },
+        {
+          "lang": "VO",
+          "label": "Title Trailer",
+          "url": "https://www.youtube.com/watch?v=eJRgQfXvGkE"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/628/1570411.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/628/1570411.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 229544
+    },
+    {
+      "id": "ca-ep-3637916",
+      "date": "2026-06-05",
+      "title": "Fear Factor Célébrités",
+      "ep_title": "Épisode 1",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 1,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR"
+      ],
+      "country": "CA",
+      "tags": [
+        "QC",
+        "CA"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "Patrick Huard"
+      ],
+      "desc": "Patrick Huard invites three artist friends, each accompanied by someone close to them, to push their limits and face their greatest fears in Celebrity Fear Factor. In each episode, the pairs try to avoid elimination by overcoming three challenges that are as spectacular as they are terrifying. At the end, the winning duo donates $5,000 to the charity of their choice.",
+      "note": null,
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/627/1569670.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/627/1569670.jpg",
+      "source": "tvmaze-ca",
+      "isManual": false,
+      "tmdb_id": 324690
+    },
+    {
+      "id": "film-1274706",
+      "date": "2026-06-05",
+      "title": "L'Inconnue du port",
+      "ep_title": "",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normale",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1274706",
+      "platformLogo": "assets/logos/cinema.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [],
+      "categories": [
+        "Thriller",
+        "Crime"
+      ],
+      "cast": [
+        "Candela Peña",
+        "Ana Rujas",
+        "Pol López",
+        "Manolo Solo",
+        "Kira Miró",
+        "Esther Noya"
+      ],
+      "desc": "Quand une femme retrouvée dans un conteneur se révèle amnésique, deux enquêteurs cherchent à découvrir son identité au plus vite, et à comprendre qui veut sa mort.",
+      "note": "4.7",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Official Trailer [Subtitled]",
+          "url": "https://www.youtube.com/watch?v=161b4xLkokE"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/vpcvFncVoRA48mtPXu94kdwRI0C.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/2fgcRuaseQ9RIiTAUDbLtymnj2z.jpg",
+      "source": "tmdb-film",
+      "isManual": false,
+      "tmdb_id": 1274706
+    },
+    {
       "id": "film-454639",
       "date": "2026-06-05",
       "title": "Les Maîtres de l'Univers",
@@ -19803,7 +19671,7 @@
       "saison_num": 0,
       "ep_num": null,
       "ep_status": "normale",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "film",
       "platform": "Cinema",
       "platformUrl": "https://www.themoviedb.org/movie/454639",
@@ -19828,7 +19696,7 @@
         "Jóhannes Haukur Jóhannesson"
       ],
       "desc": "Après en avoir été séparée pendant 15 ans, l’Épée de pouvoir guide le prince Adam de retour sur Eternia, où il découvre son monde brisé sous le règne maléfique de Skeletor. Pour sauver sa famille et son royaume, Adam doit unir ses forces à celles de ses plus proches alliés, Teela (Camila Mendes) et Duncan, alias le Maître d’Armes (Idris Elba), et accepter sa véritable destinée en devenant Musclor — l’homme le plus puissant de l’univers.",
-      "note": "7.6",
+      "note": "7.4",
       "trailers": [
         {
           "lang": "VF",
@@ -19848,6 +19716,93 @@
       "tmdb_id": 454639
     },
     {
+      "id": "web-ep-3638177",
+      "date": "2026-06-05",
+      "title": "Los Topuria",
+      "ep_title": "Episodio 1",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 1,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Crave",
+      "platformUrl": "https://www.crave.ca",
+      "platformLogo": "assets/logos/crave.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "EU",
+      "tags": [
+        "EU"
+      ],
+      "categories": [
+        "Drame"
+      ],
+      "cast": [
+        "ილია თოფურია",
+        "ალექსანდრე თოფურია",
+        "Omar Montes",
+        "Sergio Ramos"
+      ],
+      "desc": "Ilia Topuria is one of the biggest stars in MMA. A documentary that explores his personal side and reveals a side of the champion never seen before.",
+      "note": null,
+      "trailers": [],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/627/1569807.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/627/1569807.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 323979
+    },
+    {
+      "id": "film-1358005",
+      "date": "2026-06-05",
+      "title": "Office Romance",
+      "ep_title": "",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normale",
+      "status": "sorti",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1358005",
+      "platformLogo": "assets/logos/cinema.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [],
+      "categories": [
+        "Romance",
+        "Comedie"
+      ],
+      "cast": [
+        "Jennifer Lopez",
+        "Brett Goldstein",
+        "Betty Gilpin",
+        "Edward James Olmos",
+        "Bradley Whitford",
+        "Amy Sedaris"
+      ],
+      "desc": "Jackie, présidente-directrice générale d'Air Cruz, dirige son entreprise d'une main de fer, notamment en appliquant une politique stricte interdisant toute relation entre collègues. Lorsqu'une nouvelle avocate séduisante vient travailler pour elle, cette politique est mise à rude épreuve.",
+      "note": "6.7",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Office Romance | Bande-annonce officielle VOSTFR | Netflix France",
+          "url": "https://www.youtube.com/watch?v=fk9491e0ERY"
+        }
+      ],
+      "poster": "https://image.tmdb.org/t/p/w300/lHHZ0EiJZeFcNu1vjSxMdoCCMrU.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/erkh3hHfGh06qPQIuFpV0PoQeV8.jpg",
+      "source": "tmdb-film",
+      "isManual": false,
+      "tmdb_id": 1358005
+    },
+    {
       "id": "film-1273221",
       "date": "2026-06-05",
       "title": "Scary Movie",
@@ -19856,7 +19811,7 @@
       "saison_num": 0,
       "ep_num": null,
       "ep_status": "normale",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "film",
       "platform": "Cinema",
       "platformUrl": "https://www.themoviedb.org/movie/1273221",
@@ -19868,7 +19823,8 @@
       "country": "USA",
       "tags": [],
       "categories": [
-        "Comedie"
+        "Comedie",
+        "Horreur"
       ],
       "cast": [
         "Marlon Wayans",
@@ -19879,7 +19835,7 @@
         "Gregg Wayans"
       ],
       "desc": "Vingt-six ans après avoir échappé à un tueur masqué étrangement familier, les héros emblématiques de la saga sont de nouveau dans la ligne de mire du meurtrier, et aucune franchise de film d’horreur n’est à l’abri.",
-      "note": "5.5",
+      "note": "5.8",
       "trailers": [
         {
           "lang": "VF",
@@ -19902,7 +19858,7 @@
           "url": "https://www.youtube.com/watch?v=PtR0LAKzWrg"
         }
       ],
-      "poster": "https://image.tmdb.org/t/p/w300/w6x1zcdRtU9ihPCNADmElR1NHRw.jpg",
+      "poster": "https://image.tmdb.org/t/p/w300/gIComZ1TfZdWmuD4L4mJ8sEv0km.jpg",
       "backdrop": "https://image.tmdb.org/t/p/w780/lj6AaDqDUbzm2XJltFNHeAm2uXN.jpg",
       "source": "tmdb-film",
       "isManual": false,
@@ -19917,7 +19873,7 @@
       "saison_num": 1,
       "ep_num": 1,
       "ep_status": "premiere",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "serie",
       "platform": "Netflix",
       "platformUrl": "https://www.netflix.com",
@@ -19932,7 +19888,6 @@
       ],
       "categories": [
         "Drame",
-        "Comedie",
         "Action"
       ],
       "cast": [
@@ -19957,8 +19912,8 @@
           "url": "https://www.youtube.com/watch?v=V_cBOcRYJ_M"
         }
       ],
-      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/626/1567300.jpg",
-      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/626/1567300.jpg",
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/627/1569777.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/627/1569777.jpg",
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 276161
@@ -19972,7 +19927,7 @@
       "saison_num": 0,
       "ep_num": null,
       "ep_status": "normale",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "film",
       "platform": "Cinema",
       "platformUrl": "https://www.themoviedb.org/movie/1680516",
@@ -20018,7 +19973,7 @@
       "saison_num": 1,
       "ep_num": 1,
       "ep_status": "premiere",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "serie",
       "platform": "Tele-Quebec",
       "platformUrl": "https://www.telequebec.tv",
@@ -20045,15 +20000,64 @@
       "tmdb_id": null
     },
     {
+      "id": "web-ep-3605087",
+      "date": "2026-06-08",
+      "title": "Alice and Steve",
+      "ep_title": "Episode 1",
+      "saison": "Saison 1",
+      "saison_num": 1,
+      "ep_num": 1,
+      "ep_status": "premiere",
+      "status": "sorti",
+      "type": "serie",
+      "platform": "Disney+",
+      "platformUrl": "https://www.disneyplus.com",
+      "platformLogo": "assets/logos/disney.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Comedie"
+      ],
+      "cast": [
+        "Nicola Walker",
+        "Jemaine Clement",
+        "Yali Topol Margalith",
+        "Joel Fry",
+        "Marcia Warren",
+        "Eilidh Fisher"
+      ],
+      "desc": "Alice is devastated when her best friend Steve starts dating her 26-year-old daughter Izzy. She's going to lose her best friend and her daughter in one fell swoop. Alice tries everything she can to end the relationship. Unfortunately for her, Steve's more than ready for the attack, and what begins as a perfect friendship, devolves into an all-out feud.A hilarious, messy, and complicated exploration of friendship, family, and love, Alice and Steve is an anti-romantic comedy that asks the question, how far would you go for love - or revenge? Will Alice forgive Steve? Will Steve and Izzy make a relationship work? Amongst all the questions hanging in the balance, one thing is certain; their lives will never be the same again.",
+      "note": "5.5",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "Official Trailer",
+          "url": "https://www.youtube.com/watch?v=k_7EEeSvssQ"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/624/1561417.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/624/1561417.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 318203
+    },
+    {
       "id": "intl-ep-3615550",
       "date": "2026-06-08",
       "title": "Below Deck Mediterranean",
-      "ep_title": "TBA",
+      "ep_title": "King's Crash Landing",
       "saison": "Saison 11",
       "saison_num": 11,
       "ep_num": 1,
       "ep_status": "retour",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "serie",
       "platform": "Peacock",
       "platformUrl": "https://www.peacocktv.com",
@@ -20094,7 +20098,7 @@
       "saison_num": 1,
       "ep_num": 1,
       "ep_status": "premiere",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "serie",
       "platform": "Tele-Quebec",
       "platformUrl": "https://www.telequebec.tv",
@@ -20129,7 +20133,7 @@
       "saison_num": 1,
       "ep_num": 1,
       "ep_status": "premiere",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "serie",
       "platform": "Tele-Quebec",
       "platformUrl": "https://www.telequebec.tv",
@@ -20164,7 +20168,7 @@
       "saison_num": 1,
       "ep_num": 1,
       "ep_status": "premiere",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "serie",
       "platform": "Tele-Quebec",
       "platformUrl": "https://www.telequebec.tv",
@@ -20199,7 +20203,7 @@
       "saison_num": 1,
       "ep_num": 1,
       "ep_status": "premiere",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "serie",
       "platform": "Tele-Quebec",
       "platformUrl": "https://www.telequebec.tv",
@@ -20234,7 +20238,7 @@
       "saison_num": 1,
       "ep_num": 1,
       "ep_status": "premiere",
-      "status": "a-venir",
+      "status": "sorti",
       "type": "serie",
       "platform": "Tele-Quebec",
       "platformUrl": "https://www.telequebec.tv",
@@ -20363,7 +20367,7 @@
         "Michael Bradway",
         "Joseph Chiu"
       ],
-      "desc": "Every Year After is described as a fun, sweeping, romantic story that asks the question, what if your first love actually was your soulmate?",
+      "desc": "Carley Fortune's Every Year After is a romantic, nostalgic story of first loves and the people and choices that mark us forever.",
       "note": null,
       "trailers": [
         {
@@ -20483,7 +20487,7 @@
         "Juliette Lewis"
       ],
       "desc": "Un couple dysfonctionnel se rend dans une cabane isolée pour se \" reconnecter \" l'un envers l'autre, mais chacun a l'intention secrète de tuer l'autre.",
-      "note": "6.9",
+      "note": "6.8",
       "trailers": [
         {
           "lang": "VO",
@@ -20491,7 +20495,7 @@
           "url": "https://www.youtube.com/watch?v=pGxKTIegUZ4"
         }
       ],
-      "poster": "https://image.tmdb.org/t/p/w300/6yPvopLmtoyxzJt6Cr0BRyFxtrd.jpg",
+      "poster": "https://image.tmdb.org/t/p/w300/kZCauMzAt9eMAhLMopCqnFw1Q5k.jpg",
       "backdrop": "https://image.tmdb.org/t/p/w780/sb76azrAXr9U13uEQxNP5e3fujY.jpg",
       "source": "tmdb-film",
       "isManual": false,
@@ -20601,6 +20605,42 @@
       "source": "showbizz",
       "isManual": false,
       "tmdb_id": null
+    },
+    {
+      "id": "film-1710365",
+      "date": "2026-06-11",
+      "title": "Sharp Gloves",
+      "ep_title": "",
+      "saison": "Film",
+      "saison_num": 0,
+      "ep_num": null,
+      "ep_status": "normale",
+      "status": "a-venir",
+      "type": "film",
+      "platform": "Cinema",
+      "platformUrl": "https://www.themoviedb.org/movie/1710365",
+      "platformLogo": "assets/logos/cinema.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [],
+      "categories": [
+        "Film"
+      ],
+      "cast": [
+        "Emmanuel Pelletier-Michaud",
+        "Alice Paradis"
+      ],
+      "desc": "",
+      "note": null,
+      "trailers": [],
+      "poster": null,
+      "backdrop": null,
+      "source": "tmdb-film",
+      "isManual": false,
+      "tmdb_id": 1710365
     },
     {
       "id": "web-ep-3619050",
@@ -20796,7 +20836,7 @@
         "Wyatt Russell"
       ],
       "desc": "Si vous découvriez que nous ne sommes pas seuls, si quelqu'un vous le montrait, vous le prouvait, cela vous effraierait-il ?",
-      "note": "8.0",
+      "note": "8.1",
       "trailers": [
         {
           "lang": "VF",
@@ -20820,7 +20860,7 @@
         }
       ],
       "poster": "https://image.tmdb.org/t/p/w300/n3eMT3X0dbaqPMYbDP9unIB33pY.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/5p6BsJtnPbglYN15MuiUEppPl0f.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1275779
@@ -21285,7 +21325,7 @@
         }
       ],
       "poster": "https://image.tmdb.org/t/p/w300/cu0XnXLzJGPeI0msCoJKgnEecKz.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/t2u97g756eWH9DNIXex3AWob3Sa.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/wg9Qtmmq1ZgKLucA055qPNZNREJ.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1564614
@@ -21954,7 +21994,7 @@
         }
       ],
       "poster": "https://image.tmdb.org/t/p/w300/p5Dv2O1QVn08IZi8LCc2659TEo9.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/8CIgg0gCHIYz0jrx5IcZEOy047J.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/w780/z4nSdlQYIHcgaqqCnz1hRSGpEhy.jpg",
       "source": "tmdb-film",
       "isManual": false,
       "tmdb_id": 1081003
@@ -22919,6 +22959,54 @@
       "tmdb_id": 2122
     },
     {
+      "id": "web-ep-3558445",
+      "date": "2026-07-22",
+      "title": "A Shop for Killers",
+      "ep_title": "1",
+      "saison": "Saison 2",
+      "saison_num": 2,
+      "ep_num": 1,
+      "ep_status": "retour",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "Disney+",
+      "platformUrl": "https://www.disneyplus.com",
+      "platformLogo": "assets/logos/disney.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Action",
+        "Policier"
+      ],
+      "cast": [],
+      "desc": "Set in modern-day Korea, A Shop For Killers sees college student Jung Ji Ahn diving for cover in her childhood home after a series of highly skilled assassins get her in their sights. Desperately fighting to survive, Ji Ahn will begin to remember invaluable lessons her uncle taught her before his apparent suicide, drawing on them to help her stay alive. Confused and cornered, Ji Ahn will have to work fast to uncover her uncle's hidden past and figure out why so many people are desperate to gain access to the house and the extensive arsenal hidden inside.",
+      "note": "6.8",
+      "trailers": [
+        {
+          "lang": "VO",
+          "label": "A Shop For Killers | Official Trailer | Disney+ Singapore",
+          "url": "https://www.youtube.com/watch?v=69nzLpyMSHw"
+        },
+        {
+          "lang": "VO",
+          "label": "A Shop For Killers | Teaser Trailer | Disney+ Singapore",
+          "url": "https://www.youtube.com/watch?v=FBbFtJ3-HtM"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/500/1250723.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/500/1250723.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 215072
+    },
+    {
       "id": "showbizz-petite-ville--grands-secrets2026-07-22",
       "date": "2026-07-22",
       "title": "Petite ville, grands secrets",
@@ -23211,6 +23299,100 @@
       "source": "showbizz",
       "isManual": false,
       "tmdb_id": null
+    },
+    {
+      "id": "web-ep-3637286",
+      "date": "2026-07-31",
+      "title": "Batman: Caped Crusader",
+      "ep_title": "Episode 1",
+      "saison": "Saison 2",
+      "saison_num": 2,
+      "ep_num": 1,
+      "ep_status": "retour",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "Prime Video",
+      "platformUrl": "https://www.primevideo.com",
+      "platformLogo": "assets/logos/prime.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Action",
+        "Crime"
+      ],
+      "cast": [
+        "Hamish Linklater"
+      ],
+      "desc": "Welcome to Gotham City, where the corrupt outnumber the good, criminals run rampant and law-abiding citizens live in a constant state of fear. Forged in the fire of tragedy, wealthy socialite Bruce Wayne becomes something both more and less than human—the BATMAN. His one-man crusade for justice attracts unexpected allies within the GCPD and City Hall, but his heroic actions spawn deadly, unforeseen ramifications.",
+      "note": "7.2",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Bande-Annonce",
+          "url": "https://www.youtube.com/watch?v=hTwbHI8RbgQ"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/529/1323819.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/529/1323819.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 125909
+    },
+    {
+      "id": "web-ep-3638223",
+      "date": "2026-08-02",
+      "title": "Lioness",
+      "ep_title": "TBA",
+      "saison": "Saison 3",
+      "saison_num": 3,
+      "ep_num": 1,
+      "ep_status": "retour",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "Paramount+",
+      "platformUrl": "https://www.paramountplus.com",
+      "platformLogo": "assets/logos/paramount.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Thriller"
+      ],
+      "cast": [
+        "Zoe Saldaña",
+        "Laysla De Oliveira",
+        "Dave Annable",
+        "Jill Wagner",
+        "LaMonica Garrett",
+        "James Jordan"
+      ],
+      "desc": "Lioness, inspired by an actual U.S. Military program, follows the life of Joe while she attempts to balance her personal and professional life as the tip of the CIA's spear in the war on terror. The Lioness Program, overseen by Kaitlyn Meade and Donald Westfield, enlists an aggressive Marine Raider named Cruz to operate undercover alongside Joe among the power brokers of State terrorism in the CIA's efforts to thwart the next 9/11.",
+      "note": "7.6",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Opérations Spéciales : Lioness | Trailer Officiel VF - Paramount+",
+          "url": "https://www.youtube.com/watch?v=2WA7RoVDlq0"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/542/1355074.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/542/1355074.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 113962
     },
     {
       "id": "web-ep-3616891",
@@ -23657,8 +23839,8 @@
       "desc": "A Different World follows Deborah, Dwayne Wayne and Whitley Gilbert's free-spirited, well-intentioned, yet rebellious youngest child, as she enters her freshman year at Hillman College. There, she finds the shadow of her parents difficult to escape as she sets out to build her own legacy, while having the time of her life, alongside a whole new generation of Hillman's best and brightest.",
       "note": "7.0",
       "trailers": [],
-      "poster": "https://image.tmdb.org/t/p/w300/v7fuifcJjcqQxAsOjPviupcmFIZ.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/w780/ebTL1Lyvr0LVBrMlhgQp6lqijC6.jpg",
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/627/1569835.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/627/1569835.jpg",
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 115
@@ -23712,6 +23894,56 @@
       "source": "tvmaze-web",
       "isManual": false,
       "tmdb_id": 120911
+    },
+    {
+      "id": "web-ep-3639619",
+      "date": "2026-10-23",
+      "title": "Lupin",
+      "ep_title": "Chapitre 1",
+      "saison": "Saison 4",
+      "saison_num": 4,
+      "ep_num": 1,
+      "ep_status": "retour",
+      "status": "a-venir",
+      "type": "serie",
+      "platform": "Netflix",
+      "platformUrl": "https://www.netflix.com",
+      "platformLogo": "assets/logos/netflix.svg",
+      "lang": [
+        "FR",
+        "EN"
+      ],
+      "country": "USA",
+      "tags": [
+        "USA"
+      ],
+      "categories": [
+        "Drame",
+        "Action",
+        "Crime"
+      ],
+      "cast": [
+        "Omar Sy"
+      ],
+      "desc": "Inspired by the adventures of Arsène Lupin, gentleman thief Assane Diop sets out to avenge his father for an injustice inflicted by a wealthy family.",
+      "note": "7.4",
+      "trailers": [
+        {
+          "lang": "VF",
+          "label": "Bande-annonce officielle",
+          "url": "https://www.youtube.com/watch?v=gCmuYqeeNpc"
+        },
+        {
+          "lang": "VF",
+          "label": "Teaser officiel",
+          "url": "https://www.youtube.com/watch?v=lEstGHBnClE"
+        }
+      ],
+      "poster": "https://static.tvmaze.com/uploads/images/medium_portrait/603/1507749.jpg",
+      "backdrop": "https://static.tvmaze.com/uploads/images/original_untouched/603/1507749.jpg",
+      "source": "tvmaze-web",
+      "isManual": false,
+      "tmdb_id": 96677
     },
     {
       "id": "web-ep-3615601",
